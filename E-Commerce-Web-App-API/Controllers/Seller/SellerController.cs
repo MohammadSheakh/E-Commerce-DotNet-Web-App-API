@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer.Services.Seller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -45,6 +46,30 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
             return Request.CreateResponse(HttpStatusCode.OK, "Post Received");
         }
 
+        [HttpGet]
+        [Route("api/name/demo/{id}")]
+        // person er name send korbo 
+        public HttpResponseMessage GetPersonName(int id)
+        {
+            try
+            {
+                // eto din ekhanei context baniye felsi .. 
+                // context ke call kore disi ..
+
+                // but ekhon .. API layer er kono kichu dorkar hoile ..
+                // sheta chabe business layer er kase ..  
+
+                // so, business logic layer e kichu ekta thakte hobe 
+                // lets go to business logic layer ..
+
+                var data =  SellerService.GetName(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
         //public HttpResponseMessage FindSeller()
         //{
 

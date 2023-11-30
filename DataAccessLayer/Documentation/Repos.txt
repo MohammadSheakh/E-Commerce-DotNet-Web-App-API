@@ -1,0 +1,16 @@
+﻿
+Repos Folder er moddhe prottek ta entity er data ke access korar jonno 
+Dedicated class thakbe .. 
+
+// EF installation (1)
+    // Model And Context Initiation... (1)
+    // Connection string generate (1)
+
+    // last step .. jeta project e ekbar korlei hobe .. ar korte hobe na 
+    // Enabling migrations (1)
+    /*
+        > enable-migrations
+
+        > add-migration  Create Database And Add Table (*) // migration add kora hoy and give name of that migration
+        > update-database (*)
+     */

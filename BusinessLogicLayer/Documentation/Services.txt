@@ -1,0 +1,8 @@
+﻿
+Prottek ta entity ba .. ek ekta block of logic er jonno ek ekta services
+ba service provider thake 
+
+// service provider mane class 
+
+// person related data gula ke handle korar jonno thakbe personService 
+

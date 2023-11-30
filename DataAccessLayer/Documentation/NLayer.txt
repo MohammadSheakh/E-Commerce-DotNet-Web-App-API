@@ -12,7 +12,4 @@ Top Down Approach
 
 -> Presentation Layer -> Add -> Reference .. 
 
-Solution ta build korte hobe .. 
-er pore Application Layer e controller banano jabe .. 
-
 

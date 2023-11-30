@@ -1,0 +1,9 @@
+﻿
+1. Entity Framework installation (1) <- ek bar e korte hobe 
+2. Model and Context initiation (1)
+3. Connection string generate (1)
+4. Enablling migration (1)
+
+5. Update model and Context (*)
+6. Adding Migration (*) <- bar bar korte hobe
+7. Update Database(*)
