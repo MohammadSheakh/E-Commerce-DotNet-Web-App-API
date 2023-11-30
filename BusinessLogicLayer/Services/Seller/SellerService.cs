@@ -1,4 +1,9 @@
-﻿using DataAccessLayer.Repos.Seller;
+﻿using AutoMapper;
+using BusinessLogicLayer.DTOs.Seller;
+using DataAccessLayer.EF;
+using DataAccessLayer.EF.Models;
+using DataAccessLayer.Repos.Seller;
+using E_Commerce_Web_Application.Helper.Converter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +33,35 @@ namespace BusinessLogicLayer.Services.Seller
             var data =  SellerRepo.Get(id);
             return data;
         }
+
+        public static List<DTOs.Seller.SellerDTO> GetAllSeller()
+        {
+            var sellers = SellerRepo.GetAllSeller();
+
+            var autoMapper = new AutoMapperConverter();
+
+            //var ret = mapper.Map<List<PersonDTO>>(data);
+            var ret = autoMapper.ConvertForList<DataAccessLayer.EF.Models.Seller, SellerDTO>(sellers);
+            
+            return ret;
+        }
+        public static DTOs.Seller.SellerDTO GetOneSeller(int id)
+        {
+            var seller = SellerRepo.GetOneSeller(id);
+
+            var autoMapper = new AutoMapperConverter();
+
+            var ret = autoMapper.ConvertForSingleInstance<DataAccessLayer.EF.Models.Seller, SellerDTO>(seller); ;
+            return ret;
+        }
+        //public static void Create(PersonDTO p)
+        //{
+        //    var config = new MapperConfiguration(cfg => {
+        //        cfg.CreateMap<PersonDTO, Person>();
+        //    });
+        //    var mapper = new Mapper(config);
+        //    var data = mapper.Map<Person>(p);
+        //    PersonRepo.Create(data);
+        //}
     }
 }

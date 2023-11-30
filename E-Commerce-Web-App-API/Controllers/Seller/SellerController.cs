@@ -75,5 +75,35 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
 
         //}
 
+        [HttpGet] // customized // request override
+        [Route("api/seller/")] // custom routing ta add kore dite hobe 
+        public HttpResponseMessage GetAllSeller()
+        {
+            try
+            {
+                var data = SellerService.GetAllSeller();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        [HttpGet] // customized // request override
+        [Route("api/seller/{sellerId}")] // custom routing ta add kore dite hobe 
+        public HttpResponseMessage GetOneSeller(int sellerId)
+        {
+            try
+            {
+                var data = SellerService.GetOneSeller(sellerId);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
     }
 }

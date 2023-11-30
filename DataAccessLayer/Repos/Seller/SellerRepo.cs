@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLayer.EF;
+using DataAccessLayer.EF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,10 +30,49 @@ namespace DataAccessLayer.Repos.Seller
             // SQL
             return id == 110 ? "Tanvir From Data Access Layer" : "Not Found Tanvir From Data Access Layer";
            // return "Tanvir From Data Access Layer";
-        }   
+        }
 
         // Create -> Database e create korbe 
         // Update ->
         // Delete
+
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+
+        public static List<EF.Models.Seller> GetAllSeller()
+        {
+            //all person
+            var db = new ECommerceContext();
+            return db.Sellers.ToList();
+        }
+        public static EF.Models.Seller GetOneSeller(int id)
+        {
+            //id person get
+            var db = new ECommerceContext();
+            return db.Sellers.Find(id);
+        }
+        public static void Create(EF.Models.Seller person)
+        {
+            //insert
+            var db = new ECommerceContext();
+            db.Sellers.Add(person);
+            db.SaveChanges();
+        }
+        public static void Update(EF.Models.Seller person)
+        {
+            //update
+            var db = new ECommerceContext();
+            var ex = db.Sellers.Find(person.Id);
+            db.Entry(ex).CurrentValues.SetValues(person);
+            db.SaveChanges();
+        }
+        public static bool Delete(int id)
+        {
+            //delete
+            var db = new ECommerceContext();
+            var ex = db.Sellers.Find(id);
+            db.Sellers.Remove(ex);
+            return db.SaveChanges() > 0;
+        }
     }
 }

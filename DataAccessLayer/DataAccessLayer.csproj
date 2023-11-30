@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202311301158357_addMoreTable.designer.cs">
       <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311301610518_addMoreTable1.cs" />
+    <Compile Include="Migrations\202311301610518_addMoreTable1.designer.cs">
+      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Seller\SellerRepo.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311301158357_addMoreTable.resx">
       <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311301610518_addMoreTable1.resx">
+      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
