@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.EF.Models;
+using DataAccessLayer.EF.Models.University;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -39,9 +40,13 @@ namespace DataAccessLayer.EF
         public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<CategoryBrand> CategoryBrand { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        //public DbSet<Category> Categories { get; set; }
 
         public DbSet<Brand> Brands { get; set; }
+
+        public DbSet<News> News { get; set; }
+
+        public DbSet<EF.Models.University.Category> Categories { get; set; }
     }
 }
 // 100 -> 145 taka
