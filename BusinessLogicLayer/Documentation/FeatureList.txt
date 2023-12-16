@@ -1,0 +1,29 @@
+﻿
+        //  1. AddProduct [Product]
+        //  2. getAllProductsDetails [Product]
+        //  3. addReview [Product]
+        //  4. addReplyToAReview [Product]
+        //     addAvailableQualityOfAProduct [Product]
+        //     addSpecificationOfAProduct [Product]
+        //  5. paymentCompleteOfPreOrder [Product]
+        //  6. orderStatusPending [Product]
+        //  7. getAllNegetiveReview [Product]
+        //  8. checkForLowQuantity [Product]
+
+        //  9. Seller Login basic/jwt [Seller]
+        // 10. Seller Logout[Seller]
+        // 11. createNewSeller [Seller]
+        // 12. getAllSeller [Seller]
+        // 13. updateSellerInformation [Seller]
+        // 14. deleteSellerAccount [Seller]
+
+        // 15. sortProductByBrand [Brand]
+        // 16. sortProductByCategory [Category]
+        // 17. sortProductByMinAndMaxRange [Product]
+
+        // 18. createNewMessage [Message]
+        // 19. createNewConversation [Conversation]
+        // 20. showAllConversation [Conversation]
+        // 21. showAllMessageOfAConversation [Conversation]
+
+        // 22. Send Email

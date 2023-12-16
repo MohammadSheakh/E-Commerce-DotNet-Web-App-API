@@ -1,4 +1,6 @@
 ﻿using DataAccessLayer.EF.Models;
+using DataAccessLayer.EF.Models.UserModel;
+using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
 using DataAccessLayer.EF.Models.University;
 using System;
 using System.Collections.Generic;
@@ -32,7 +34,7 @@ namespace DataAccessLayer.EF
 
         // DbSet hishebe Context  e add na korle table create hobe na database e
         
-        public DbSet<Seller> Sellers { get; set; }
+        // public DbSet<Seller> Sellers { get; set; } // Seller er jinish User er moddhe chole jabe
         public DbSet<Buyer> Buyers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -44,9 +46,16 @@ namespace DataAccessLayer.EF
 
         public DbSet<Brand> Brands { get; set; }
 
+        // For University Practice -------------------------------------------
         public DbSet<News> News { get; set; }
 
-        public DbSet<EF.Models.University.Category> Categories { get; set; }
+        
+        // For Seller -------------------------------------------
+        public DbSet<Models.Seller.Profile.Reviews.Review> Reviewes { get; set; }
+
+        public DbSet<Models.Seller.Profile.Reviews.ReviewReply> ReviewReplies { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
 // 100 -> 145 taka

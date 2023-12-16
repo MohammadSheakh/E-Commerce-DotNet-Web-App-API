@@ -16,3 +16,7 @@ Solution ta build korte hobe ..
 er pore Application Layer e controller banano jabe .. 
 
 
+-> App layer e entity framework install korte hobe
+-> Data Access Layer e entity framework install korte hobe .. 
+
+

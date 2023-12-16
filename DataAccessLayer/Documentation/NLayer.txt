@@ -13,3 +13,77 @@ Top Down Approach
 -> Presentation Layer -> Add -> Reference .. 
 
 
+///////////////////////////////////////////////////////
+
+Model banano shesh .. ekhon context e add korte hobe
+// ekhon connection string .. eta application layer e likhte hobe
+// app layer er web config e .. under configuration .. 
+
+// ekhon migration shuru korte hobe 
+// 
+// Default project DAL select korte hobe .. eta must
+// enable-migrations // ekta project e ekbar korlei hobe 
+
+//  ekhon amra chaile data seed korte pari .. 
+
+protected override void Seed(DAL.Models.PostContext context){
+	
+	for(int i = 1; i <= 10; i++){
+		context.Users.AddOrUpdate(new Models.User){
+			Name = Guid.NewGuid().ToString().Substring(0, 15),
+			Uname = "User-"+i,
+			Password = Guid.NewGuid().ToString().SubString(0,10),
+			Type = "General", // pore ekjon ke admin banay dibo 
+
+		}
+		// user add done .. 
+
+		
+	}
+
+	// ekhon kichu post add korbo 
+
+	Random random = new Random();
+	
+	for(int i = 1; i <= 10; i++){
+		
+		context.Reviews.AddOrUpdate(new Models.Reviews){
+			Id = i,
+			Details = Guid.NewGuid().ToString().Substring(0, 5),
+			CreatedAt = DateTime.Now,
+			PostedBy = "User-" + random.Next(1,11),  // 1 theke 10 er moddhe select hobe randomly 
+			
+		}
+
+		
+	}
+
+	// ekhon kichu review er reply add korbo 
+
+	for(int i = 1; i <= 10; i++){
+		
+		context.ReviewReplies.AddOrUpdate(new Models.ReviewReplies){
+			Id = i,
+			Details = Guid.NewGuid().ToString().Substring(0, 5),
+			CreatedAt = DateTime.Now + random.Next(0, 10),
+			PostedBy = "User-" + random.Next(1,11),  // 1 theke 10 er moddhe select hobe randomly 
+			ReviewId = random.Next(1,21) // 1 - 20
+ 			
+		}
+
+	}
+	
+}
+
+/////////////
+
+// add-migration initDB
+// update-database
+
+
+
+////////////////////////////////
+
+Model banano shesh hoile amra interface banabo .. 
+
+interface/ IRepo  ... make this interface public 

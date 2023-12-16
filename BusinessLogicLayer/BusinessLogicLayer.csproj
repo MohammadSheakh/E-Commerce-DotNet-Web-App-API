@@ -45,13 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\Conversation\MessageDTO.cs" />
+    <Compile Include="DTOs\Product\ProductDTO.cs" />
+    <Compile Include="DTOs\Review\ReviewDTO.cs" />
+    <Compile Include="DTOs\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
-    <Compile Include="DTOs\University\CategoryDTO.cs" />
     <Compile Include="DTOs\University\NewsDTO.cs" />
+    <Compile Include="DTOs\User\LoginDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Product\ProductService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
-    <Compile Include="Services\University\CategoryService.cs" />
     <Compile Include="Services\University\NewsService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,14 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\codeFirst.txt" />
+    <Content Include="Documentation\FeatureList.txt" />
     <Content Include="Documentation\Services.txt" />
     <Content Include="Documentation\NLayer.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTOs\Admin\" />
     <Folder Include="DTOs\Buyer\" />
     <Folder Include="Helper\CustomAttribute\" />
-    <Folder Include="Services\Admin\" />
     <Folder Include="Services\Buyer\" />
   </ItemGroup>
   <ItemGroup>

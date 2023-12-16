@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataAccessFactory.cs" />
     <Compile Include="EF\ECommerceContext.cs" />
     <Compile Include="EF\Models\Buyer\Buyer.cs" />
     <Compile Include="EF\Models\Product\Brand.cs" />
@@ -60,9 +61,12 @@
     <Compile Include="EF\Models\Order\Order.cs" />
     <Compile Include="EF\Models\Order\OrderItem.cs" />
     <Compile Include="EF\Models\Product\Product.cs" />
+    <Compile Include="EF\Models\Seller\Profile\Reviews\Review.cs" />
+    <Compile Include="EF\Models\Seller\Profile\Reviews\ReviewReply.cs" />
     <Compile Include="EF\Models\Seller\Seller.cs" />
-    <Compile Include="EF\Models\University\Category.cs" />
     <Compile Include="EF\Models\University\News.cs" />
+    <Compile Include="EF\Models\UserModel\User.cs" />
+    <Compile Include="Interface\IRepo.cs" />
     <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.cs" />
     <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.designer.cs">
       <DependentUpon>202311301047249_CreateDBAndAddTable.cs</DependentUpon>
@@ -85,9 +89,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repos\Seller\SellerRepo.cs" />
-    <Compile Include="Repos\University\CategoryRepo.cs" />
+    <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
     <Compile Include="Repos\University\NewsRepo.cs" />
+    <Compile Include="Repos\UserRepo\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\codeFirst.txt" />
@@ -95,9 +100,8 @@
     <Content Include="Documentation\NLayer.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EF\Models\Admin\" />
-    <Folder Include="Repos\Admin\" />
-    <Folder Include="Repos\Buyer\" />
+    <Folder Include="EF\Models\Seller\Profile\Conversation\" />
+    <Folder Include="Repos\BuyerRepo\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

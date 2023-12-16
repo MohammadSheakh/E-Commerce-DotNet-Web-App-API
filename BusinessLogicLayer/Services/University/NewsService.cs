@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.DTOs.Seller;
 using BusinessLogicLayer.DTOs.University;
+using DataAccessLayer;
 using DataAccessLayer.Repos.Seller;
 using DataAccessLayer.Repos.University;
 using E_Commerce_Web_Application.Helper.Converter;
@@ -15,7 +16,8 @@ namespace BusinessLogicLayer.Services.University
     {
         public static DTOs.University.NewsDTO GetOneNews(int id)
         {
-            var news = NewsRepo.GetOneNews(id);
+            //var news = NewsRepo.GetOneNews(id);
+            var news = DataAccessFactory.NewsData().Get(id);
 
             var autoMapper = new AutoMapperConverter();
 
@@ -30,7 +32,8 @@ namespace BusinessLogicLayer.Services.University
 
             var data = autoMapper.ConvertForSingleInstance<NewsDTO, DataAccessLayer.EF.Models.University.News>(newsDTO); ;
             //return ret;
-            NewsRepo.CreateNews(data);
+            //NewsRepo.CreateNews(data);
+            DataAccessFactory.NewsData().Create(data);
         }
     }
 }
