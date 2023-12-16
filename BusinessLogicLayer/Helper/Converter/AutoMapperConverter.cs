@@ -12,7 +12,7 @@ namespace E_Commerce_Web_Application.Helper.Converter
 
         // 🔰🔗 i dont know constructor er moddhe kono kaj korte hobe kina 
         //for List
-        public List<TDestination> ConvertForList<TSource, TDestination>(List<TSource> sourceListFromDB)
+        public static List<TDestination> ConvertForList<TSource, TDestination>(List<TSource> sourceListFromDB)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -24,7 +24,7 @@ namespace E_Commerce_Web_Application.Helper.Converter
         }
 
         //for Single Instance
-        public TDestination ConvertForSingleInstance<TSource, TDestination>(TSource sourceFromDB)
+        public static TDestination ConvertForSingleInstance<TSource, TDestination>(TSource sourceFromDB)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -36,7 +36,7 @@ namespace E_Commerce_Web_Application.Helper.Converter
         }
 
         //for Array
-        public TDestination[] ConvertForMap<TSource, TDestination>(TSource[] sourceFromDB)
+        public static TDestination[] ConvertForMap<TSource, TDestination>(TSource[] sourceFromDB)
         {
             var config = new MapperConfiguration(cfg =>
             {

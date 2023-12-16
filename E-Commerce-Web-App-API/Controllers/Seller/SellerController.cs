@@ -178,6 +178,25 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
             }
         }
 
+        // 4.1 getAllReview
+        [HttpGet]
+        [Route("api/seller/getAllReview")]
+        public HttpResponseMessage Reviews()
+        {
+            try
+            {
+                var data = SellerService.GetAllReview();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+               return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                // string na send kore annonymous object hishebe send korte chaile
+                // json object hishebe jabe 
+              //🟢😢🔴  return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message : ex.Message  });
+            }
+        }
+
         // 4--. 
         // 4-- Show All Review For Product By Category
         // 4-- Show All Review For Seller By Category

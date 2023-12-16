@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
+using DataAccessLayer;
 using DataAccessLayer.EF;
 using DataAccessLayer.EF.Models;
+using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
 using DataAccessLayer.Repos.Seller;
 using E_Commerce_Web_Application.Helper.Converter;
 using System;
@@ -94,8 +97,50 @@ namespace BusinessLogicLayer.Services.Seller
 
 
 
-        //  3. addReview [Product]
-        //  4. addReplyToAReview [Product]
+        //  3. addReview [Product] - Tanvir sir er shathe develop kortesi 
+
+
+
+        //  4. addReplyToAReview [Product] - Tanvir sir er shathe develop kortesi 
+
+        // 4.1 getAllReview [Seller]
+        public static List<ReviewDTO> GetAllReview()
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get();
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            //var cfg = new MapperConfiguration(c =>
+            //{
+            //    c.CreateMap<Review, ReviewDTO>();
+            //});
+            //var mapper = new Mapper(cfg);
+
+            //var mapped = mapper.Map<List<ReviewDTO>>(data);
+
+            //var mappedData = AutoMapperConverter.ConvertForList<Review, ReviewDTO>(data);
+
+            var mappedData = AutoMapperConverter.ConvertForList<Review, ReviewDTO>(data);
+
+
+            return mappedData;
+        }
+
+        // 4.2 getAReview [Product]
+        public static ReviewDTO GetAReview(int id)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(id);
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<Review, ReviewDTO>(data);
+
+
+            return mappedData;
+        }
+
+
+
         //     addAvailableQualityOfAProduct [Product]
         //     addSpecificationOfAProduct [Product]
         //  5. paymentCompleteOfPreOrder [Product]

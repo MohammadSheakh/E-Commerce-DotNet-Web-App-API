@@ -87,3 +87,6 @@ protected override void Seed(DAL.Models.PostContext context){
 Model banano shesh hoile amra interface banabo .. 
 
 interface/ IRepo  ... make this interface public 
+
+
+// 

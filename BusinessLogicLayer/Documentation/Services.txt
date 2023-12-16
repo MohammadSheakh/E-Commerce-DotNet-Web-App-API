@@ -6,3 +6,4 @@ ba service provider thake
 
 // person related data gula ke handle korar jonno thakbe personService 
 
+// Auto Mapper 10 version BLL e install korte hobe 
