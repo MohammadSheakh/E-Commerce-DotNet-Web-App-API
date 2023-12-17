@@ -38,6 +38,11 @@ namespace DataAccessLayer
             return new ReviewReplyRepo();
         }
 
+        public static IAuth<bool> AuthData ()
+        {
+            return new UserRepo();
+        }
+
 
 
         /* <CLASS, IdDataType, ReturnDataType> */

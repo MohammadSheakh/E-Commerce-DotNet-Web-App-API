@@ -11,10 +11,14 @@ namespace DataAccessLayer.EF.Models.UserModel
     {
         // public korte hobe internal ke 
         [Key]
+        [Required]
         public int id { get; set; } // auto increment // unique
         //[StringLength(35)]
         //[Required]
         public string name { get; set; }
+
+        [Required]
+        public string email { get; set; }
 
         [Required]
         public string password { get; set; }

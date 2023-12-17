@@ -49,12 +49,14 @@
     <Compile Include="DTOs\Product\ProductDTO.cs" />
     <Compile Include="DTOs\Review\ReviewDTO.cs" />
     <Compile Include="DTOs\Review\ReviewReplyDTO.cs" />
+    <Compile Include="DTOs\Review\Review_ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
     <Compile Include="DTOs\University\NewsDTO.cs" />
     <Compile Include="DTOs\User\LoginDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Auth\AuthService.cs" />
     <Compile Include="Services\Product\ProductService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
     <Compile Include="Services\University\NewsService.cs" />

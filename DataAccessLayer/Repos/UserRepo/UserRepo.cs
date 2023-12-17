@@ -10,8 +10,16 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repos.UserRepo
 {
-    internal class UserRepo : Repo, IRepo<User, int, User>
+    internal class UserRepo : Repo, IRepo<User, int, User>, IAuth<bool>
     {
+        public bool Authenticate(string email, string password)
+        {
+            var data = db.Users.FirstOrDefault(u => u.email.Equals(email) && password.Equals(password));
+            if (data != null) return true;
+            return false;
+            // throw new NotImplementedException();
+        }
+
         public User Create(User obj)
         {
             db.Users.Add(obj);

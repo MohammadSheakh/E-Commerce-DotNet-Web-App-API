@@ -13,6 +13,8 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
     {
         // public korte hobe 
         // prop
+        [Key]
+        [Required]
         public int id { get; set; }
 
         [Required]
@@ -28,7 +30,7 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
 
 
         [ForeignKey("User")]
-        public string postedBy { get; set; }
+        public int? postedBy { get; set; }
         /*
           eta hocche amar foreign key of user .. 
           so, amra ekta virtual nibo .. 
@@ -41,11 +43,11 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
          Review er under e multiple Reply thakte pare .. 
          */
 
-        public virtual ICollection<ReviewReply> ReviewReplies { get; set; }
+        public virtual ICollection<ReviewReply> reviewReplies { get; set; }
 
         public Review()
         {
-            ReviewReplies =  new List<ReviewReply>(); // initiate kore dite hobe .. 
+            reviewReplies =  new List<ReviewReply>(); // initiate kore dite hobe .. 
             // jehetu list .. na hole may be null assign hoye thakbe 
         }
 

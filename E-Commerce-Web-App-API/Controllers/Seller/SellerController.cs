@@ -181,7 +181,7 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
         // 4.1 getAllReview
         [HttpGet]
         [Route("api/seller/getAllReview")]
-        public HttpResponseMessage Reviews()
+        public HttpResponseMessage GetAllReviews()
         {
             try
             {
@@ -194,6 +194,47 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
                 // string na send kore annonymous object hishebe send korte chaile
                 // json object hishebe jabe 
               //🟢😢🔴  return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message : ex.Message  });
+            }
+        }
+
+        // 4.2 
+
+        [HttpGet]
+        [Route("api/seller/getAReview/{id}")]
+        public HttpResponseMessage GetAReview(int id)
+        {
+            try
+            {
+                var data = SellerService.GetAReview(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                // string na send kore annonymous object hishebe send korte chaile
+                // json object hishebe jabe 
+                //🟢😢🔴  return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message : ex.Message  });
+            }
+        }
+
+
+        // 4.3
+
+        [HttpGet]
+        [Route("api/seller/GetAReviewWithReviewReplies/{id}")]
+        public HttpResponseMessage GetAReviewWithReviewReplies(int id)
+        {
+            try
+            {
+                var data = SellerService.GetAReviewWithReviewReplies(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                // string na send kore annonymous object hishebe send korte chaile
+                // json object hishebe jabe 
+                //🟢😢🔴  return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message : ex.Message  });
             }
         }
 

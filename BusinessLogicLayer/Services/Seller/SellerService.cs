@@ -139,6 +139,28 @@ namespace BusinessLogicLayer.Services.Seller
             return mappedData;
         }
 
+        // 4.3 getAReviewWithReviewReplies [Product]
+        public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int id)
+        {
+            var data = DataAccessFactory.ReviewData().Get(id);
+            var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<Review, Review_ReviewReplyDTO>(data);
+
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Review, Review_ReviewReplyDTO>();
+                c.CreateMap<ReviewReply, ReviewReplyDTO>();
+            });
+            var mapper = new Mapper(cfg);
+
+
+            var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
+
+
+           // var mappedData2 = 
+
+            return mappedData1;
+        }
+
 
 
         //     addAvailableQualityOfAProduct [Product]

@@ -7,3 +7,18 @@
 5. Update model and Context (*)
 6. Adding Migration (*) <- bar bar korte hobe
 7. Update Database(*)
+
+
+//////////////////////////
+
+ DTO
+
+ amra jei DTO gula banaisi ... 
+ ekhon emon kichu usecase hoite pare je .. ekta Review er shathe 
+ associated ki ki review reply ase .. and shei review reply e ki ki user ase .. 
+
+
+ Review te .. List of Review Reply rakhlei kintu hoye jay .. 
+
+ kintu shob shomoy je review er shathe shobar reviewReply dorkar hobe ..
+ its not nessesary .. 

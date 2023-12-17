@@ -11,6 +11,8 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
 {
     public class ReviewReply
     {
+        [Key]
+        [Required]
         public int id { get; set; }
 
         [Required]
@@ -19,10 +21,10 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
         public DateTime? createdAt { get; set; }
 
         [ForeignKey("User")]
-        public string postedBy { get; set; } // kon user reply diyeche
+        public int? postedBy { get; set; } // kon user reply diyeche
 
         [ForeignKey("Review")]
-        public int reviewId { get; set; } // kon review er reply
+        public int? reviewId { get; set; } // kon review er reply
 
         public virtual User User { get; set; }
 

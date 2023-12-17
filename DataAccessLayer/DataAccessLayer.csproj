@@ -66,6 +66,7 @@
     <Compile Include="EF\Models\Seller\Seller.cs" />
     <Compile Include="EF\Models\University\News.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
+    <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
     <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.cs" />
     <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.designer.cs">
@@ -86,6 +87,10 @@
     <Compile Include="Migrations\202312010557098_UpdateNewsTable.cs" />
     <Compile Include="Migrations\202312010557098_UpdateNewsTable.designer.cs">
       <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.cs" />
+    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.designer.cs">
+      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312010557098_UpdateNewsTable.resx">
       <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161453184_UpdateReviewTableSolveError.resx">
+      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
