@@ -53,6 +53,7 @@
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
     <Compile Include="DTOs\University\NewsDTO.cs" />
     <Compile Include="DTOs\User\LoginDTO.cs" />
+    <Compile Include="DTOs\User\TokenDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

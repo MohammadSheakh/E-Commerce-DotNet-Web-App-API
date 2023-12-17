@@ -14,7 +14,7 @@ namespace DataAccessLayer.Repos.UserRepo
     {
         public bool Authenticate(string email, string password)
         {
-            var data = db.Users.FirstOrDefault(u => u.email.Equals(email) && password.Equals(password));
+            var data = db.Users.FirstOrDefault(u => u.email.Equals(email) && u.password.Equals(password));
             if (data != null) return true;
             return false;
             // throw new NotImplementedException();

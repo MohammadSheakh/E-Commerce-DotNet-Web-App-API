@@ -43,6 +43,11 @@ namespace DataAccessLayer
             return new UserRepo();
         }
 
+        public static IRepo<Token, string, Token> TokenData()
+        {
+            return new TokenRepo();
+        }
+
 
 
         /* <CLASS, IdDataType, ReturnDataType> */

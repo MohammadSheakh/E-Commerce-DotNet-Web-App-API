@@ -56,6 +56,11 @@ namespace DataAccessLayer.EF
         public DbSet<Models.Seller.Profile.Reviews.ReviewReply> ReviewReplies { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        // token rakhar jonno ekta table lagbe 
+        public DbSet<Token> Tokens { get; set; }
+
+
     }
 }
 // 100 -> 145 taka

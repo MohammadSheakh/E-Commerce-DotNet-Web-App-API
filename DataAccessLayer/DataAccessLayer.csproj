@@ -65,6 +65,7 @@
     <Compile Include="EF\Models\Seller\Profile\Reviews\ReviewReply.cs" />
     <Compile Include="EF\Models\Seller\Seller.cs" />
     <Compile Include="EF\Models\University\News.cs" />
+    <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Repos\SellerRepo\ReviewReplyRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
     <Compile Include="Repos\University\NewsRepo.cs" />
+    <Compile Include="Repos\UserRepo\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
