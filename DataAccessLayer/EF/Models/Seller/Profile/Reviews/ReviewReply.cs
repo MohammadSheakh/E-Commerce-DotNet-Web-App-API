@@ -28,7 +28,7 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
 
         public virtual User User { get; set; }
 
-        public virtual Review Review { get; set; }
+        public virtual Review Review { get; set;  }
 
 
     }
