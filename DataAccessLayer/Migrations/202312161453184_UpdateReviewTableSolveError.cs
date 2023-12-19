@@ -20,7 +20,7 @@
                         postedBy = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Users", t => t.postedBy, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.postedBy, cascadeDelete: false)
                 .Index(t => t.postedBy);
             
             CreateTable(
@@ -34,8 +34,8 @@
                         reviewId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Reviews", t => t.reviewId, cascadeDelete: true)
-                .ForeignKey("dbo.Users", t => t.postedBy, cascadeDelete: true)
+                .ForeignKey("dbo.Reviews", t => t.reviewId, cascadeDelete: false)
+                .ForeignKey("dbo.Users", t => t.postedBy, cascadeDelete: false)
                 .Index(t => t.postedBy)
                 .Index(t => t.reviewId);
             

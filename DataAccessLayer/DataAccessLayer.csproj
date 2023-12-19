@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.designer.cs">
       <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312190900482_updateAgain.cs" />
+    <Compile Include="Migrations\202312190900482_updateAgain.designer.cs">
+      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\Repo.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312161453184_UpdateReviewTableSolveError.resx">
       <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312190900482_updateAgain.resx">
+      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
