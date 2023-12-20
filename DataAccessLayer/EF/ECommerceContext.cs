@@ -62,6 +62,8 @@ namespace DataAccessLayer.EF
         public DbSet<Models.Seller.Profile.Reviews.Review> Reviewes { get; set; }
         public DbSet<Models.Seller.Profile.Reviews.ReviewReply> ReviewReplies { get; set; }
 
+        public DbSet<Models.Common.Reviews.LikeDislike> LikeDisliikes { get; set; }
+
 
         // For Buyer ----------------------------------------
         public DbSet<BuyerProfile> BuyerProfiles { get; set; }
@@ -77,15 +79,12 @@ namespace DataAccessLayer.EF
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Role> Roles{ get; set; }
+
         // token rakhar jonno ekta table lagbe 
         public DbSet<Token> Tokens { get; set; }
 
     }
 }
-// 100 -> 145 taka
 
-//100 taka -> 70 rupi ..
-//1 taka  ->  70/100  ..
-
-//145 taka -> 100 rupi .. 
 
