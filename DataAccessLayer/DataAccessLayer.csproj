@@ -62,7 +62,7 @@
     <Compile Include="EF\Models\Common\Products\CategoryBrand.cs" />
     <Compile Include="EF\Models\Common\Orders\Order.cs" />
     <Compile Include="EF\Models\Common\Orders\OrderItem.cs" />
-    <Compile Include="EF\Models\Common\Products\Product.cs" />
+    <Compile Include="EF\Models\Common\Products\Products.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\Specification.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\SpecificationCategory.cs" />
     <Compile Include="EF\Models\Common\Reviews\LikeDislike.cs" />
