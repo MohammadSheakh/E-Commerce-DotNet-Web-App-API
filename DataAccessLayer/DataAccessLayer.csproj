@@ -75,37 +75,13 @@
     <Compile Include="EF\Models\UserModel\User.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
-    <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.cs" />
-    <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.designer.cs">
-      <DependentUpon>202311301047249_CreateDBAndAddTable.cs</DependentUpon>
+    <Compile Include="Migrations\202312200618014_Reset.cs" />
+    <Compile Include="Migrations\202312200618014_Reset.designer.cs">
+      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311301158357_addMoreTable.cs" />
-    <Compile Include="Migrations\202311301158357_addMoreTable.designer.cs">
-      <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311301610518_addMoreTable1.cs" />
-    <Compile Include="Migrations\202311301610518_addMoreTable1.designer.cs">
-      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.cs" />
-    <Compile Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.designer.cs">
-      <DependentUpon>202312010549493_UpdateDBWIthUniversityNews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312010557098_UpdateNewsTable.cs" />
-    <Compile Include="Migrations\202312010557098_UpdateNewsTable.designer.cs">
-      <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.cs" />
-    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.designer.cs">
-      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312190900482_updateAgain.cs" />
-    <Compile Include="Migrations\202312190900482_updateAgain.designer.cs">
-      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312200341325_table-created.cs" />
-    <Compile Include="Migrations\202312200341325_table-created.designer.cs">
-      <DependentUpon>202312200341325_table-created.cs</DependentUpon>
+    <Compile Include="Migrations\202312200715377_brandAndProduct.cs" />
+    <Compile Include="Migrations\202312200715377_brandAndProduct.designer.cs">
+      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,29 +104,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311301047249_CreateDBAndAddTable.resx">
-      <DependentUpon>202311301047249_CreateDBAndAddTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200618014_Reset.resx">
+      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311301158357_addMoreTable.resx">
-      <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311301610518_addMoreTable1.resx">
-      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.resx">
-      <DependentUpon>202312010549493_UpdateDBWIthUniversityNews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312010557098_UpdateNewsTable.resx">
-      <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161453184_UpdateReviewTableSolveError.resx">
-      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312190900482_updateAgain.resx">
-      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312200341325_table-created.resx">
-      <DependentUpon>202312200341325_table-created.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200715377_brandAndProduct.resx">
+      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,6 +26,8 @@ namespace DataAccessLayer.EF.Models.UserModel
         [Required]
         public string Type { get; set; } // buyer // seller 
 
+        //public int? Role {  get; set; }
+
 
         public DateTime? CreatedAt { get; set; }
         
