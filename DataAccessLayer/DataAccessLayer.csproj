@@ -108,7 +108,6 @@
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewReplyRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
-    <Compile Include="Repos\University\NewsRepo.cs" />
     <Compile Include="Repos\UserRepo\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo\UserRepo.cs" />
   </ItemGroup>
