@@ -7,18 +7,18 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateAgain : IMigrationMetadata
+    public sealed partial class brandAndProduct : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateAgain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(brandAndProduct));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312190900482_updateAgain"; }
+            get { return "202312200715377_brandAndProduct"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

@@ -49,7 +49,7 @@ namespace DataAccessLayer.EF
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         // ---------- For Products --------------------------
-        public DbSet<Products> Products { get; set; }
+        public DbSet<Products> Product { get; set; }
         public DbSet<CategoryBrand> CategoryBrand { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
