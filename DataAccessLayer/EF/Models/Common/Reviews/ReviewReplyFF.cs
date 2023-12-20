@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EF.Models
+namespace DataAccessLayer.EF.Models.Common.Review
 {
-    public class Category
+    public class ReviewReplyFF
     {
         public int Id { get; set; }
+
+        public string Details { get; set;}
+
+
     }
 }

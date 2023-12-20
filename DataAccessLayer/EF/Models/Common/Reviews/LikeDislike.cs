@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EF.Models.University
+namespace DataAccessLayer.EF.Models.Common.Review
 {
-    public class News
+    public class LikeDislike
     {
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        // 'like' | 'dislike' | 'normal'
+        public string type { get; set; }
 
-        
-        public DateTime? Date { get; set; }
     }
 }

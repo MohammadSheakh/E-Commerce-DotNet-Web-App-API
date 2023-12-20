@@ -12,21 +12,22 @@ namespace DataAccessLayer.EF.Models.UserModel
         // public korte hobe internal ke 
         [Key]
         [Required]
-        public int id { get; set; } // auto increment // unique
+        public int Id { get; set; } // auto increment // unique
         //[StringLength(35)]
         //[Required]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public string password { get; set; }
+        public string Password { get; set; }
 
         [Required]
-        public string type { get; set; } // buyer // seller 
+        public string Type { get; set; } // buyer // seller 
 
-        public int? rating { get; set; } // intiger normally null accept kore na .. 
-        // amra nullable kore dilam 
+
+        public DateTime? CreatedAt { get; set; }
+        
     }
 }
