@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EF.Models
 {
-    public class Product
+    public class Brand
     {
         public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }
