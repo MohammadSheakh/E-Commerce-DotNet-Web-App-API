@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EF.Models
 {
-    public class Buyer
+    public class BuyerProfile
     {
         //prop
         public int Id { get; set; }
@@ -23,7 +23,7 @@ namespace DataAccessLayer.EF.Models
 
         public virtual ICollection<Order> Orders { get; set; }
 
-        public Buyer()
+        public BuyerProfile()
         {
             Orders = new List<Order>(); // initiate kore dite hobe .. 
             // jehetu list .. na hole may be null assign hoye thakbe 

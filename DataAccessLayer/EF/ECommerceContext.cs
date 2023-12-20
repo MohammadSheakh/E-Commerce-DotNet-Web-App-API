@@ -8,6 +8,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.EF.Models.Common;
+using DataAccessLayer.EF.Models.Common.Products;
+using DataAccessLayer.EF.Models.Common.Conversations;
+using DataAccessLayer.EF.Models.Product.Specifications;
+using DataAccessLayer.EF.Models.Seller.Profile;
 
 namespace DataAccessLayer.EF
 {
@@ -28,44 +33,58 @@ namespace DataAccessLayer.EF
     internal class ECommerceContext : DbContext // inheriting from
     {
         // internal ke public kore dite hobe 
-        
+
         // eta amader database .. 
         // er moddhe amra table create korbo 
 
         // DbSet hishebe Context  e add na korle table create hobe na database e
-        
-        // public DbSet<Seller> Sellers { get; set; } // Seller er jinish User er moddhe chole jabe
-        public DbSet<Buyer> Buyers { get; set; }
-        public DbSet<Products> Products { get; set; }
+
+
+        // For Common -------------------------------------------
+
+        // -----------For Conversation --------------------------
+        public DbSet<Conversation> Conversations{ get; set; }
+        public DbSet<Message> Messages{ get; set; }
+        // ---------- For Orders --------------------------
         public DbSet<Order> Orders { get; set; }
-
         public DbSet<OrderItem> OrderItems { get; set; }
-
+        // ---------- For Products --------------------------
+        public DbSet<Products> Product { get; set; }
         public DbSet<CategoryBrand> CategoryBrand { get; set; }
-        //public DbSet<Category> Categories { get; set; }
-
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
 
-     
+        // ---------------------- For Specifications ---------
+        public DbSet<Specification> Specifications{ get; set; }
+        public DbSet<SpecificationCategory> SpecificationCategories{ get; set; }
 
-        
-        // For Seller -------------------------------------------
+        // ---------- For Reviews --------------------------
         public DbSet<Models.Seller.Profile.Reviews.Review> Reviewes { get; set; }
-
         public DbSet<Models.Seller.Profile.Reviews.ReviewReply> ReviewReplies { get; set; }
 
+        public DbSet<Models.Common.Reviews.LikeDislike> LikeDisliikes { get; set; }
+
+
+        // For Buyer ----------------------------------------
+        public DbSet<BuyerProfile> BuyerProfiles { get; set; }
+
+
+
+        // For Seller -----------------------------------------
+        // ---------For SellerProfile -----------------------------------------
+        public DbSet<SellerProfile> SellerProfiles{ get; set; }
+
+
+        // For UserModel --------------------------------------
+
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Role> Roles{ get; set; }
 
         // token rakhar jonno ekta table lagbe 
         public DbSet<Token> Tokens { get; set; }
 
-
     }
 }
-// 100 -> 145 taka
 
-//100 taka -> 70 rupi ..
-//1 taka  ->  70/100  ..
-
-//145 taka -> 100 rupi .. 
 

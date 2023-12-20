@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateAgain : IMigrationMetadata
+    public sealed partial class LikeDislikeReviewUserRelation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateAgain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LikeDislikeReviewUserRelation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312190900482_updateAgain"; }
+            get { return "202312200807363_LikeDislikeReviewUserRelation"; }
         }
         
         string IMigrationMetadata.Source

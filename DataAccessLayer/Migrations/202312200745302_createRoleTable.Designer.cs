@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addMoreTable : IMigrationMetadata
+    public sealed partial class createRoleTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addMoreTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createRoleTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202311301158357_addMoreTable"; }
+            get { return "202312200745302_createRoleTable"; }
         }
         
         string IMigrationMetadata.Source

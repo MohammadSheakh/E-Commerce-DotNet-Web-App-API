@@ -54,7 +54,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="EF\ECommerceContext.cs" />
-    <Compile Include="EF\Models\Buyer\Buyer.cs" />
+    <Compile Include="EF\Models\Buyer\Profile\BuyerProfile.cs" />
     <Compile Include="EF\Models\Common\Conversations\Conversation.cs" />
     <Compile Include="EF\Models\Common\Conversations\Message.cs" />
     <Compile Include="EF\Models\Common\Products\Brand.cs" />
@@ -62,46 +62,37 @@
     <Compile Include="EF\Models\Common\Products\CategoryBrand.cs" />
     <Compile Include="EF\Models\Common\Orders\Order.cs" />
     <Compile Include="EF\Models\Common\Orders\OrderItem.cs" />
-    <Compile Include="EF\Models\Common\Products\Products.cs" />
+    <Compile Include="EF\Models\Common\Products\Product.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\Specification.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\SpecificationCategory.cs" />
     <Compile Include="EF\Models\Common\Reviews\LikeDislike.cs" />
-    <Compile Include="EF\Models\Common\Reviews\ReviewFF.cs" />
-    <Compile Include="EF\Models\Common\Reviews\ReviewReplyFF.cs" />
     <Compile Include="EF\Models\Common\Reviews\Review.cs" />
     <Compile Include="EF\Models\Common\Reviews\ReviewReply.cs" />
     <Compile Include="EF\Models\Seller\Profile\SellerProfile.cs" />
+    <Compile Include="EF\Models\UserModel\Role.cs" />
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
-    <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.cs" />
-    <Compile Include="Migrations\202311301047249_CreateDBAndAddTable.designer.cs">
-      <DependentUpon>202311301047249_CreateDBAndAddTable.cs</DependentUpon>
+    <Compile Include="Migrations\202312200618014_Reset.cs" />
+    <Compile Include="Migrations\202312200618014_Reset.designer.cs">
+      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311301158357_addMoreTable.cs" />
-    <Compile Include="Migrations\202311301158357_addMoreTable.designer.cs">
-      <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
+    <Compile Include="Migrations\202312200715377_brandAndProduct.cs" />
+    <Compile Include="Migrations\202312200715377_brandAndProduct.designer.cs">
+      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311301610518_addMoreTable1.cs" />
-    <Compile Include="Migrations\202311301610518_addMoreTable1.designer.cs">
-      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
+    <Compile Include="Migrations\202312200745302_createRoleTable.cs" />
+    <Compile Include="Migrations\202312200745302_createRoleTable.designer.cs">
+      <DependentUpon>202312200745302_createRoleTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.cs" />
-    <Compile Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.designer.cs">
-      <DependentUpon>202312010549493_UpdateDBWIthUniversityNews.cs</DependentUpon>
+    <Compile Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.cs" />
+    <Compile Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.designer.cs">
+      <DependentUpon>202312200807363_LikeDislikeReviewUserRelation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312010557098_UpdateNewsTable.cs" />
-    <Compile Include="Migrations\202312010557098_UpdateNewsTable.designer.cs">
-      <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.cs" />
-    <Compile Include="Migrations\202312161453184_UpdateReviewTableSolveError.designer.cs">
-      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312190900482_updateAgain.cs" />
-    <Compile Include="Migrations\202312190900482_updateAgain.designer.cs">
-      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
+    <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.cs" />
+    <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.designer.cs">
+      <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,26 +115,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311301047249_CreateDBAndAddTable.resx">
-      <DependentUpon>202311301047249_CreateDBAndAddTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200618014_Reset.resx">
+      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311301158357_addMoreTable.resx">
-      <DependentUpon>202311301158357_addMoreTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200715377_brandAndProduct.resx">
+      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311301610518_addMoreTable1.resx">
-      <DependentUpon>202311301610518_addMoreTable1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200745302_createRoleTable.resx">
+      <DependentUpon>202312200745302_createRoleTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312010549493_UpdateDBWIthUniversityNews.resx">
-      <DependentUpon>202312010549493_UpdateDBWIthUniversityNews.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.resx">
+      <DependentUpon>202312200807363_LikeDislikeReviewUserRelation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312010557098_UpdateNewsTable.resx">
-      <DependentUpon>202312010557098_UpdateNewsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161453184_UpdateReviewTableSolveError.resx">
-      <DependentUpon>202312161453184_UpdateReviewTableSolveError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312190900482_updateAgain.resx">
-      <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.resx">
+      <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
