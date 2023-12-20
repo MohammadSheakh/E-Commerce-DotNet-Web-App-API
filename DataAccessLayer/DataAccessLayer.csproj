@@ -54,7 +54,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="EF\ECommerceContext.cs" />
-    <Compile Include="EF\Models\Buyer\Buyer.cs" />
+    <Compile Include="EF\Models\Buyer\Profile\BuyerProfile.cs" />
     <Compile Include="EF\Models\Common\Conversations\Conversation.cs" />
     <Compile Include="EF\Models\Common\Conversations\Message.cs" />
     <Compile Include="EF\Models\Common\Products\Brand.cs" />
@@ -62,7 +62,7 @@
     <Compile Include="EF\Models\Common\Products\CategoryBrand.cs" />
     <Compile Include="EF\Models\Common\Orders\Order.cs" />
     <Compile Include="EF\Models\Common\Orders\OrderItem.cs" />
-    <Compile Include="EF\Models\Common\Products\Products.cs" />
+    <Compile Include="EF\Models\Common\Products\Product.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\Specification.cs" />
     <Compile Include="EF\Models\Common\Products\Specifications\SpecificationCategory.cs" />
     <Compile Include="EF\Models\Common\Reviews\LikeDislike.cs" />
@@ -102,6 +102,10 @@
     <Compile Include="Migrations\202312190900482_updateAgain.cs" />
     <Compile Include="Migrations\202312190900482_updateAgain.designer.cs">
       <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312200341325_table-created.cs" />
+    <Compile Include="Migrations\202312200341325_table-created.designer.cs">
+      <DependentUpon>202312200341325_table-created.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312190900482_updateAgain.resx">
       <DependentUpon>202312190900482_updateAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312200341325_table-created.resx">
+      <DependentUpon>202312200341325_table-created.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

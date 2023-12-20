@@ -14,7 +14,7 @@ namespace DataAccessLayer.Repos.UserRepo
     {
         public bool Authenticate(string email, string password)
         {
-            var data = db.Users.FirstOrDefault(u => u.email.Equals(email) && u.password.Equals(password));
+            var data = db.Users.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(password));
             if (data != null) return true;
             return false;
             // throw new NotImplementedException();
@@ -50,7 +50,7 @@ namespace DataAccessLayer.Repos.UserRepo
 
         public User Update(User obj)
         {
-            var existing = Get(obj.id);
+            var existing = Get(obj.Id);
             db.Entry(existing).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
