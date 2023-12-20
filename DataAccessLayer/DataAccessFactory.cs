@@ -1,10 +1,10 @@
 ﻿using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
-using DataAccessLayer.EF.Models.University;
+
 using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.Interface;
 using DataAccessLayer.Repos.Seller;
 using DataAccessLayer.Repos.SellerRepo;
-using DataAccessLayer.Repos.University;
+
 using DataAccessLayer.Repos.UserRepo;
 using System;
 using System.Collections.Generic;
@@ -18,10 +18,7 @@ namespace DataAccessLayer
     public class DataAccessFactory
     {
         /* <CLASS, IdDataType, ReturnDataType> */
-        public static IRepo<News, int , bool>  NewsData()
-        {
-            return new NewsRepo();
-        }
+        
 
         public static IRepo<User, int, User> UserData()
         {
