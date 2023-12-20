@@ -1,7 +1,7 @@
 ﻿using DataAccessLayer.EF.Models;
 using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
-using DataAccessLayer.EF.Models.University;
+
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -36,7 +36,7 @@ namespace DataAccessLayer.EF
         
         // public DbSet<Seller> Sellers { get; set; } // Seller er jinish User er moddhe chole jabe
         public DbSet<Buyer> Buyers { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Products> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderItem> OrderItems { get; set; }
@@ -46,8 +46,7 @@ namespace DataAccessLayer.EF
 
         public DbSet<Brand> Brands { get; set; }
 
-        // For University Practice -------------------------------------------
-        public DbSet<News> News { get; set; }
+     
 
         
         // For Seller -------------------------------------------

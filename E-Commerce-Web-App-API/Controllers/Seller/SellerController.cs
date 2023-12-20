@@ -2,10 +2,10 @@
 using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
-using BusinessLogicLayer.DTOs.University;
+
 using BusinessLogicLayer.DTOs.User;
 using BusinessLogicLayer.Services.Seller;
-using BusinessLogicLayer.Services.University;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
