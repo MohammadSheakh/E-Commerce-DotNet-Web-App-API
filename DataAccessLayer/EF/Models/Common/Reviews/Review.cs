@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.EF.Models.UserModel;
+﻿using DataAccessLayer.EF.Models.Common.Reviews;
+using DataAccessLayer.EF.Models.UserModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -38,17 +39,21 @@ namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
 
         public virtual User User { get; set; }
 
+        // One Review Can have many LikeDislike 
+        public virtual ICollection<LikeDislike> LikeDislikes { get; set; }
+
 
         /*
          Review er under e multiple Reply thakte pare .. 
          */
 
-        public virtual ICollection<ReviewReply> reviewReplies { get; set; }
+        public virtual ICollection<ReviewReply> ReviewReplies { get; set; }
 
         public Review()
         {
-            reviewReplies =  new List<ReviewReply>(); // initiate kore dite hobe .. 
+            ReviewReplies =  new List<ReviewReply>(); // initiate kore dite hobe .. 
             // jehetu list .. na hole may be null assign hoye thakbe 
+            LikeDislikes = new List<LikeDislike>();
         }
 
     }

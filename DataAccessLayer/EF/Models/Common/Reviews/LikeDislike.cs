@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EF.Models.Common.Review
+namespace DataAccessLayer.EF.Models.Common.Reviews
 {
     public class LikeDislike
     {
@@ -12,6 +12,11 @@ namespace DataAccessLayer.EF.Models.Common.Review
 
         // 'like' | 'dislike' | 'normal'
         public string type { get; set; }
+
+        // Many LikeDislike to One Review 
+
+        // Many LikeDislike to One User
+
 
     }
 }
