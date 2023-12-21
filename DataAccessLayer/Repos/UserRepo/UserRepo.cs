@@ -22,6 +22,7 @@ namespace DataAccessLayer.Repos.UserRepo
 
         public User Create(User obj)
         {
+            obj.CreatedAt = DateTime.Now.Date;
             db.Users.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;

@@ -43,9 +43,19 @@ namespace BusinessLogicLayer.Services.UserService
 
 
         // User.2. GetOneUserById
-        public static string GetOneUserById(int UserId)
+        public static UserDTO GetOneUserById(int UserId)
         {
-            return "";
+            // 🏠 ekhane ki amra return type User dibo naki User DTO dibo 
+            var result =  DataAccessFactory.UserData().Get(UserId);
+
+
+            //auto mapper diye convert korte hobe 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<User, UserDTO>(result);
+
+
+
+            return Model_DTOMapped;
+            //return "";
         }
 
         // User.3. GetOneUsersProfileById

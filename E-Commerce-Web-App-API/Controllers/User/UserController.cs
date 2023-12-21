@@ -11,16 +11,17 @@ namespace E_Commerce_Web_App_API.Controllers.User
 {
     public class UserController : ApiController
     {
+          
+        // User.1. Create User Or Registration //🔰OK- - -🔴🔗
 
-        // User.1. Create User Or Registration
-
-        [HttpGet]
+        [HttpPost]
         [Route("api/user/CreateNewUser")]
         public HttpResponseMessage CreateNewUser(RegistrationDTO registrationDTO)
         {
             try
             {
                 var data  = UserService.CreateNewUser(registrationDTO);
+                //return Request.CreateResponse(HttpStatusCode.OK, "DDD");
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -32,7 +33,7 @@ namespace E_Commerce_Web_App_API.Controllers.User
         // User.2. GetOneUserById
 
         [HttpGet]
-        [Route("api/user/GetOneUserById/{UserId}")]
+        [Route("api/user/GetOneUserById/{UserId}")] //🔰OK- - -🔴🔗
         public HttpResponseMessage GetOneUserById(int UserId)
         {
             try
