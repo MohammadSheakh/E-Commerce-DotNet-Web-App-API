@@ -69,6 +69,7 @@
     <Compile Include="EF\Models\Common\Reviews\Review.cs" />
     <Compile Include="EF\Models\Common\Reviews\ReviewReply.cs" />
     <Compile Include="EF\Models\Seller\Profile\SellerProfile.cs" />
+    <Compile Include="EF\Models\Seller\Shop\ShopProfile.cs" />
     <Compile Include="EF\Models\UserModel\Role.cs" />
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
@@ -93,6 +94,14 @@
     <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.cs" />
     <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.designer.cs">
       <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312210752153_shopProfile.cs" />
+    <Compile Include="Migrations\202312210752153_shopProfile.designer.cs">
+      <DependentUpon>202312210752153_shopProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312210759034_relationProductAndSellerProfile.cs" />
+    <Compile Include="Migrations\202312210759034_relationProductAndSellerProfile.designer.cs">
+      <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.resx">
       <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312210752153_shopProfile.resx">
+      <DependentUpon>202312210752153_shopProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312210759034_relationProductAndSellerProfile.resx">
+      <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

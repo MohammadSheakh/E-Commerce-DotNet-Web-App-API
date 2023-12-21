@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+//using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLogicLayer.DTOs.Review
 {
@@ -13,8 +14,7 @@ namespace BusinessLogicLayer.DTOs.Review
         // Required pore assign korbo 
         public int id { get; set; }
 
-        // [Required] error dicche 
-        
+        //[Required] 
         public string category { get; set; }
        
         public string reviewDetails { get; set; }

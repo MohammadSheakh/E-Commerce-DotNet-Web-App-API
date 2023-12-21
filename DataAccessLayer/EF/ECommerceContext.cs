@@ -13,6 +13,9 @@ using DataAccessLayer.EF.Models.Common.Products;
 using DataAccessLayer.EF.Models.Common.Conversations;
 using DataAccessLayer.EF.Models.Product.Specifications;
 using DataAccessLayer.EF.Models.Seller.Profile;
+using DataAccessLayer.EF.Models.Seller.Shop;
+// using DataAccessLayer.EF.Models.Seller.Shop;
+using System.Reflection.Emit;
 
 namespace DataAccessLayer.EF
 {
@@ -74,6 +77,8 @@ namespace DataAccessLayer.EF
         // ---------For SellerProfile -----------------------------------------
         public DbSet<SellerProfile> SellerProfiles{ get; set; }
 
+        public DbSet<ShopProfile> ShopProfiles { get; set; }
+
 
         // For UserModel --------------------------------------
 
@@ -83,6 +88,14 @@ namespace DataAccessLayer.EF
 
         // token rakhar jonno ekta table lagbe 
         public DbSet<Token> Tokens { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<SellerProfile>()
+        //        .HasOne(s => s.ShopProfile)
+        //        .WithOne(sp => sp.SellerProfile)
+        //        .HasForeignKey<ShopProfile>(sp => sp.SellerProfileId);
+        //}
 
     }
 }

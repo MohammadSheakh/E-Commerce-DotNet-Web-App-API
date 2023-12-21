@@ -52,6 +52,7 @@
     <Compile Include="DTOs\Review\Review_ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
     <Compile Include="DTOs\User\LoginDTO.cs" />
+    <Compile Include="DTOs\User\RegistrationDTO.cs" />
     <Compile Include="DTOs\User\TokenDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Services\Auth\AuthService.cs" />
     <Compile Include="Services\Product\ProductService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
+    <Compile Include="Services\UserService\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
