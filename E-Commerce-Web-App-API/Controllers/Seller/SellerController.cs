@@ -130,7 +130,9 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
 
 
         [HttpGet] // customized // request override
-        [Route("api/seller/getAllProductsDetailsBySellerId")] // custom routing ta add kore dite hobe 
+        [Route("api/seller/getAllProductsDetailsBySellerId")]
+        // custom routing ta add kore dite hobe 
+        //[Pr]
         public HttpResponseMessage GetAllProductsDetailsBySellerId(int id)
         {
             try
