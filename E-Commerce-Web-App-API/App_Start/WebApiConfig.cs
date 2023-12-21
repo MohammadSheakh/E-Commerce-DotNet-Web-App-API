@@ -13,6 +13,7 @@ namespace E_Commerce_Web_App_API
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.EnableCors();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
