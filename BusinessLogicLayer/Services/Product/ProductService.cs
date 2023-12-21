@@ -8,5 +8,6 @@ namespace BusinessLogicLayer.Services.Product
 {
     public class ProductService
     {
+
     }
 }

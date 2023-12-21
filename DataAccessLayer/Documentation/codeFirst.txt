@@ -7,3 +7,7 @@
 5. Update model and Context (*)
 6. Adding Migration (*) <- bar bar korte hobe
 7. Update Database(*)
+
+
+add-migration dnsndksdn
+update-database
