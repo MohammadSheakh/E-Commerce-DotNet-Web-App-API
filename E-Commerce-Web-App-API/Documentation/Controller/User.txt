@@ -1,0 +1,8 @@
+﻿// User.1. Create User Or Registration //🔰OK- - -🔴🔗
+			// Profile o create hoye jabe .. 
+ // User.2. GetOneUserById
+ // User.3. GetOneUsersProfileById
+ // User.4. GetAllUsersProfile
+ // User.5. UpdateAUserById
+ // User.6. UpdateAUserProfileById
+ // User.7. DeleteAUsersAccountById

@@ -35,6 +35,10 @@ namespace DataAccessLayer.EF.Models.UserModel
 
         public DateTime? CreatedAt { get; set; }
 
+        public int? ProfileId { get; set; }
+
+        
+
 
         // ekhon amake Selle Profile And Buyer Profile er 
         // shathe User er relation korte hobe .. eta kivabe korbo ?

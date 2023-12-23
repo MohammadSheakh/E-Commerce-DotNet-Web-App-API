@@ -73,6 +73,7 @@
     <Compile Include="EF\Models\UserModel\Role.cs" />
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
+    <Compile Include="Helper\GenericMethodForRepo.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
     <Compile Include="Migrations\202312200618014_Reset.cs" />
@@ -103,9 +104,28 @@
     <Compile Include="Migrations\202312210759034_relationProductAndSellerProfile.designer.cs">
       <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312221424538_updateShopProfileId.cs" />
+    <Compile Include="Migrations\202312221424538_updateShopProfileId.designer.cs">
+      <DependentUpon>202312221424538_updateShopProfileId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312221427301_updateShopProfileIdAgain.cs" />
+    <Compile Include="Migrations\202312221427301_updateShopProfileIdAgain.designer.cs">
+      <DependentUpon>202312221427301_updateShopProfileIdAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312230546025_updateSellerPro.cs" />
+    <Compile Include="Migrations\202312230546025_updateSellerPro.designer.cs">
+      <DependentUpon>202312230546025_updateSellerPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312230607085_updateUserTable.cs" />
+    <Compile Include="Migrations\202312230607085_updateUserTable.designer.cs">
+      <DependentUpon>202312230607085_updateUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
+    <Compile Include="Repos\SellerRepo\Profile\Shop\ShopRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewReplyRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
     <Compile Include="Repos\UserRepo\TokenRepo.cs" />
@@ -116,9 +136,7 @@
     <Content Include="Documentation\Repos.txt" />
     <Content Include="Documentation\NLayer.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repos\BuyerRepo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -144,6 +162,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312210759034_relationProductAndSellerProfile.resx">
       <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221424538_updateShopProfileId.resx">
+      <DependentUpon>202312221424538_updateShopProfileId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312221427301_updateShopProfileIdAgain.resx">
+      <DependentUpon>202312221427301_updateShopProfileIdAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312230546025_updateSellerPro.resx">
+      <DependentUpon>202312230546025_updateSellerPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312230607085_updateUserTable.resx">
+      <DependentUpon>202312230607085_updateUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
