@@ -1,10 +1,13 @@
-﻿using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+﻿using DataAccessLayer.EF.Models;
+using DataAccessLayer.EF.Models.Seller.Profile;
+using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
 
 using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.Interface;
+using DataAccessLayer.Repos.BuyerRepo.Profile;
 using DataAccessLayer.Repos.Seller;
 using DataAccessLayer.Repos.SellerRepo;
-
+using DataAccessLayer.Repos.SellerRepo.Profile;
 using DataAccessLayer.Repos.UserRepo;
 using System;
 using System.Collections.Generic;
@@ -19,11 +22,27 @@ namespace DataAccessLayer
     {
         /* <CLASS, IdDataType, ReturnDataType> */
         
+        //----------------------------------- User ---------------
 
         public static IRepo<User, int, User> UserData()
         {
             return new UserRepo();
         }
+
+        //----------------------------------- Seller ---------------
+
+        public static IRepo<SellerProfile, int, SellerProfile> SellerProfileData()
+        {
+            return new SellerProfileRepo();
+        }
+
+        //----------------------------------- Buyer ---------------
+        public static IRepo<BuyerProfile, int, BuyerProfile> BuyerProfileData()
+        {
+            return new BuyerProfileRepo();
+        }
+
+        //----------------------------------- Common ---------------
 
         public static IRepo<Review, int, Review> ReviewData()
         {

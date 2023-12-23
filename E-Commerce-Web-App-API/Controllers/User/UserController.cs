@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.DTOs.User;
+﻿using BusinessLogicLayer.DTOs.Seller.Profile;
+using BusinessLogicLayer.DTOs.User;
 using BusinessLogicLayer.Services.UserService;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace E_Commerce_Web_App_API.Controllers.User
         {
             try
             {
+                // It also create profile 
                 var data  = UserService.CreateNewUser(registrationDTO);
                 //return Request.CreateResponse(HttpStatusCode.OK, "DDD");
                 return Request.CreateResponse(HttpStatusCode.OK, data);
@@ -85,11 +87,11 @@ namespace E_Commerce_Web_App_API.Controllers.User
 
         [HttpGet]
         [Route("api/user/UpdateAUserById/{UserId}")]
-        public HttpResponseMessage UpdateAUserById(int UserId)
+        public HttpResponseMessage UpdateAUserById(int UserId, UpdateUserDTO updateUserDto)
         {
             try
             {
-                var data = UserService.UpdateAUserById(UserId);
+                var data = UserService.UpdateAUserById(UserId, updateUserDto);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -102,14 +104,13 @@ namespace E_Commerce_Web_App_API.Controllers.User
 
         [HttpGet]
         [Route("api/user/UpdateAUserProfileById/{UserId}")]
-        public HttpResponseMessage UpdateAUserProfileById(int UserId)
+        public HttpResponseMessage UpdateAUserProfileById(int UserId, UpdateSellerProfileDTO updateSellerProfileDto)
         {
             try
             {
-                var data = UserService.UpdateAUserProfileById(UserId);
+                var data = UserService.UpdateAUserProfileById(UserId, updateSellerProfileDto);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
-            }
-            catch (Exception ex)
+            }catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
             }
