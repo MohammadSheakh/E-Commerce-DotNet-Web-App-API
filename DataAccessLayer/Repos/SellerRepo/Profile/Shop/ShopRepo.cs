@@ -30,7 +30,13 @@ namespace DataAccessLayer.Repos.SellerRepo.Profile.Shop
 
         public ShopProfile Get(int id)
         {
-            throw new NotImplementedException();
+            
+            var existingShop = db.ShopProfiles.FirstOrDefault(u => u.id == id);
+            if(existingShop != null)
+            {
+                return existingShop;
+            }
+            return null;
         }
 
         public ShopProfile Update(ShopProfile obj)

@@ -7,6 +7,7 @@ using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.Helper;
 using DataAccessLayer.Interface;
 using DataAccessLayer.Migrations;
+using DataAccessLayer.Repos.BuyerRepo.Profile;
 using DataAccessLayer.Repos.SellerRepo.Profile;
 using DataAccessLayer.Repos.SellerRepo.Profile.Shop;
 using System;
@@ -19,6 +20,7 @@ namespace DataAccessLayer.Repos.UserRepo
 {
     internal class UserRepo : Repo, IRepo<User, int, User>, IAuth<bool>
     {
+
         public bool Authenticate(string email, string password)
         {
             var data = db.Users.FirstOrDefault(u => u.Email.Equals(email) && u.Password.Equals(password));
@@ -32,64 +34,44 @@ namespace DataAccessLayer.Repos.UserRepo
         public User Create(User obj)
         {
             obj.CreatedAt = DateTime.Now.Date;
-            //var res = GenericMethodForRepo.Create
             
-            // it also create a profile .. based on
-            // RoleId
             if(obj.RoleId == 1)
             {
-                // taile sellerProfile Create korbo
+                
                 var sellerProfile = new SellerProfile();
-                // ekta shop profile  create kore .. shetar
-                // id assign korte hobe seller profile e 
+                
 
                 var shopProfile = new ShopProfile();
 
-                //var guid = Guid.NewGuid();
-
-                //byte[] bytes = guid.ToByteArray();
-                //int intGuid = BitConverter.ToInt32(bytes, 0);
-
-                //shopProfile.id = intGuid;
-
                 shopProfile.Name = obj.Name+"'s Shop";
-                //db.ShopProfiles.Add(shopProfile);
-                // 🔴 Repo to create korsi .. 
-                // so, repo ke call korbo 
-
+                
                 var shopRepo = new ShopRepo();
                 var result =  shopRepo.Create(shopProfile);
 
                 sellerProfile.ShopProfileId = result.id;
 
-                //db.SellerProfiles.Add(sellerProfile);
                 var sellerProfileRepo = new SellerProfileRepo();
 
                 var createdSellerProfile =  sellerProfileRepo.Create(sellerProfile);
 
-                obj.ProfileId = createdSellerProfile.Id;
+                obj.SellerProfileId = createdSellerProfile.Id;
 
                 
-
+                 
             }
             else if (obj.RoleId == 2)
             {
                 // taile buyerProfile create korbo 
                 var buyerProfile = new BuyerProfile();
-                db.BuyerProfiles.Add(buyerProfile);
-
+                // db.BuyerProfiles.Add(buyerProfile);
+                var BuyerProfileRepo = new BuyerProfileRepo();
+                var createdBuyerProfile = BuyerProfileRepo.Create(buyerProfile);
+                obj.BuyerProfileId = createdBuyerProfile.Id;
             }
             else if(obj.RoleId == 3)
             {
                 // taile admin profile create korbo
             }
-
-
-
-
-            // 🏠 database e create houar pore ki jei 
-            // id return korbe .. sheta diye ki assign kora jabe ?
-
 
 
 
@@ -102,10 +84,44 @@ namespace DataAccessLayer.Repos.UserRepo
 
         public bool Delete(int id)
         {
-            var existing = Get(id);
-            db.Users.Remove(existing);
+            var existingUser = Get(id);
+
+            // 🔴 User account Remove korar age .. 
+            // Profile Account Remove korte hobe 
+            // Tar Age Seller Shop Profile Remove korte hobe 
+
+
+            // 🔰 Age dekhte hobe Role ki .. Role Seller Hoile Seller Profile Delete
+            // Role Buyer Hoile Buyer Profile Delete korte hobe .. 
+
+            if (existingUser != null)
+            {
+                var sellerProfileRepo = new SellerProfileRepo();
+
+               
+
+                var existingProfileAccount = sellerProfileRepo.Get(existingUser.SellerProfileId ?? 0);
+
+                var shopProfileRepo = new ShopRepo();
+                 var existingShopProfileAccount = shopProfileRepo.Get(existingProfileAccount.ShopProfileId);
+
+                if (existingShopProfileAccount != null)
+                {
+                    db.ShopProfiles.Remove(existingShopProfileAccount);
+                }
+
+                if (existingProfileAccount != null)
+                {
+                    // profileAccount Remove korbo 
+                    db.SellerProfiles.Remove(existingProfileAccount);
+                }
+
+                db.Users.Remove(existingUser);
+
+            }
+
             return db.SaveChanges() > 0;
-            // throw new NotImplementedException();
+            
         }
 
         public List<User> Get()
@@ -120,10 +136,20 @@ namespace DataAccessLayer.Repos.UserRepo
             //throw new NotImplementedException();
         }
 
-        public User Update(User obj)
+        public User Update( User obj)
         {
-            var existing = Get(obj.Id);
-            db.Entry(existing).CurrentValues.SetValues(obj);
+
+            //var existing = Get(obj.Id);
+            var id = Convert.ToInt32(obj.Id);
+             var existing = db.Users.Find(id);
+            //db.Entry(existing).CurrentValues.SetValues(obj);
+
+            existing.Name = obj.Name;
+            existing.Email = obj.Email;
+            existing.Password = obj.Password;
+
+
+
             if (db.SaveChanges() > 0) return obj;
             return null;
 

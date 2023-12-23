@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.EF.Models.Common.Reviews;
+using DataAccessLayer.EF.Models.Seller.Profile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -34,10 +35,21 @@ namespace DataAccessLayer.EF.Models.UserModel
 
 
         public DateTime? CreatedAt { get; set; }
+        public string Image { get; set; }
+        public int? PhoneNumber { get; set; }
+        public DateTime? DOB { get; set; }
 
-        public int? ProfileId { get; set; }
+        public string Address { get; set; }
 
+         [ForeignKey("SellerProfile")]
+        public int? SellerProfileId { get; set; }
+        public virtual SellerProfile SellerProfile{ get; set; }
         
+        [ForeignKey("BuyerProfile")]
+        public int? BuyerProfileId { get; set; }
+        public virtual BuyerProfile BuyerProfile { get; set; }
+
+
 
 
         // ekhon amake Selle Profile And Buyer Profile er 

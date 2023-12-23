@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace E_Commerce_Web_App_API.Controllers.User
 {
+    
     public class UserController : ApiController
     {
           
@@ -52,7 +53,7 @@ namespace E_Commerce_Web_App_API.Controllers.User
         // User.3. GetOneUsersProfileById
 
         [HttpGet]
-        [Route("api/user/GetOneUsersProfileById/{UserId}")]
+        [Route("api/user/GetOneUsersProfileById/{UserId}")] //🔰OK- - -🔴🔗
         public HttpResponseMessage GetOneUsersProfileById(int UserId)
         {
             try
@@ -66,10 +67,13 @@ namespace E_Commerce_Web_App_API.Controllers.User
             }
         }
 
+        // 3.1 // User Profile er shathe Shop Profile o jodi dekhate chai ...  //🔰 - - -
+
+
         // User.4. GetAllUsersProfile
 
         [HttpGet]
-        [Route("api/user/GetAllUsersProfile/")]
+        [Route("api/user/GetAllUsersProfile/")] //🔰OK- - -🔴🔗
         public HttpResponseMessage GetAllUsersProfile()
         {
             try
@@ -85,13 +89,18 @@ namespace E_Commerce_Web_App_API.Controllers.User
 
         // User.5. UpdateAUserById
 
-        [HttpGet]
-        [Route("api/user/UpdateAUserById/{UserId}")]
+        [HttpPatch]
+        [Route("api/user/UpdateAUserById/{UserId}")]  //🔰 X - - -🔴🔗
         public HttpResponseMessage UpdateAUserById(int UserId, UpdateUserDTO updateUserDto)
         {
             try
             {
-                var data = UserService.UpdateAUserById(UserId, updateUserDto);
+                var isUserExist = UserService.GetOneUserById(UserId);
+                if (isUserExist == null) {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "User not found ");
+                }
+                updateUserDto.Id = UserId;
+                var data = UserService.UpdateAUserById(updateUserDto);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -103,12 +112,12 @@ namespace E_Commerce_Web_App_API.Controllers.User
         // User.6. UpdateAUserProfileById
 
         [HttpGet]
-        [Route("api/user/UpdateAUserProfileById/{UserId}")]
+        [Route("api/user/UpdateAUserProfileById/{UserId}")] //🔰 X - - -🔴🔗
         public HttpResponseMessage UpdateAUserProfileById(int UserId, UpdateSellerProfileDTO updateSellerProfileDto)
         {
             try
             {
-                var data = UserService.UpdateAUserProfileById(UserId, updateSellerProfileDto);
+                var data = UserService.UpdateAUserProfileById( updateSellerProfileDto);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }catch (Exception ex)
             {
@@ -120,7 +129,7 @@ namespace E_Commerce_Web_App_API.Controllers.User
         // User.7. DeleteAUsersAccountById
 
 
-        [HttpGet]
+        [HttpDelete]
         [Route("api/user/DeleteAUsersAccountById/{UserId}")]
         public HttpResponseMessage DeleteAUsersAccountById(int UserId)
         {

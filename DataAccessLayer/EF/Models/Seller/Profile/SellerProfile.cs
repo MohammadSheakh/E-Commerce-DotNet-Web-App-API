@@ -17,13 +17,7 @@ namespace DataAccessLayer.EF.Models.Seller.Profile
         public int Id { get; set; }
 
         public string Description { get; set; }
-        public string Image { get; set; }
-       
-        public DateTime? CreatedAt { get; set; }
-
-        // UpdatedAt
-
-        public int? PhoneNumber { get; set; }
+         
 
         [ForeignKey("ShopProfile")]
         public int ShopProfileId { get; set; }  // Foreign key

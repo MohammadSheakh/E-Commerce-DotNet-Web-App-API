@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateUserTable : IMigrationMetadata
+    public sealed partial class sellerProfileUpdateAgain : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateUserTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(sellerProfileUpdateAgain));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312230607085_updateUserTable"; }
+            get { return "202312231603420_sellerProfileUpdateAgain"; }
         }
         
         string IMigrationMetadata.Source
