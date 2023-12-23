@@ -21,7 +21,7 @@ namespace BusinessLogicLayer.Services.UserService
 
         // static method banabo ..
 
-        // User.1. Create User Or Registration
+        // User.1. Create User Or Registration //🔰OK- - -🔴🔗
         public static UserDTO CreateNewUser(RegistrationDTO registrationDTO)
         {
             // auto mapper diye convert korte hobe 
@@ -44,7 +44,7 @@ namespace BusinessLogicLayer.Services.UserService
         }
 
 
-        // User.2. GetOneUserById
+        // User.2. GetOneUserById //🔰OK- - -🔴🔗
         public static UserDTO GetOneUserById(int UserId)
         {
             // 🏠 ekhane ki amra return type User dibo naki User DTO dibo 
@@ -60,7 +60,7 @@ namespace BusinessLogicLayer.Services.UserService
             //return "";
         }
 
-        // User.3. GetOneUsersProfileById
+        // User.3. GetOneUsersProfileById //🔰OK- - -🔴🔗
         public static SellerProfileDTO GetOneUsersProfileById(int UserId)
         {
             var result = DataAccessFactory.SellerProfileData().Get(UserId);
@@ -70,7 +70,7 @@ namespace BusinessLogicLayer.Services.UserService
             return Model_DTOMapped;
         }
 
-        // User.4. GetAllUsersProfile
+        // User.4. GetAllUsersProfile //🔰OK- - -🔴🔗
         public static List<SellerProfileDTO> GetAllUsersProfile()
         {
             var result = DataAccessFactory.SellerProfileData().Get();
@@ -81,7 +81,7 @@ namespace BusinessLogicLayer.Services.UserService
         }
 
         // User.5. UpdateAUserById
-        public static UpdateUserDTO UpdateAUserById(int UserId, UpdateUserDTO updateUserDto)
+        public static UpdateUserDTO UpdateAUserById(UpdateUserDTO updateUserDto)
         {
             // Update Only Basic Information
 
@@ -95,13 +95,12 @@ namespace BusinessLogicLayer.Services.UserService
 
             var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<User, UpdateUserDTO>(result);// 🏠 ekhane ki UserDTO hobe naki UpdateUserDTO hobe ?
 
-
             return Model_DTOMapped;
 
         }
 
         // User.6. UpdateAUserProfileById
-        public static UpdateSellerProfileDTO UpdateAUserProfileById(int UserId, UpdateSellerProfileDTO updateSellerProfileDto)
+        public static UpdateSellerProfileDTO UpdateAUserProfileById(UpdateSellerProfileDTO updateSellerProfileDto)
         {
             // Update Only Profile Information
 

@@ -32,7 +32,8 @@ namespace DataAccessLayer.Repos.SellerRepo.Profile
 
         public SellerProfile Get(int id)
         {
-            return db.SellerProfiles.Find(id);
+            //return db.SellerProfiles.Find(id);
+            return db.SellerProfiles.FirstOrDefault(u => u.Id == id);
         }
 
         public SellerProfile Update(SellerProfile obj)
