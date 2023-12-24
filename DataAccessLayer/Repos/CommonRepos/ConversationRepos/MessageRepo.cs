@@ -1,50 +1,42 @@
-﻿using DataAccessLayer.EF.Models.Common.Reviews;
-
+﻿using DataAccessLayer.EF.Models.Common.Conversations;
 using DataAccessLayer.Interface;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Repos.Seller
+namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
-    internal class ReviewRepo : Repo, IRepo<Review, int, Review>
+    internal class MessageRepo : Repo, IRepo<Message, int, Message>
     {
-        public Review Create(Review obj)
+        public Message Create(Message obj)
         {
-            db.Reviewes.Add(obj);
+            db.Messages.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
-            
         }
 
         public bool Delete(int id)
         {
             var existing = Get(id);
-            db.Reviewes.Remove(existing);
+            db.Messages.Remove(existing);
             return db.SaveChanges() > 0;
-            
         }
 
-        public List<Review> Get()
+        public List<Message> Get()
         {
-            return db.Reviewes.ToList();
-            
+            return db.Messages.ToList();
         }
 
-        public Review Get(int id)
+        public Message Get(int id)
         {
-            return db.Reviewes.Find(id);
-            
+            return db.Messages.Find(id);
         }
 
-        
-
-        public Review Update(Review obj)
+        public Message Update(Message obj)
         {
-            var existing = Get(obj.id);
+            var existing = Get(obj.Id);
             db.Entry(existing).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;

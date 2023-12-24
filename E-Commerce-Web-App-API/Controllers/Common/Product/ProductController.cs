@@ -14,12 +14,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         //  1. AddProduct [Product] // status[n-n-n]
 
         [HttpPost]
-        [Route("api/seller/createProduct")]             //🔰OK- - -🔴🔗
+        [Route("api/product/createProduct")]  //🔰OK- - -🔴🔗
         public HttpResponseMessage CreateProduct(ProductDTO productDTO)
         {
             try
             {
                 var data = ProductService.CreateProduct(productDTO);
+                // 🔴 I want to return the product
                 return Request.CreateResponse(HttpStatusCode.OK, "New Product Added");
             }
             catch (Exception ex)
@@ -31,8 +32,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         //  2. getAllProductsDetails [Product]
 
 
-        [HttpGet] // customized // request override               //🔰OK- - -🔴🔗
-        [Route("api/seller/getAllProductsDetails")] // custom routing ta add kore dite hobe 
+        [HttpGet] // customized // request override  //🔰OK- - -🔴🔗
+        [Route("api/product/getAllProductsDetails")] // custom routing ta add kore dite hobe 
         public HttpResponseMessage GetAllProductsDetails()
         {
             try
@@ -57,7 +58,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         {
             try
             {
-                var data = "";// = ProductService.GetAllProductsDetailsBySellerId(id);
+                var data = ProductService.GetAllProductsDetailsBySellerId(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

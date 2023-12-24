@@ -22,43 +22,65 @@ namespace DataAccessLayer.Migrations
         //  You can use the DbSet<T>.AddOrUpdate() helper extension method
         protected override void Seed(DataAccessLayer.EF.ECommerceContext context)
         {
-            //  ekhon amra chaile data seed korte pari .. 
+        //  ekhon amra chaile data seed korte pari .. 
 
-            // Category  Added
-            //for (int i = 1; i <= 4; i++)
-            //{
-            //    context.Categories.AddOrUpdate(new EF.Models.Common.Products.Category
-            //    {
-            //        Name = "Category-" + i,
-            //    });
-            //    // user add done .. 
-            //}
+        // Category  Added
+        //for (int i = 1; i <= 4; i++)
+        //{
+        //    context.Categories.AddOrUpdate(new EF.Models.Common.Products.Category
+        //    {
+        //        Name = "Category-" + i,
+        //    });
+        //    // user add done .. 
+        //}
 
-            //Name = Guid.NewGuid().ToString().Substring(0, 15),
-            //Password = Guid.NewGuid().ToString().SubString(0, 10),
-            //Type = "General", // pore ekjon ke admin banay dibo 
+        //Name = Guid.NewGuid().ToString().Substring(0, 15),
+        //Password = Guid.NewGuid().ToString().SubString(0, 10),
+        //Type = "General", // pore ekjon ke admin banay dibo 
 
 
-            // Brand  Added
-            //for (int i = 1; i <= 4; i++)
-            //{
-            //    context.Brands.AddOrUpdate(new EF.Models.Common.Products.Brand
-            //    {
+        // Brand  Added
+        //for (int i = 1; i <= 4; i++)
+        //{
+        //    context.Brands.AddOrUpdate(new EF.Models.Common.Products.Brand
+        //    {
 
-            //        Name = "Brand-" + i,
-            //    });
+        //        Name = "Brand-" + i,
+        //    });
 
-            //}
+        //}
 
-            // Role Added
-            //string[] roleNames = { "Seller", "Buyer", "Admin" };
-            //foreach (var roleName in roleNames)
-            //{
-            //    context.Roles.AddOrUpdate(new EF.Models.UserModel.Role
-            //    {
-            //        name = roleName,
-            //    });
-            //}
+        // Role Added
+        //string[] roleNames = { "Seller", "Buyer", "Admin" };
+        //foreach (var roleName in roleNames)
+        //{
+        //    context.Roles.AddOrUpdate(new EF.Models.UserModel.Role
+        //    {
+        //        name = roleName,
+        //    });
+        //}
+
+        // Product Added=============================
+
+        //Name: Tp Link 445
+        //Details: amezing router
+        //Rating: 0
+        //Price: 50
+        //availableQuantity: 3
+        //lowestQuantityToStock: 3
+        //CategoryId: 1
+        //BrandId: 1
+        //SellerId: 6
+
+
+        // Seler Added=============================
+
+        //Name: sheakhBuyer
+        //Email:d @gmail.com
+        //Password:1234
+        //RoleId: 1
+
+
 
 
             ///////////////////////////////////////////////////
