@@ -1,6 +1,6 @@
 ﻿using DataAccessLayer.EF.Models;
 using DataAccessLayer.EF.Models.UserModel;
-using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+using DataAccessLayer.EF.Models.Common.Reviews;
 
 using System;
 using System.Collections.Generic;
@@ -62,8 +62,8 @@ namespace DataAccessLayer.EF
         public DbSet<SpecificationCategory> SpecificationCategories{ get; set; }
 
         // ---------- For Reviews --------------------------
-        public DbSet<Models.Seller.Profile.Reviews.Review> Reviewes { get; set; }
-        public DbSet<Models.Seller.Profile.Reviews.ReviewReply> ReviewReplies { get; set; }
+        public DbSet<Models.Common.Reviews.Review> Reviewes { get; set; }
+        public DbSet<Models.Common.Reviews.ReviewReply> ReviewReplies { get; set; }
 
         public DbSet<Models.Common.Reviews.LikeDislike> LikeDisliikes { get; set; }
 

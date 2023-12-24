@@ -97,79 +97,11 @@ namespace BusinessLogicLayer.Services.Seller
 
 
 
-        //  3. addReview [Product] - Tanvir sir er shathe develop kortesi 
 
 
 
-        //  4. addReplyToAReview [Product] - Tanvir sir er shathe develop kortesi 
-
-        // 4.1 getAllReview [Seller]
-        public static List<ReviewDTO> GetAllReview()
-        {
-            // data access layer theke data anbo first e .. 
-            var data = DataAccessFactory.ReviewData().Get();
-            // eta te DTO te convert na korle application layer use korte parbe na 
-
-            //var cfg = new MapperConfiguration(c =>
-            //{
-            //    c.CreateMap<Review, ReviewDTO>();
-            //});
-            //var mapper = new Mapper(cfg);
-
-            //var mapped = mapper.Map<List<ReviewDTO>>(data);
-
-            //var mappedData = AutoMapperConverter.ConvertForList<Review, ReviewDTO>(data);
-
-            var mappedData = AutoMapperConverter.ConvertForList<Review, ReviewDTO>(data);
 
 
-            return mappedData;
-        }
-
-        // 4.2 getAReview [Product]
-        public static ReviewDTO GetAReview(int id)
-        {
-            // data access layer theke data anbo first e .. 
-            var data = DataAccessFactory.ReviewData().Get(id);
-            // eta te DTO te convert na korle application layer use korte parbe na 
-
-            var mappedData = AutoMapperConverter.ConvertForSingleInstance<Review, ReviewDTO>(data);
-
-
-            return mappedData;
-        }
-
-        // 4.3 getAReviewWithReviewReplies [Product]
-        public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int id)
-        {
-            var data = DataAccessFactory.ReviewData().Get(id);
-            var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<Review, Review_ReviewReplyDTO>(data);
-
-            var cfg = new MapperConfiguration(c =>
-            {
-                c.CreateMap<Review, Review_ReviewReplyDTO>();
-                c.CreateMap<ReviewReply, ReviewReplyDTO>();
-            });
-            var mapper = new Mapper(cfg);
-
-
-            var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
-
-
-           // var mappedData2 = 
-
-            return mappedData1;
-        }
-
-
-
-        //     addAvailableQualityOfAProduct [Product]
-        //     addSpecificationOfAProduct [Product]
-        //  5. paymentCompleteOfPreOrder [Product]
-        //  6. orderStatusPending [Product]
-        //  7. getAllNegetiveReview [Product]
-
-        //  8. checkForLowQuantity [Product]
 
         //  9. Seller Login basic/jwt [Seller]
         // 10. Seller Logout[Seller]
@@ -179,14 +111,6 @@ namespace BusinessLogicLayer.Services.Seller
         // 13. updateSellerInformation [Seller]
         // 14. deleteSellerAccount [Seller]
 
-        // 15. sortProductByBrand [Brand]
-        // 16. sortProductByCategory [Category]
-        // 17. sortProductByMinAndMaxRange [Product]
-
-        // 18. createNewMessage [Message]
-        // 19. createNewConversation [Conversation]
-        // 20. showAllConversation [Conversation]
-        // 21. showAllMessageOfAConversation [Conversation]
 
         // 22. Send Email
     }

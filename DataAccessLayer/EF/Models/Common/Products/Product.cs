@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.EF.Models.Product.Specifications;
-using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+using DataAccessLayer.EF.Models.Common.Reviews;
 using DataAccessLayer.EF.Models.UserModel;
 using System;
 using System.Collections.Generic;

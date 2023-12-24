@@ -61,7 +61,10 @@
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Auth\AuthService.cs" />
-    <Compile Include="Services\Product\ProductService.cs" />
+    <Compile Include="Services\Buyer\BuyerService.cs" />
+    <Compile Include="Services\Common\Conversation\ConversationService.cs" />
+    <Compile Include="Services\Common\Product\ProductService.cs" />
+    <Compile Include="Services\Common\Review\ReviewService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
     <Compile Include="Services\UserService\UserService.cs" />
   </ItemGroup>
@@ -80,7 +83,6 @@
   <ItemGroup>
     <Folder Include="DTOs\Buyer\" />
     <Folder Include="Helper\CustomAttribute\" />
-    <Folder Include="Services\Buyer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
