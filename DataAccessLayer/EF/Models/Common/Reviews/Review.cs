@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EF.Models.Seller.Profile.Reviews
+namespace DataAccessLayer.EF.Models.Common.Reviews
 {
     public class Review
     {

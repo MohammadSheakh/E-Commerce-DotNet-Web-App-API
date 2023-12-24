@@ -1,6 +1,6 @@
 ﻿using DataAccessLayer.EF.Models;
 using DataAccessLayer.EF.Models.Seller.Profile;
-using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+using DataAccessLayer.EF.Models.Common.Reviews;
 
 using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.Interface;

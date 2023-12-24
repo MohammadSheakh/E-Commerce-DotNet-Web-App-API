@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogicLayer.Services.Product
+namespace BusinessLogicLayer.Services.Buyer
 {
-    public class ProductService
+    internal class BuyerService
     {
-
     }
 }
