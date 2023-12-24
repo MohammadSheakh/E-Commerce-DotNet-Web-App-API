@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.DTOs.Product;
+using BusinessLogicLayer.Services.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,12 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         //  1. AddProduct [Product] // status[n-n-n]
 
         [HttpPost]
-        [Route("api/seller/createProduct")]
+        [Route("api/seller/createProduct")]             //🔰OK- - -🔴🔗
         public HttpResponseMessage CreateProduct(ProductDTO productDTO)
         {
             try
             {
-                //ProductService.CreateProduct(productDTO);
+                var data = ProductService.CreateProduct(productDTO);
                 return Request.CreateResponse(HttpStatusCode.OK, "New Product Added");
             }
             catch (Exception ex)
@@ -30,13 +31,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         //  2. getAllProductsDetails [Product]
 
 
-        [HttpGet] // customized // request override
+        [HttpGet] // customized // request override               //🔰OK- - -🔴🔗
         [Route("api/seller/getAllProductsDetails")] // custom routing ta add kore dite hobe 
         public HttpResponseMessage GetAllProductsDetails()
         {
             try
             {
-                var data = "";//= ProductService.GetAllProductsDetails();
+                var data = ProductService.GetAllProductsDetails();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -49,7 +50,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
 
 
         [HttpGet] // customized // request override
-        [Route("api/seller/getAllProductsDetailsBySellerId")]
+        [Route("api/seller/getAllProductsDetailsBySellerId/{sellerId}")]
         // custom routing ta add kore dite hobe 
         //[Pr]
         public HttpResponseMessage GetAllProductsDetailsBySellerId(int id)

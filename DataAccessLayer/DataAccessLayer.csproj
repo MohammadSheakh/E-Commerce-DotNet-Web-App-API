@@ -91,11 +91,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ProductRepos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\Shop\ShopRepo.cs" />
-    <Compile Include="Repos\SellerRepo\ReviewReplyRepo.cs" />
-    <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ReviewRepos\ReviewReplyRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ReviewRepos\ReviewRepo.cs" />
     <Compile Include="Repos\UserRepo\TokenRepo.cs" />
     <Compile Include="Repos\UserRepo\UserRepo.cs" />
   </ItemGroup>
@@ -118,6 +119,9 @@
     <EmbeddedResource Include="Migrations\202312231603420_sellerProfileUpdateAgain.resx">
       <DependentUpon>202312231603420_sellerProfileUpdateAgain.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repos\CommonRepos\ConversationRepos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,5 +1,4 @@
-﻿using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
-
+﻿using DataAccessLayer.EF.Models.Common.Reviews;
 using DataAccessLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -7,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Repos.Seller
+namespace DataAccessLayer.Repos.SellerRepo
 {
-    internal class ReviewRepo : Repo, IRepo<Review, int, Review>
+    internal class ReviewReplyRepo : Repo, IRepo<ReviewReply, int, ReviewReply> // Return bool korse sir 
     {
-        public Review Create(Review obj)
+        public ReviewReply Create(ReviewReply obj)
         {
-            db.Reviewes.Add(obj);
+            db.ReviewReplies.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
             //throw new NotImplementedException();
@@ -22,24 +21,25 @@ namespace DataAccessLayer.Repos.Seller
         public bool Delete(int id)
         {
             var existing = Get(id);
-            db.Reviewes.Remove(existing);
+            db.ReviewReplies.Remove(existing);
             return db.SaveChanges() > 0;
             // throw new NotImplementedException();
         }
 
-        public List<Review> Get()
+        public List<ReviewReply> Get()
         {
-            return db.Reviewes.ToList();
+            return db.ReviewReplies.ToList();
             //throw new NotImplementedException();
         }
 
-        public Review Get(int id)
+        public ReviewReply Get(int id)
         {
-            return db.Reviewes.Find(id);
+            return db.ReviewReplies.Find(id);
             //throw new NotImplementedException();
+
         }
 
-        public Review Update(Review obj)
+        public ReviewReply Update(ReviewReply obj)
         {
             var existing = Get(obj.id);
             db.Entry(existing).CurrentValues.SetValues(obj);
@@ -47,6 +47,7 @@ namespace DataAccessLayer.Repos.Seller
             return null;
 
             //throw new NotImplementedException();
+
         }
     }
 }
