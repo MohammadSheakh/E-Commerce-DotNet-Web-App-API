@@ -15,7 +15,7 @@ namespace DataAccessLayer.EF.Models.UserModel
         public int Id { get; set; }
 
         [Required]
-        public string RoleName { get; set; }
+        public string name { get; set; }
 
         public virtual ICollection<User> Users{ get; set; }
 
