@@ -16,7 +16,7 @@ namespace DataAccessLayer.Repos.Seller
             db.Reviewes.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
-            //throw new NotImplementedException();
+            
         }
 
         public bool Delete(int id)
@@ -24,19 +24,19 @@ namespace DataAccessLayer.Repos.Seller
             var existing = Get(id);
             db.Reviewes.Remove(existing);
             return db.SaveChanges() > 0;
-            // throw new NotImplementedException();
+            
         }
 
         public List<Review> Get()
         {
             return db.Reviewes.ToList();
-            //throw new NotImplementedException();
+            
         }
 
         public Review Get(int id)
         {
             return db.Reviewes.Find(id);
-            //throw new NotImplementedException();
+            
         }
 
         public Review Update(Review obj)
@@ -45,8 +45,6 @@ namespace DataAccessLayer.Repos.Seller
             db.Entry(existing).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
-
-            //throw new NotImplementedException();
         }
     }
 }

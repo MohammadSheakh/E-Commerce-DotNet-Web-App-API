@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.DTOs.Review;
+using BusinessLogicLayer.Services.Product;
 using BusinessLogicLayer.Services.Seller;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BusinessLogicLayer.Services.Common.Review;
 
 namespace E_Commerce_Web_App_API.Controllers.Common.Review
 {
@@ -55,7 +57,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                var data = SellerService.GetAllReview();
+                //var data = SellerService.GetAllReview();
+                var data = ReviewService.GetAllReview();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -76,7 +79,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                var data = SellerService.GetAReview(id);
+                var data = ReviewService.GetAReview(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -96,7 +99,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                var data = SellerService.GetAReviewWithReviewReplies(id);
+                var data = ReviewService.GetAReviewWithReviewReplies(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -123,7 +126,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                var data = "";//= ProductService.GetAllNegetiveReview();
+                var data = "";// ReviewService.GetAllNegetiveReview();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

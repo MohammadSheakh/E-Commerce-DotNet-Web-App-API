@@ -91,6 +91,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ProductRepos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\Shop\ShopRepo.cs" />
@@ -121,7 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repos\CommonRepos\ConversationRepos\" />
-    <Folder Include="Repos\CommonRepos\ProductRepos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
