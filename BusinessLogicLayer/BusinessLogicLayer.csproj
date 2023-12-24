@@ -50,10 +50,13 @@
     <Compile Include="DTOs\Review\ReviewDTO.cs" />
     <Compile Include="DTOs\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Review\Review_ReviewReplyDTO.cs" />
+    <Compile Include="DTOs\Seller\Profile\SellerProfileDTO.cs" />
+    <Compile Include="DTOs\Seller\Profile\UpdateSellerProfileDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
     <Compile Include="DTOs\User\LoginDTO.cs" />
     <Compile Include="DTOs\User\RegistrationDTO.cs" />
     <Compile Include="DTOs\User\TokenDTO.cs" />
+    <Compile Include="DTOs\User\UpdateUserDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

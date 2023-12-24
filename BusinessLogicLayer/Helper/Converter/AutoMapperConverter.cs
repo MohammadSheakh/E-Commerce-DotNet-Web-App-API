@@ -23,6 +23,10 @@ namespace E_Commerce_Web_Application.Helper.Converter
             return mapper.Map<List<TDestination>>(sourceListFromDB);
         }
 
+        
+
+
+
         //for Single Instance
         public static TDestination ConvertForSingleInstance<TSource, TDestination>(TSource sourceFromDB)
         {

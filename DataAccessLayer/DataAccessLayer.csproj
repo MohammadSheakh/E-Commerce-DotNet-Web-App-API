@@ -73,39 +73,27 @@
     <Compile Include="EF\Models\UserModel\Role.cs" />
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
+    <Compile Include="Helper\GenericMethodForRepo.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
-    <Compile Include="Migrations\202312200618014_Reset.cs" />
-    <Compile Include="Migrations\202312200618014_Reset.designer.cs">
-      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
+    <Compile Include="Migrations\202312231328260_new.cs" />
+    <Compile Include="Migrations\202312231328260_new.designer.cs">
+      <DependentUpon>202312231328260_new.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312200715377_brandAndProduct.cs" />
-    <Compile Include="Migrations\202312200715377_brandAndProduct.designer.cs">
-      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
+    <Compile Include="Migrations\202312231344031_sellerProfileUpdate.cs" />
+    <Compile Include="Migrations\202312231344031_sellerProfileUpdate.designer.cs">
+      <DependentUpon>202312231344031_sellerProfileUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312200745302_createRoleTable.cs" />
-    <Compile Include="Migrations\202312200745302_createRoleTable.designer.cs">
-      <DependentUpon>202312200745302_createRoleTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.cs" />
-    <Compile Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.designer.cs">
-      <DependentUpon>202312200807363_LikeDislikeReviewUserRelation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.cs" />
-    <Compile Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.designer.cs">
-      <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312210752153_shopProfile.cs" />
-    <Compile Include="Migrations\202312210752153_shopProfile.designer.cs">
-      <DependentUpon>202312210752153_shopProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312210759034_relationProductAndSellerProfile.cs" />
-    <Compile Include="Migrations\202312210759034_relationProductAndSellerProfile.designer.cs">
-      <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
+    <Compile Include="Migrations\202312231603420_sellerProfileUpdateAgain.cs" />
+    <Compile Include="Migrations\202312231603420_sellerProfileUpdateAgain.designer.cs">
+      <DependentUpon>202312231603420_sellerProfileUpdateAgain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
+    <Compile Include="Repos\SellerRepo\Profile\Shop\ShopRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewReplyRepo.cs" />
     <Compile Include="Repos\SellerRepo\ReviewRepo.cs" />
     <Compile Include="Repos\UserRepo\TokenRepo.cs" />
@@ -117,33 +105,18 @@
     <Content Include="Documentation\NLayer.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repos\BuyerRepo\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312200618014_Reset.resx">
-      <DependentUpon>202312200618014_Reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312231328260_new.resx">
+      <DependentUpon>202312231328260_new.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312200715377_brandAndProduct.resx">
-      <DependentUpon>202312200715377_brandAndProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312231344031_sellerProfileUpdate.resx">
+      <DependentUpon>202312231344031_sellerProfileUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312200745302_createRoleTable.resx">
-      <DependentUpon>202312200745302_createRoleTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312200807363_LikeDislikeReviewUserRelation.resx">
-      <DependentUpon>202312200807363_LikeDislikeReviewUserRelation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312200812272_LikeDislikeReviewUserRelationV1.resx">
-      <DependentUpon>202312200812272_LikeDislikeReviewUserRelationV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312210752153_shopProfile.resx">
-      <DependentUpon>202312210752153_shopProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312210759034_relationProductAndSellerProfile.resx">
-      <DependentUpon>202312210759034_relationProductAndSellerProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312231603420_sellerProfileUpdateAgain.resx">
+      <DependentUpon>202312231603420_sellerProfileUpdateAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
