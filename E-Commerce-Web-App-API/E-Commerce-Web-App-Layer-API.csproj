@@ -122,6 +122,9 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Auth\AuthController.cs" />
+    <Compile Include="Controllers\Common\Conversation\ConversationController.cs" />
+    <Compile Include="Controllers\Common\Product\ProductController.cs" />
+    <Compile Include="Controllers\Common\Review\ReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Seller\SellerController.cs" />
     <Compile Include="Controllers\User\UserController.cs" />
