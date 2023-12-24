@@ -88,6 +88,14 @@
     <Compile Include="Migrations\202312231603420_sellerProfileUpdateAgain.designer.cs">
       <DependentUpon>202312231603420_sellerProfileUpdateAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312241112305_dataPushToDB.cs" />
+    <Compile Include="Migrations\202312241112305_dataPushToDB.designer.cs">
+      <DependentUpon>202312241112305_dataPushToDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312241127458_dataPushToDB2.cs" />
+    <Compile Include="Migrations\202312241127458_dataPushToDB2.designer.cs">
+      <DependentUpon>202312241127458_dataPushToDB2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
@@ -118,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312231603420_sellerProfileUpdateAgain.resx">
       <DependentUpon>202312231603420_sellerProfileUpdateAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312241112305_dataPushToDB.resx">
+      <DependentUpon>202312241112305_dataPushToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312241127458_dataPushToDB2.resx">
+      <DependentUpon>202312241127458_dataPushToDB2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

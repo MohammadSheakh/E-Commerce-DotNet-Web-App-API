@@ -1,7 +1,7 @@
 ﻿using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.User;
 using DataAccessLayer;
-using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+using DataAccessLayer.EF.Models.Common.Reviews;
 using DataAccessLayer.EF.Models.UserModel;
 using E_Commerce_Web_Application.Helper.Converter;
 using System;
