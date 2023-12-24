@@ -41,14 +41,19 @@ namespace BusinessLogicLayer.Services.Product
             return Model_DTOMapped;
         }
 
-        // 2.1
-
+        // 2.1 GetAllProductsDetailsBySellerId  //🔰 - - -🔴🔗
         public static List<ProductDTO> GetAllProductsDetailsBySellerId(int sellerId)
         {
-            return null;   
+            // seller id er against e shob gula product niye ashte hobe
+            var allProductsOfSeller = DataAccessFactory.ProductDataForGetAllProductsDetailsBySellerId().GetAllProductsDetailsBySellerId(sellerId);
+
+            // jei data ashse .. eta ke Model -> DTO te convert korte hobe
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allProductsOfSeller);
+
+            return Model_DTOMapped;   
         }
 
-
+        
 
         //     addAvailableQualityOfAProduct [Product]                           //🔰OK- - -🔴🔗
         //     addSpecificationOfAProduct [Product]                              //🔰OK- - -🔴🔗

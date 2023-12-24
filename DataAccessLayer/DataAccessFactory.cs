@@ -16,6 +16,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.EF.Models.Common.Products;
 using DataAccessLayer.Repos.CommonRepos.ProductRepos;
+using DataAccessLayer.Interface.Common.Product;
+using DataAccessLayer.Repos.CommonRepos.ConversationRepos;
+using DataAccessLayer.EF.Models.Common.Conversations;
 
 namespace DataAccessLayer
 {
@@ -51,6 +54,12 @@ namespace DataAccessLayer
         {
             return new ProductRepo();
         }
+
+        public static IProduct<Products> ProductDataForGetAllProductsDetailsBySellerId()
+        {
+            return new ProductRepo();
+        }
+
         //--------------------------------------------- Review---------------
         public static IRepo<Review, int, Review> ReviewData()
         {
@@ -62,6 +71,18 @@ namespace DataAccessLayer
             return new ReviewReplyRepo();
         }
 
+        //--------------------------------------------- Conversation---------------
+        public static IRepo<Conversation, int, Conversation> ConversationData()
+        {
+            return new ConversationRepo();
+        }
+
+        public static IRepo<Message, int, Message> MessageData()
+        {
+            return new MessageRepo();
+        }
+
+        //-----Auth-------------------------------------------------------
         public static IAuth<bool> AuthData ()
         {
             return new UserRepo();
