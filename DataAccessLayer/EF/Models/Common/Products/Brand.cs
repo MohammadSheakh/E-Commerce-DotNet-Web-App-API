@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EF.Models
+namespace DataAccessLayer.EF.Models.Common.Products
 {
     public class Brand
     {
