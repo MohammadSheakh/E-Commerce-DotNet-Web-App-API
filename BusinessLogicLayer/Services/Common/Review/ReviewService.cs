@@ -13,7 +13,7 @@ using DataAccessLayer.EF.Models.Common.Reviews;
 
 namespace BusinessLogicLayer.Services.Common.Review
 {
-    internal class ReviewService
+    public class ReviewService
     {
         //  3. addReview [Product] - Tanvir sir er shathe develop kortesi 
 
@@ -25,7 +25,7 @@ namespace BusinessLogicLayer.Services.Common.Review
         public static List<ReviewDTO> GetAllReview()
         {
             // data access layer theke data anbo first e .. 
-            /////// var data = DataAccessFactory.ReviewData().Get();// .ReviewData().Get();
+            
             var data = DataAccessFactory.ReviewData().Get();
 
 

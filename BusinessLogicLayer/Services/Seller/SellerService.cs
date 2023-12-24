@@ -4,7 +4,7 @@ using BusinessLogicLayer.DTOs.Seller;
 using DataAccessLayer;
 using DataAccessLayer.EF;
 using DataAccessLayer.EF.Models;
-using DataAccessLayer.EF.Models.Seller.Profile.Reviews;
+using DataAccessLayer.EF.Models.Common.Reviews;
 using DataAccessLayer.Repos.Seller;
 using E_Commerce_Web_Application.Helper.Converter;
 using System;
@@ -79,8 +79,7 @@ namespace BusinessLogicLayer.Services.Seller
         /////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////
 
-        //  1. AddProduct [Product]
-        //  2. getAllProductsDetails [Product]
+       
 
 
         //public static List<DTOs.Seller.SellerDTO> GetAllSeller()

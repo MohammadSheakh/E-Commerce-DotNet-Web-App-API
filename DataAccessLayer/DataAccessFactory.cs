@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.EF.Models.Common.Products;
+using DataAccessLayer.Repos.CommonRepos.ProductRepos;
 
 namespace DataAccessLayer
 {
@@ -43,7 +45,13 @@ namespace DataAccessLayer
         }
 
         //----------------------------------- Common ---------------
+        //--------------------------------------------- Product---------------
 
+        public static IRepo<Products, int, Products> ProductData()
+        {
+            return new ProductRepo();
+        }
+        //--------------------------------------------- Review---------------
         public static IRepo<Review, int, Review> ReviewData()
         {
             return new ReviewRepo();
