@@ -22,5 +22,6 @@ namespace BusinessLogicLayer.DTOs.Product
 
         public int? CategoryId { get; set; }
 
+        
     }
 }

@@ -5,12 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.EF.Models.Common.Products;
-
+using DataAccessLayer.Interface.Common.Product;
 
 namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 {
-    internal class ProductRepo : Repo, IRepo<Products, int, Products>
+    internal class ProductRepo : Repo, IRepo<Products, int, Products>  ,IProduct<Products>// IProduct<Products>,
     {
+        public List<Products> GetAllProductsDetailsBySellerId(int sellerId)
+        {
+
+            var products = db.Product.Where(p => p.SellerId == sellerId).ToList();
+            return products;
+            //throw new NotImplementedException();
+        }
+
         public Products Create(Products obj)
         {
             db.Product.Add(obj);
@@ -35,6 +43,9 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             return db.Product.Find(id);
         }
 
+       
+
+        
         public Products Update(Products obj)
         {
             var existing = Get(obj.Id);
@@ -42,5 +53,9 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             if (db.SaveChanges() > 0) return obj;
             return null;
         }
+
+       
+
+        
     }
 }

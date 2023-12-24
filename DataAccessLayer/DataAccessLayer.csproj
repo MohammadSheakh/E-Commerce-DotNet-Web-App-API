@@ -74,6 +74,7 @@
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
     <Compile Include="Helper\GenericMethodForRepo.cs" />
+    <Compile Include="Interface\Common\Product\IProduct.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
     <Compile Include="Migrations\202312231328260_new.cs" />
@@ -99,6 +100,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ConversationRepos\ConversationRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ConversationRepos\MessageRepo.cs" />
     <Compile Include="Repos\CommonRepos\ProductRepos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
@@ -135,7 +138,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repos\CommonRepos\ConversationRepos\" />
+    <Folder Include="Interface\Common\Review\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
