@@ -84,7 +84,8 @@ namespace DataAccessLayer.Repos.UserRepo
 
         public bool Delete(int id)
         {
-            var existingUser = Get(id);
+            // var existingUser = Get(id);
+            var existingUser = db.Users.Find(id);
 
             // 🔴 User account Remove korar age .. 
             // Profile Account Remove korte hobe 
@@ -103,20 +104,31 @@ namespace DataAccessLayer.Repos.UserRepo
                 var existingProfileAccount = sellerProfileRepo.Get(existingUser.SellerProfileId ?? 0);
 
                 var shopProfileRepo = new ShopRepo();
-                 var existingShopProfileAccount = shopProfileRepo.Get(existingProfileAccount.ShopProfileId);
+                //    var existingShopProfileAccount = shopProfileRepo.Get(existingProfileAccount.ShopProfileId);
 
-                if (existingShopProfileAccount != null)
+                var existingShopProfileAccount =  db.ShopProfiles.FirstOrDefault(u => u.id == existingProfileAccount.ShopProfileId);
+
+                if (existingShopProfileAccount != null && existingProfileAccount != null)
                 {
+                    // Remove the reference from the Users table
+                    
+
                     db.ShopProfiles.Remove(existingShopProfileAccount);
-                }
 
-                if (existingProfileAccount != null)
-                {
-                    // profileAccount Remove korbo 
+                    db.SaveChanges();
+
                     db.SellerProfiles.Remove(existingProfileAccount);
+
+                    //db.SaveChanges();
+
+                    existingUser.SellerProfileId = null;
+
+                    db.Users.Remove(existingUser);
+
+
                 }
 
-                db.Users.Remove(existingUser);
+                
 
             }
 
