@@ -13,18 +13,18 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
     {
         [Key]
         [Required]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string replyDetails { get; set; }
+        public string ReplyDetails { get; set; }
 
-        public DateTime? createdAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [ForeignKey("User")]
-        public int? postedBy { get; set; } // kon user reply diyeche
+        public int? PostedBy { get; set; } // kon user reply diyeche
 
         [ForeignKey("Review")]
-        public int? reviewId { get; set; } // kon review er reply
+        public int? ReviewId { get; set; } // kon review er reply
 
         public virtual User User { get; set; }
 

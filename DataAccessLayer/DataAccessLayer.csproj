@@ -77,6 +77,7 @@
     <Compile Include="Interface\Common\Conversation\IConversation.cs" />
     <Compile Include="Interface\Common\Conversation\IMessage.cs" />
     <Compile Include="Interface\Common\Product\IProduct.cs" />
+    <Compile Include="Interface\Common\Review\IReview.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
     <Compile Include="Interface\User\IUser.cs" />
@@ -99,6 +100,18 @@
     <Compile Include="Migrations\202312241127458_dataPushToDB2.cs" />
     <Compile Include="Migrations\202312241127458_dataPushToDB2.designer.cs">
       <DependentUpon>202312241127458_dataPushToDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312251206399_update-conversation.cs" />
+    <Compile Include="Migrations\202312251206399_update-conversation.designer.cs">
+      <DependentUpon>202312251206399_update-conversation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312251453437_ReviewUpdated.cs" />
+    <Compile Include="Migrations\202312251453437_ReviewUpdated.designer.cs">
+      <DependentUpon>202312251453437_ReviewUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312251504573_ReviewUpdated01.cs" />
+    <Compile Include="Migrations\202312251504573_ReviewUpdated01.designer.cs">
+      <DependentUpon>202312251504573_ReviewUpdated01.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,10 +152,17 @@
     <EmbeddedResource Include="Migrations\202312241127458_dataPushToDB2.resx">
       <DependentUpon>202312241127458_dataPushToDB2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312251206399_update-conversation.resx">
+      <DependentUpon>202312251206399_update-conversation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312251453437_ReviewUpdated.resx">
+      <DependentUpon>202312251453437_ReviewUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312251504573_ReviewUpdated01.resx">
+      <DependentUpon>202312251504573_ReviewUpdated01.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interface\Common\Review\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

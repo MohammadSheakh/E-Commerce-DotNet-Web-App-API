@@ -41,7 +41,7 @@ namespace DataAccessLayer.Repos.SellerRepo
 
         public ReviewReply Update(ReviewReply obj)
         {
-            var existing = Get(obj.id);
+            var existing = Get(obj.Id);
             db.Entry(existing).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
