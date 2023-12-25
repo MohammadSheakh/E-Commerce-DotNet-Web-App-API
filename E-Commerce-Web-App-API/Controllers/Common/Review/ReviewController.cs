@@ -13,8 +13,6 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 {
     public class ReviewController : ApiController
     {
-
-
         //  3. addReview [Product] // Seller er jonno o review add kora lagbe .. product er jonno o review add korte hobe 
 
         [HttpPost]
@@ -23,7 +21,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                //ProductService.AddReview(reviewDTO);
+                var data =  ReviewService.AddReview(reviewDTO);
                 return Request.CreateResponse(HttpStatusCode.OK, "Review Created");
             }
             catch (Exception ex)
@@ -40,7 +38,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         {
             try
             {
-                //ProductService.AddReplyToReview(reviewReplyDTO);
+                ReviewService.AddReplyToAReview(reviewReplyDTO);
                 return Request.CreateResponse(HttpStatusCode.OK, "Review Reply Created");
             }
             catch (Exception ex)
@@ -70,16 +68,15 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
             }
         }
 
-
         // 4.2 
 
         [HttpGet]
-        [Route("api/seller/getAReview/{id}")]
-        public HttpResponseMessage GetAReview(int id)
+        [Route("api/seller/getAReview/{reviewId}")]
+        public HttpResponseMessage GetAReview(int reviewId)
         {
             try
             {
-                var data = ReviewService.GetAReview(id);
+                var data = ReviewService.GetAReview(reviewId);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

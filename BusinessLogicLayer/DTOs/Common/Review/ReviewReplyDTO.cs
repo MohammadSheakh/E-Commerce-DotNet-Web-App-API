@@ -11,15 +11,15 @@ namespace BusinessLogicLayer.DTOs.Review
         // public int id { get; set; }
 
         //[Required]
-        public string replyDetails { get; set; }
+        public string ReplyDetails { get; set; }
 
-        public DateTime? createdAt { get; set; }
-
-        
-        public string postedBy { get; set; } // kon user reply diyeche
+        public DateTime? CreatedAt { get; set; }
 
         
-        public int reviewId { get; set; } // kon review er reply
+        public string PostedBy { get; set; } // kon user reply diyeche
+
+        
+        public int ReviewId { get; set; } // kon review er reply
 
        
 

@@ -11,7 +11,7 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
         public int Id { get; set; }
 
         // 'like' | 'dislike' | 'normal'
-        public string type { get; set; }
+        public string Type { get; set; }
 
         // Many LikeDislike to One Review 
 
