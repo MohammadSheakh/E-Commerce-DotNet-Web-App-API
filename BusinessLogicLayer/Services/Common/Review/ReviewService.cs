@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.EF.Models.Common.Reviews;
+using BusinessLogicLayer.DTOs.User;
+using DataAccessLayer.EF.Models.UserModel;
 
 //using ;
 
@@ -16,10 +18,33 @@ namespace BusinessLogicLayer.Services.Common.Review
     public class ReviewService
     {
         //  3. addReview [Product] - Tanvir sir er shathe develop kortesi 
+        public static ReviewDTO AddReview(ReviewDTO reviewDto)
+        {
+            // convert DTO -> Model
+            var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<ReviewDTO, DataAccessLayer.EF.Models.Common.Reviews.Review> (reviewDto);
 
+            var result = DataAccessFactory.ReviewData().Create(DTO_ModelMapped);
+
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(result);
+
+            return Model_DTOMapped;
+        }
 
 
         //  4. addReplyToAReview [Product] - Tanvir sir er shathe develop kortesi 
+
+        public static ReviewReplyDTO AddReplyToAReview(ReviewReplyDTO reviewReplyDto)
+        {
+            // convert DTO -> Model
+            var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<ReviewReplyDTO, DataAccessLayer.EF.Models.Common.Reviews.ReviewReply>(reviewReplyDto);
+
+            var result = DataAccessFactory.ReviewReplyData().Create(DTO_ModelMapped);
+
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>(result);
+
+            return Model_DTOMapped;
+        }
+
 
         // 4.1 getAllReview [Seller]
         public static List<ReviewDTO> GetAllReview()

@@ -49,7 +49,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
 
         //  2.1. getAllProductsDetailsBySellerId [Product]
         [HttpGet] // customized // request override
-        [Route("api/seller/getAllProductsDetailsBySellerId/{sellerId}")]
+        [Route("api/product/getAllProductsDetailsBySellerId/{sellerId}")]
         // custom routing ta add kore dite hobe 
         //[Pr]
         public HttpResponseMessage GetAllProductsDetailsBySellerId(int id)

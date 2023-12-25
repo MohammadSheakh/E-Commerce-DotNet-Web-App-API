@@ -16,22 +16,27 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
         // prop
         [Key]
         [Required]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string category { get; set; }
+        public string Category { get; set; }
         [Required]
-        public string reviewDetails { get; set; }
+        public string ReviewDetails { get; set; }
 
-        public DateTime? createdAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
-        public int? likeCount { get; set; }
+        public int? LikeCount { get; set; }
 
-        public int? disLikeCount { get; set; }
+        public int? DisLikeCount { get; set; }
+
+        // kon post er Review 
+        [ForeignKey("Product")]
+        public int? ProductId { get; set; }
+        public virtual DataAccessLayer.EF.Models.Common.Products.Products Product{ get; set; }
 
 
         [ForeignKey("User")]
-        public int? postedBy { get; set; }
+        public int? PostedBy { get; set; }
         /*
           eta hocche amar foreign key of user .. 
           so, amra ekta virtual nibo .. 

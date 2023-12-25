@@ -11,12 +11,12 @@ namespace BusinessLogicLayer.DTOs.Review
     {
         // eta te Review er shob kichu thakbe .. 
         // additionally 
-        public List<ReviewReplyDTO> reviewReplies {  get; set; }
+        public List<ReviewReplyDTO> ReviewReplies {  get; set; }
 
         // List ke shob shomoy initiate korte hoy 
 
         public Review_ReviewReplyDTO() { 
-            reviewReplies = new List<ReviewReplyDTO>();
+            ReviewReplies = new List<ReviewReplyDTO>();
         }
 
 
