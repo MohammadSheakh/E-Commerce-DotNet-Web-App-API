@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\Common\Conversation\ConversationDTO.cs" />
     <Compile Include="DTOs\Common\Conversation\MessageDTO.cs" />
     <Compile Include="DTOs\Common\Product\ProductDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewDTO.cs" />

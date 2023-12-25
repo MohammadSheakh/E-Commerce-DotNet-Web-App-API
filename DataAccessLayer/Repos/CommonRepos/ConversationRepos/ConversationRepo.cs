@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.EF.Models.Common.Conversations;
 using DataAccessLayer.Interface;
+using DataAccessLayer.Interface.Common.Conversation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
-    internal class ConversationRepo : Repo, IRepo<Conversation, int, Conversation>
+    internal class ConversationRepo : Repo, IRepo<Conversation, int, Conversation>, IConversation<Conversation>
     {
+        public List<Conversation> showAllConversationToCurrentLoggedInUser(int currentLoggedInUserEmail)
+        {
+            throw new NotImplementedException();
+        }
+
         public Conversation Create(Conversation obj)
         {
             db.Conversations.Add(obj);
@@ -33,6 +39,8 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
         {
             return db.Conversations.Find(id);
         }
+
+        
 
         public Conversation Update(Conversation obj)
         {

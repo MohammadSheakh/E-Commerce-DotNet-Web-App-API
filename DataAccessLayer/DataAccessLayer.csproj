@@ -74,6 +74,8 @@
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
     <Compile Include="Helper\GenericMethodForRepo.cs" />
+    <Compile Include="Interface\Common\Conversation\IConversation.cs" />
+    <Compile Include="Interface\Common\Conversation\IMessage.cs" />
     <Compile Include="Interface\Common\Product\IProduct.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
