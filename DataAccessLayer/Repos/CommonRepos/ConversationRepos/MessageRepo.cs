@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.EF.Models.Common.Conversations;
 using DataAccessLayer.Interface;
+using DataAccessLayer.Interface.Common.Conversation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,14 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
-    internal class MessageRepo : Repo, IRepo<Message, int, Message>
+    internal class MessageRepo : Repo, IRepo<Message, int, Message>, IMessage<Message>
     {
+        public List<Message> GetAllMessageByConversationId(int conversationId)
+        {
+            var products = db.Messages.Where(p => p.ConversationId == conversationId).ToList();
+            return products;
+        }
+
         public Message Create(Message obj)
         {
             db.Messages.Add(obj);
@@ -33,6 +40,8 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
         {
             return db.Messages.Find(id);
         }
+
+        
 
         public Message Update(Message obj)
         {

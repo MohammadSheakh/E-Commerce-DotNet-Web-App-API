@@ -19,6 +19,8 @@ using DataAccessLayer.Repos.CommonRepos.ProductRepos;
 using DataAccessLayer.Interface.Common.Product;
 using DataAccessLayer.Repos.CommonRepos.ConversationRepos;
 using DataAccessLayer.EF.Models.Common.Conversations;
+using System.Runtime.Remoting.Messaging;
+using DataAccessLayer.Interface.Common.Conversation;
 
 namespace DataAccessLayer
 {
@@ -81,6 +83,12 @@ namespace DataAccessLayer
         {
             return new MessageRepo();
         }
+        public static IMessage<Message> MessageDataForGetAllMessageByConversationId()
+        {
+            return new MessageRepo();
+        }
+
+        
 
         //-----Auth-------------------------------------------------------
         public static IAuth<bool> AuthData ()
