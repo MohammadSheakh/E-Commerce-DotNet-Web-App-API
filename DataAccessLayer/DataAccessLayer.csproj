@@ -79,6 +79,7 @@
     <Compile Include="Interface\Common\Product\IProduct.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
+    <Compile Include="Interface\User\IUser.cs" />
     <Compile Include="Migrations\202312231328260_new.cs" />
     <Compile Include="Migrations\202312231328260_new.designer.cs">
       <DependentUpon>202312231328260_new.cs</DependentUpon>

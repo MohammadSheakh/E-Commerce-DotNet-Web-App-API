@@ -43,13 +43,13 @@ namespace DataAccessLayer.EF.Models.Common.Products
 
         // kon brand er product 
         [ForeignKey("Brand")]
-        public int? BrandId {  get; set; }
+        public int BrandId {  get; set; }
 
         public virtual Brand Brand { get; set; }
 
         // Kon category er product
         [ForeignKey("Category")]
-        public int? CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         public virtual Category Category{ get; set; }
 

@@ -62,6 +62,25 @@ namespace DataAccessLayer
             return new ProductRepo();
         }
 
+        public static IProduct<Products> ProductDataForCheckForLowQuantityBySellerId()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByBrand()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByCategory()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByMinAndMaxRange()
+        {
+            return new ProductRepo();
+        }
         //--------------------------------------------- Review---------------
         public static IRepo<Review, int, Review> ReviewData()
         {
@@ -75,6 +94,11 @@ namespace DataAccessLayer
 
         //--------------------------------------------- Conversation---------------
         public static IRepo<Conversation, int, Conversation> ConversationData()
+        {
+            return new ConversationRepo();
+        }
+
+        public static IConversation<Conversation> ConversationDataForshowAllConversationToCurrentLoggedInUser()
         {
             return new ConversationRepo();
         }

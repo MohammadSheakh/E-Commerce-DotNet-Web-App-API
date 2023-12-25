@@ -48,8 +48,6 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         }
 
         //  2.1. getAllProductsDetailsBySellerId [Product]
-
-
         [HttpGet] // customized // request override
         [Route("api/seller/getAllProductsDetailsBySellerId/{sellerId}")]
         // custom routing ta add kore dite hobe 
@@ -67,22 +65,32 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             }
         }
 
-        //  5. addAvailableQualityOfAProduct [Product]
-
-        //[HttpPost]
-        //[Route("api/seller/addAvailableQualityOfAProduct")]
-        //public HttpResponseMessage AddAvailableQualityOfAProduct(DTO DTO)
+        //[HttpGet]
+        //[Route("api/seller/getReport")]
+        //public HttpResponseMessage GetReport()
         //{
         //    try
         //    {
-        //       // ProductService.AddAvailableQualityOfAProduct(DTO);
-        //        return Request.CreateResponse(HttpStatusCode.OK, "Available Quality Created");
+        //        var AvailableQualityOfAllProduct = ProductService.GetAllAvailableQualityOfAllProduct();
+        //        var SpecificationOfAProduct = ProductService.GetAllAvailableQualityOfAllProduct();
+               
+                
+        //        // 🔴🔴
+        //        var checkForLowQuantity = ProductService.GetAllAvailableQualityOfAllProduct();
+        //        // koyta product and ki ki product shegula dekhate hobe ..
+
+                
+        //        var getAllBrandName = ProductService.GetAllAvailableQualityOfAllProduct();
+        //        var getAllCategoryName = ProductService.GetAllAvailableQualityOfAllProduct();
+        //        //var AvailableQualityOfAllProduct = ProductService.GetAllAvailableQualityOfAllProduct();
         //    }
         //    catch (Exception ex)
         //    {
         //        return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
         //    }
         //}
+
+        
 
         //  6. addSpecificationOfAProduct [Product]
 
@@ -102,14 +110,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         //}
 
         // 10. checkForLowQuantity [Product]
-
         [HttpGet]
-        [Route("api/seller/checkForLowQuantity")]
-        public HttpResponseMessage CheckForLowQuantity()
+        [Route("api/seller/checkForLowQuantity/{sellerId}")]
+        public HttpResponseMessage CheckForLowQuantity(int sellerId)
         {
             try
             {
-                var data = "";//= ProductService.CheckForLowQuantity();
+                var data = ProductService.CheckForLowQuantity(sellerId);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -118,7 +125,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             }
         }
 
-        // 18. sortProductByBrand [Brand]
+        // 15. sortProductByBrand [Brand]
         [HttpGet]
         [Route("api/seller/{brandName}")]
         public HttpResponseMessage SortProductByBrand(string brandName)
@@ -126,7 +133,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             try
             {
                 // brandName er upor base kore product gula niye ashbo
-                var data = "";// = ProductService.SortProductByBrand(brandName);
+                var data = ProductService.SortProductByBrand(brandName);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -135,7 +142,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             }
         }
 
-        // 19. sortProductByCategory [Category]
+        // 16. sortProductByCategory [Category]
 
         [HttpGet]
         [Route("api/seller/{categoryName}")]
@@ -144,7 +151,24 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             try
             {
                 // brandName er upor base kore product gula niye ashbo
-                var data = "";//= ProductService.SortProductByCategory(categoryName);
+                var data = ProductService.SortProductByCategory(categoryName);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        // 17. sortProductByMinAndMaxRange [Product]
+        [HttpGet]
+        [Route("api/seller/{sellerId}")]
+        public HttpResponseMessage SortProductByMinAndMaxPrice(int minPrice, int maxPrice)
+        {
+            try
+            {
+                // brandName er upor base kore product gula niye ashbo
+                var data =  ProductService.SortProductByMinAndMaxRange(minPrice, maxPrice);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -190,21 +214,6 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             }
         }
 
-        // 20. sortProductByMinAndMaxRange [Product]
-        [HttpGet]
-        [Route("api/seller/{sellerId}")]
-        public HttpResponseMessage SortProductByMinAndMaxPrice(int minPrice, int maxPrice)
-        {
-            try
-            {
-                // brandName er upor base kore product gula niye ashbo
-                var data = "";// = ProductService.SortProductByMinAndMaxPrice(minPrice, maxPrice);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
-            }
-        }
+        
     }
 }
