@@ -19,6 +19,8 @@ using DataAccessLayer.Repos.CommonRepos.ProductRepos;
 using DataAccessLayer.Interface.Common.Product;
 using DataAccessLayer.Repos.CommonRepos.ConversationRepos;
 using DataAccessLayer.EF.Models.Common.Conversations;
+using System.Runtime.Remoting.Messaging;
+using DataAccessLayer.Interface.Common.Conversation;
 
 namespace DataAccessLayer
 {
@@ -60,6 +62,25 @@ namespace DataAccessLayer
             return new ProductRepo();
         }
 
+        public static IProduct<Products> ProductDataForCheckForLowQuantityBySellerId()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByBrand()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByCategory()
+        {
+            return new ProductRepo();
+        }
+
+        public static IProduct<Products> ProductDataForSortProductByMinAndMaxRange()
+        {
+            return new ProductRepo();
+        }
         //--------------------------------------------- Review---------------
         public static IRepo<Review, int, Review> ReviewData()
         {
@@ -77,10 +98,21 @@ namespace DataAccessLayer
             return new ConversationRepo();
         }
 
+        public static IConversation<Conversation> ConversationDataForshowAllConversationToCurrentLoggedInUser()
+        {
+            return new ConversationRepo();
+        }
+
         public static IRepo<Message, int, Message> MessageData()
         {
             return new MessageRepo();
         }
+        public static IMessage<Message> MessageDataForGetAllMessageByConversationId()
+        {
+            return new MessageRepo();
+        }
+
+        
 
         //-----Auth-------------------------------------------------------
         public static IAuth<bool> AuthData ()

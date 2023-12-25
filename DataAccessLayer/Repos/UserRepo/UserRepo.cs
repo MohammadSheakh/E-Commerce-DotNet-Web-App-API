@@ -6,6 +6,7 @@ using DataAccessLayer.EF.Models.Seller.Shop;
 using DataAccessLayer.EF.Models.UserModel;
 using DataAccessLayer.Helper;
 using DataAccessLayer.Interface;
+using DataAccessLayer.Interface.User;
 using DataAccessLayer.Migrations;
 using DataAccessLayer.Repos.BuyerRepo.Profile;
 using DataAccessLayer.Repos.SellerRepo.Profile;
@@ -18,8 +19,19 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repos.UserRepo
 {
-    internal class UserRepo : Repo, IRepo<User, int, User>, IAuth<bool>
+    internal class UserRepo : Repo, IRepo<User, int, User>, IAuth<bool>, IUser<User>
     {
+
+        public User getUserByEmail(string senderEmail, string receiverEmail)
+        {
+           var user = db.Users.FirstOrDefault(u => u.Email.Equals(senderEmail) && u.Email.Equals(receiverEmail));
+           if(user != null)
+           {
+                return user;
+           }
+            return null;
+           // throw new NotImplementedException();
+        }
 
         public bool Authenticate(string email, string password)
         {
@@ -28,6 +40,8 @@ namespace DataAccessLayer.Repos.UserRepo
             return false;
             // throw new NotImplementedException();
         }
+
+
 
         
 
@@ -147,6 +161,8 @@ namespace DataAccessLayer.Repos.UserRepo
             return db.Users.Find(id);
             //throw new NotImplementedException();
         }
+
+        
 
         public User Update( User obj)
         {
