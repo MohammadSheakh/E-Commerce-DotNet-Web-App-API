@@ -53,7 +53,37 @@ namespace BusinessLogicLayer.Services.Product
             return Model_DTOMapped;   
         }
 
-        
+        // 8 checkForLowQuantity //🔰 - - -🔴🔗
+        public static List<ProductDTO> CheckForLowQuantity(int sellerId)
+        {
+            // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
+            // shegula list return korbe 
+
+            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForCheckForLowQuantityBySellerId().GetALlLowQuantityProductForSellerId(sellerId);
+
+            // Model To DTO Convert korte hobe .. 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
+
+
+            return Model_DTOMapped;
+        }
+
+
+
+        /**
+         
+                    Order er upor 
+            // dekhte hobe kon product er upor koto gula order place kora hoise 
+            // dekhte hobe kon quality er upor koto gula order place kora hoise .. 
+            // dekhte hobe orderStatusPending kader 
+            // dekhte hobe Cash on Delevery kon Order gular .. 
+            // jei product gular kono negetive review nai .. shegular total count and 
+                  // shegular tag e add hobe no_negetive_review 
+            // jei product gular 50% or er beshi review negetive shegular total count 
+                  // shegular list return korte hobe 
+            // 
+        */
+
 
         //     addAvailableQualityOfAProduct [Product]                           //🔰OK- - -🔴🔗
         //     addSpecificationOfAProduct [Product]                              //🔰OK- - -🔴🔗
@@ -61,12 +91,57 @@ namespace BusinessLogicLayer.Services.Product
         //  6. orderStatusPending [Product]                                      //🔰OK- - -🔴🔗
         //  7. getAllNegetiveReview [Product]                                    //🔰OK- - -🔴🔗
 
-        //  8. checkForLowQuantity [Product]                                     //🔰OK- - -🔴🔗
 
 
-        // 15. sortProductByBrand [Brand]                                       //🔰OK- - -🔴🔗
-        // 16. sortProductByCategory [Category]                                 //🔰OK- - -🔴🔗
-        // 17. sortProductByMinAndMaxRange [Product]                            //🔰OK- - -🔴🔗
+
+
+        // 15. sortProductByBrand [Brand]                                       //🔰 - - -🔴🔗
+        public static List<ProductDTO> SortProductByBrand(string brandName)
+        {
+            // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
+            // shegula list return korbe 
+
+            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByBrand().sortProductByBrand(brandName);
+
+            // Model To DTO Convert korte hobe .. 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
+
+
+            return Model_DTOMapped;
+        }
+
+        // 16. sortProductByCategory [Category]                                 //🔰 - - -🔴🔗
+        public static List<ProductDTO> SortProductByCategory(string categoryName)
+        {
+            // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
+            // shegula list return korbe 
+
+            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByCategory().sortProductByCategory(categoryName);
+
+            // Model To DTO Convert korte hobe .. 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
+
+
+            return Model_DTOMapped;
+        }
+
+        // 17. sortProductByMinAndMaxRange [Product]                            //🔰 - - -🔴🔗
+        public static List<ProductDTO> SortProductByMinAndMaxRange(int? minValue, int? maxValue)
+        {
+            // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
+            // shegula list return korbe 
+
+            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByMinAndMaxRange().sortProductByMinAndMaxRange(minValue, maxValue);
+
+            // Model To DTO Convert korte hobe .. 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
+
+
+            return Model_DTOMapped;
+        }
+
+
+
 
 
     }

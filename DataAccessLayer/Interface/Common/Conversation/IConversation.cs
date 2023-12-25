@@ -8,6 +8,6 @@ namespace DataAccessLayer.Interface.Common.Conversation
 {
     public interface IConversation<CLASS>
     {
-        List<CLASS> showAllConversationToCurrentLoggedInUser(int currentLoggedInUserEmail);
+        List<CLASS> showAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail);
     }
 }

@@ -30,6 +30,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
             var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<MessageDTO, Message>(messageDto);
 
+            // 🏠 Message Repo er Create method e data return kora niye problem ase
             var result = DataAccessFactory.MessageData().Create(DTO_ModelMapped);
 
             var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Message, MessageDTO>(result);
@@ -85,9 +86,11 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
         // 23 .  showAllConversationToCurrentLoggedInUser
 
-        public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> showAllConversationToCurrentLoggedInUser(int currentLoggedInUserEmail)
+        public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> showAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
         {
             var result = DataAccessFactory.ConversationDataForshowAllConversationToCurrentLoggedInUser().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
+            //DTO conversation .. 🏠
+            
             return result;
         }
     }
