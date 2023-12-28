@@ -59,7 +59,7 @@ namespace E_Commerce_Web_App_API.Controllers.User
             try
             {
                 var data = UserService.GetOneUsersProfileById(UserId);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, "hello2222");
             }
             catch (Exception ex)
             {
