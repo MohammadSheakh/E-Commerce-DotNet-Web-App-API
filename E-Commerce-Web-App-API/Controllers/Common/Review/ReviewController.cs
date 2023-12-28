@@ -35,7 +35,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         //  4. addReplyToAReview [Product]
 
         [HttpPost]
-        [Route("api/review/addReplyToAReview")]
+        [Route("api/review/addReplyToAReview")]//🔰OK- - -🔴🔗
         public HttpResponseMessage AddReplyToReview(ReviewReplyDTO reviewReplyDTO)
         {
             try
@@ -52,7 +52,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
         // 4.1 getAllReview by shopProfile Id And reviewCategory
         [HttpGet]
-        [Route("api/review/seller/all")]
+        [Route("api/review/seller/all")] //🔰OK- - -🔴🔗
         public HttpResponseMessage GetAllReviewsByShopProfileIdAndReviewCategory([FromUri] int ShopProfileId, [FromUri] string ReviewCategory)
         {
             try
@@ -72,7 +72,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
         // 4.1.1 getAllReview by product Id And reviewCategory
         [HttpGet]
-        [Route("api/review/product/all")]
+        [Route("api/review/product/all")] //🔰OK- - -🔴🔗
         public HttpResponseMessage GetAllReviewsByProductIdAndReviewCategory([FromUri] int ProductId, [FromUri] string ReviewCategory)
         {
             try
@@ -93,7 +93,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         // 4.2 
 
         [HttpGet]
-        [Route("api/review/")] // {reviewId}
+        [Route("api/review/")] // {reviewId} //🔰OK- - -🔴🔗
         public HttpResponseMessage GetAReviewByReviewId([FromUri] int ReviewId)
         {
             try
@@ -112,8 +112,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
         // 4.3
 
-        [HttpGet]
-        [Route("api/seller/GetAReviewWithReviewReplies/")] //{id}
+        [HttpGet] //🔰 - - -🔴🔗
+        [Route("api/review/GetAReviewWithReviewReplies/")] //{id}
         public HttpResponseMessage GetAReviewWithReviewReplies([FromUri] int ReviewId)
         {
             try
@@ -132,34 +132,42 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
 
 
-        // 4--. 
-        // 4-- Show All Review For Product By Category
-        // 4-- Show All Review For Seller By Category
+        // doLikeDislikeToAReview -> reviewId , sellerId, likeDislikeStatus
+
+        [HttpGet]
+        [Route("api/review/doLikeDislikeToAReview/by/")] //🔰 - - -🔴🔗
+        public HttpResponseMessage DoLikeDislikeToAReview([FromUri] int ReviewId, [FromUri] int SellerId, [FromUri] string LikeDislikeStatus)
+        {
+            try
+            {
+                var data = ReviewService.DoLikeDislikeToAReview(ReviewId, SellerId, LikeDislikeStatus);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
 
 
-        ////  9. getAllNegetiveReview [Product]
-
-        //[HttpGet]
-        //[Route("api/seller/getAllNegetiveReview")]
-        //public HttpResponseMessage GetAllNegetiveReview()
-        //{
-        //    try
-        //    {
-        //        var data = "";// ReviewService.GetAllNegetiveReview();
-        //        return Request.CreateResponse(HttpStatusCode.OK, data);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
-        //    }
-        //}
-
-
-        // doLikeDislikeToAReview
-
-        // getLikeDislikeStatusForAReview
+        // getLikeDislikeStatusForReviewIdAndSellerId -> reviewId,  sellerId
         
+        [HttpGet]
+        [Route("api/review/getLikeDislikeStatus/by/")]   //🔰 - - -🔴🔗
+        public HttpResponseMessage GetLikeDislikeStatusForReviewIdAndSellerId([FromUri] int ReviewId, [FromUri] int SellerId)
+        {
+            try
+            {
+                var data =  ReviewService.GetLikeDislikeStatusForReviewIdAndSellerId(ReviewId, SellerId);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
 
-        
+
+
     }
 }
