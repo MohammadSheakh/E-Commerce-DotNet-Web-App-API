@@ -33,7 +33,7 @@ namespace BusinessLogicLayer.Services.Common.Review
 
 
         //  4. addReplyToAReview [Product] - Tanvir sir er shathe develop kortesi 
-
+        //🔰OK- - -🔴🔗
         public static ReviewReplyDTO AddReplyToAReview(ReviewReplyDTO reviewReplyDto)
         {
             // convert DTO -> Model
@@ -46,7 +46,7 @@ namespace BusinessLogicLayer.Services.Common.Review
             return Model_DTOMapped;
         }
 
-
+        //🔰OK- - -🔴🔗
         // 4.1 GetAllReviewsByShopProfileIdAndReviewCategory [Seller]
         public static List<ReviewDTO> GetAllReviewsByShopProfileIdAndReviewCategory(int ShopProfileId, string ReviewCategory)
         {
@@ -73,7 +73,7 @@ namespace BusinessLogicLayer.Services.Common.Review
             return mappedData;
         }
 
-        // getAllReview by productId And ReviewCategory
+        // getAllReview by productId And ReviewCategory //🔰OK- - -🔴🔗
         public static List<ReviewDTO> GetAllReviewsByProductIdAndReviewCategory(int ProductId, string ReviewCategory)
         {
             // data access layer theke data anbo first e .. 
@@ -99,7 +99,7 @@ namespace BusinessLogicLayer.Services.Common.Review
             return mappedData;
         }
 
-        // 4.2 getAReview [Product]
+        // 4.2 getAReview [Product] //🔰OK- - -🔴🔗
         public static ReviewDTO GetAReviewByReviewId(int ReviewId)
         {
             // data access layer theke data anbo first e .. 
@@ -111,7 +111,7 @@ namespace BusinessLogicLayer.Services.Common.Review
             return mappedData;
         }
 
-        // 4.3 getAReviewWithReviewReplies [Product]
+        // 4.3 getAReviewWithReviewReplies [Product] //🔰 - - -🔴🔗
         public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int ReviewId)
         {
             var data = DataAccessFactory.ReviewData().Get(ReviewId);
@@ -124,13 +124,35 @@ namespace BusinessLogicLayer.Services.Common.Review
             });
             var mapper = new Mapper(cfg);
 
-
             var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
 
-
             // var mappedData2 = 
-
+            //return mappedData1;
             return mappedData1;
+        }
+
+        //  doLikeDislikeToAReview [Product] //🔰 - - -🔴🔗
+        public static ReviewDTO DoLikeDislikeToAReview(int ReviewId, int SellerId, string LikeDislikeStatus)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId, LikeDislikeStatus);
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+
+            return mappedData;
+        }
+
+        //  getLikeDislikeStatusForReviewIdAndSellerId [Product] //🔰 - - -🔴🔗
+        public static ReviewDTO GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int SellerId)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId);
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+
+            return mappedData;
         }
     }
 }
