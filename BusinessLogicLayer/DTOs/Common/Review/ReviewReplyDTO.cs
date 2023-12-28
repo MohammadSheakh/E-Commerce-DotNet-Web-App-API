@@ -13,7 +13,7 @@ namespace BusinessLogicLayer.DTOs.Review
         //[Required]
         public string ReplyDetails { get; set; }
 
-        public DateTime? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; } // set in Repo
 
         
         public string PostedBy { get; set; } // kon user reply diyeche

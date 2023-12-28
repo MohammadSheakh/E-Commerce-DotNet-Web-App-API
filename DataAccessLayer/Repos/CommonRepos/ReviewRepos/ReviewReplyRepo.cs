@@ -12,6 +12,8 @@ namespace DataAccessLayer.Repos.SellerRepo
     {
         public ReviewReply Create(ReviewReply obj)
         {
+            obj.CreatedAt = DateTime.Now;
+
             db.ReviewReplies.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;

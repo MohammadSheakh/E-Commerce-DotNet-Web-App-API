@@ -145,14 +145,21 @@ namespace BusinessLogicLayer.Services.Product
         // 19.1 getAllCategory
         public static List<CategoryDTO> GetAllCategory()
         {
-            var result = DataAccessFactory.
-            return null;
+            var result = DataAccessFactory.CategoryData().Get();
+
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Category, CategoryDTO>(result);
+
+
+            return Model_DTOMapped;
         }
         // 19.2 getAllBrand
         public static List<BrandDTO> GetAllBrand()
         {
+            var result = DataAccessFactory.BrandData().Get();
 
-            return null;
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Brand, BrandDTO>(result);
+            
+            return Model_DTOMapped;
         }
 
         // 19.3 Search Product by productName ,

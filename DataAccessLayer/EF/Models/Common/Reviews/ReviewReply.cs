@@ -13,7 +13,7 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public int Id { get; set; } // eta may be required hobe na 
 
         [Required]
         public string ReplyDetails { get; set; }
