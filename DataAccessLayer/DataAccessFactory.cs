@@ -21,6 +21,7 @@ using DataAccessLayer.Repos.CommonRepos.ConversationRepos;
 using DataAccessLayer.EF.Models.Common.Conversations;
 using System.Runtime.Remoting.Messaging;
 using DataAccessLayer.Interface.Common.Conversation;
+using DataAccessLayer.Interface.Common.Review;
 
 namespace DataAccessLayer
 {
@@ -81,8 +82,31 @@ namespace DataAccessLayer
         {
             return new ProductRepo();
         }
+        //----------------------------------------- Category Brand -----------------
+        public static IRepo<Category, int , Category> CategoryData()
+        {
+            return new CategoryRepo();
+        }
+        
+        public static IRepo<Brand, int, Brand> BrandData()
+        {
+            return new BrandRepo();
+        }
+        public static IRepo<CategoryBrand, int, CategoryBrand> CategoryAndBrandData()
+        {
+            return new CategoryBrandRepo();
+        }
         //--------------------------------------------- Review---------------
         public static IRepo<Review, int, Review> ReviewData()
+        {
+            return new ReviewRepo();
+        }
+        public static IReview<Review> ReviewDataForGetAllReviewsByShopProfileIdAndReviewCategory()
+        {
+            return new ReviewRepo();
+        }
+
+        public static IReview<Review> ReviewDataForGetAllReviewsByProductIdAndReviewCategory()
         {
             return new ReviewRepo();
         }
@@ -91,6 +115,8 @@ namespace DataAccessLayer
         {
             return new ReviewReplyRepo();
         }
+
+
 
         //--------------------------------------------- Conversation---------------
         public static IRepo<Conversation, int, Conversation> ConversationData()

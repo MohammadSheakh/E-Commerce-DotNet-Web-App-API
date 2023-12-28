@@ -12,9 +12,10 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
     {
         public Brand Create(Brand obj)
         {
-            throw new NotImplementedException();
+            db.Brands.Add(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return null;
         }
-
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -22,12 +23,12 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 
         public List<Brand> Get()
         {
-            throw new NotImplementedException();
+            return db.Brands.ToList();
         }
 
         public Brand Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Brands.Find(id);
         }
 
         public Brand Update(Brand obj)

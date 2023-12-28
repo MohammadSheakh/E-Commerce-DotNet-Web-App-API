@@ -17,6 +17,7 @@ namespace BusinessLogicLayer.Services.Common.Review
 {
     public class ReviewService
     {
+        // //🔰OK- - -🔴🔗
         //  3. addReview [Product] - Tanvir sir er shathe develop kortesi 
         public static ReviewDTO AddReview(ReviewDTO reviewDto)
         {
@@ -32,7 +33,7 @@ namespace BusinessLogicLayer.Services.Common.Review
 
 
         //  4. addReplyToAReview [Product] - Tanvir sir er shathe develop kortesi 
-
+        //🔰OK- - -🔴🔗
         public static ReviewReplyDTO AddReplyToAReview(ReviewReplyDTO reviewReplyDto)
         {
             // convert DTO -> Model
@@ -45,13 +46,13 @@ namespace BusinessLogicLayer.Services.Common.Review
             return Model_DTOMapped;
         }
 
-
-        // 4.1 getAllReview [Seller]
-        public static List<ReviewDTO> GetAllReview()
+        //🔰OK- - -🔴🔗
+        // 4.1 GetAllReviewsByShopProfileIdAndReviewCategory [Seller]
+        public static List<ReviewDTO> GetAllReviewsByShopProfileIdAndReviewCategory(int ShopProfileId, string ReviewCategory)
         {
             // data access layer theke data anbo first e .. 
             
-            var data = DataAccessFactory.ReviewData().Get();
+            var data = DataAccessFactory.ReviewDataForGetAllReviewsByShopProfileIdAndReviewCategory().GetAllReviewsByShopProfileIdAndReviewCategory(ShopProfileId, ReviewCategory);
 
 
             // eta te DTO te convert na korle application layer use korte parbe na 
@@ -72,11 +73,37 @@ namespace BusinessLogicLayer.Services.Common.Review
             return mappedData;
         }
 
-        // 4.2 getAReview [Product]
-        public static ReviewDTO GetAReview(int id)
+        // getAllReview by productId And ReviewCategory //🔰OK- - -🔴🔗
+        public static List<ReviewDTO> GetAllReviewsByProductIdAndReviewCategory(int ProductId, string ReviewCategory)
         {
             // data access layer theke data anbo first e .. 
-            var data = DataAccessFactory.ReviewData().Get(id);
+
+            var data = DataAccessFactory.ReviewDataForGetAllReviewsByProductIdAndReviewCategory().GetAllReviewsByProductIdAndReviewCategory(ProductId, ReviewCategory);
+
+
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            //var cfg = new MapperConfiguration(c =>
+            //{
+            //    c.CreateMap<Review, ReviewDTO>();
+            //});
+            //var mapper = new Mapper(cfg);
+
+            //var mapped = mapper.Map<List<ReviewDTO>>(data);
+
+            //var mappedData = AutoMapperConverter.ConvertForList<Review, ReviewDTO>(data);
+
+            var mappedData = AutoMapperConverter.ConvertForList<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+
+
+            return mappedData;
+        }
+
+        // 4.2 getAReview [Product] //🔰OK- - -🔴🔗
+        public static ReviewDTO GetAReviewByReviewId(int ReviewId)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(ReviewId);
             // eta te DTO te convert na korle application layer use korte parbe na 
 
             var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
@@ -84,10 +111,10 @@ namespace BusinessLogicLayer.Services.Common.Review
             return mappedData;
         }
 
-        // 4.3 getAReviewWithReviewReplies [Product]
-        public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int id)
+        // 4.3 getAReviewWithReviewReplies [Product] //🔰 - - -🔴🔗
+        public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int ReviewId)
         {
-            var data = DataAccessFactory.ReviewData().Get(id);
+            var data = DataAccessFactory.ReviewData().Get(ReviewId);
             var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, Review_ReviewReplyDTO>(data);
 
             var cfg = new MapperConfiguration(c =>
@@ -97,13 +124,35 @@ namespace BusinessLogicLayer.Services.Common.Review
             });
             var mapper = new Mapper(cfg);
 
-
             var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
 
-
             // var mappedData2 = 
-
+            //return mappedData1;
             return mappedData1;
+        }
+
+        //  doLikeDislikeToAReview [Product] //🔰 - - -🔴🔗
+        public static ReviewDTO DoLikeDislikeToAReview(int ReviewId, int SellerId, string LikeDislikeStatus)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId, LikeDislikeStatus);
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+
+            return mappedData;
+        }
+
+        //  getLikeDislikeStatusForReviewIdAndSellerId [Product] //🔰 - - -🔴🔗
+        public static ReviewDTO GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int SellerId)
+        {
+            // data access layer theke data anbo first e .. 
+            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId);
+            // eta te DTO te convert na korle application layer use korte parbe na 
+
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+
+            return mappedData;
         }
     }
 }

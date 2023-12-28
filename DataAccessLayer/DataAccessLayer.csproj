@@ -76,6 +76,7 @@
     <Compile Include="Helper\GenericMethodForRepo.cs" />
     <Compile Include="Interface\Common\Conversation\IConversation.cs" />
     <Compile Include="Interface\Common\Conversation\IMessage.cs" />
+    <Compile Include="Interface\Common\Product\CategoryAndBrand\ICategoryBrand.cs" />
     <Compile Include="Interface\Common\Product\IProduct.cs" />
     <Compile Include="Interface\Common\Review\IReview.cs" />
     <Compile Include="Interface\IAuth.cs" />
@@ -121,13 +122,18 @@
     <Compile Include="Migrations\202312280920399_addCategoryBrandManyToMany01.designer.cs">
       <DependentUpon>202312280920399_addCategoryBrandManyToMany01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312281347500_reviewUpdated02.cs" />
+    <Compile Include="Migrations\202312281347500_reviewUpdated02.designer.cs">
+      <DependentUpon>202312281347500_reviewUpdated02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
     <Compile Include="Repos\CommonRepos\ConversationRepos\ConversationRepo.cs" />
     <Compile Include="Repos\CommonRepos\ConversationRepos\MessageRepo.cs" />
-    <Compile Include="Repos\CommonRepos\ProductRepos\BrandRepo.cs" />
-    <Compile Include="Repos\CommonRepos\ProductRepos\CategoryRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\BrandRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\CategoryBrandRepo.cs" />
+    <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\CategoryRepo.cs" />
     <Compile Include="Repos\CommonRepos\ProductRepos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SellerRepo\Profile\SellerProfileRepo.cs" />
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312280920399_addCategoryBrandManyToMany01.resx">
       <DependentUpon>202312280920399_addCategoryBrandManyToMany01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312281347500_reviewUpdated02.resx">
+      <DependentUpon>202312281347500_reviewUpdated02.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

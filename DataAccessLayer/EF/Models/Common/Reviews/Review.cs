@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.EF.Models.Common.Reviews;
+using DataAccessLayer.EF.Models.Seller.Shop;
 using DataAccessLayer.EF.Models.UserModel;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,17 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
 
         public int? DisLikeCount { get; set; }
 
-        // kon post er Review 
+        // kon product er Review 
         [ForeignKey("Product")]
         public int? ProductId { get; set; }
         public virtual DataAccessLayer.EF.Models.Common.Products.Products Product{ get; set; }
+
+
+        // kon shop er review 
+
+        [ForeignKey("ShopProfile")]
+        public int? ShopProfileId { get; set; }
+        public virtual ShopProfile ShopProfile{ get; set; }
 
 
         [ForeignKey("User")]
