@@ -132,6 +132,11 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
             }
         }
 
+        // doLikeDislikeToAReview
+
+        // getLikeDislikeStatusForAReview
+        
+
         
     }
 }

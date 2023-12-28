@@ -13,7 +13,7 @@ using BusinessLogicLayer.DTOs.Common.Conversation;
 
 namespace BusinessLogicLayer.Services.Common.Conversation
 {
-    internal class ConversationService
+    public class ConversationService
     {
         // 18. createNewMessage [Message]
         // 19. createNewConversation [Conversation]
@@ -24,7 +24,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
 
         // 18. createNewMessage [Message]
-        public static MessageDTO createNewMessage(MessageDTO messageDto) //🔰 - - -🔴🔗
+        public static MessageDTO CreateNewMessage(MessageDTO messageDto) //🔰 - - -🔴🔗
         {
             // auto mapper diye convert korte hobe 
 
@@ -40,7 +40,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
 
         // 19. createNewConversation [Message] //🔰 - - -🔴🔗
-        public static ConversationDTO createNewConversation(ConversationDTO conversationDto)
+        public static ConversationDTO CreateNewConversation(ConversationDTO conversationDto)
         {
             // auto mapper diye convert korte hobe 
 
@@ -55,7 +55,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
         // 20. showAllConversation [Conversation]
 
-        public static List<ConversationDTO> showAllConversation()
+        public static List<ConversationDTO> ShowAllConversation(string loggedInUserEmail)
         {
             var result = DataAccessFactory.ConversationData().Get();
             // Model to DTO
@@ -65,7 +65,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
         }
 
         // 21. showAllMessageOfAConversation [Conversation]
-        public static List<MessageDTO> showAllMessageOfAConversation(int conversationId)
+        public static List<MessageDTO> ShowAllMessageOfAConversation(int conversationId)
         {
             var result = DataAccessFactory.MessageDataForGetAllMessageByConversationId().GetAllMessageByConversationId(conversationId);
             // Model to DTO
@@ -78,7 +78,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
 
         // 22. deleteConversationByConversationId
-        public static bool deleteConversationByConversationId(int conversationId)
+        public static bool DeleteConversationByConversationId(int conversationId)
         {
             var result = DataAccessFactory.ConversationData().Delete(conversationId);
             return result;
@@ -86,7 +86,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
         // 23 .  showAllConversationToCurrentLoggedInUser
 
-        public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> showAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
+        public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> ShowAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
         {
             var result = DataAccessFactory.ConversationDataForshowAllConversationToCurrentLoggedInUser().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
             //DTO conversation .. 🏠

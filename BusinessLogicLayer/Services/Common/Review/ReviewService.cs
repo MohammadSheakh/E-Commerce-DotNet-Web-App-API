@@ -81,7 +81,6 @@ namespace BusinessLogicLayer.Services.Common.Review
 
             var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
 
-
             return mappedData;
         }
 

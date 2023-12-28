@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Seller.Profile;
 using DataAccessLayer.EF.Models.Seller.Profile;
+using BusinessLogicLayer.DTOs.Common.Product.Brand_And_Category;
 
 namespace BusinessLogicLayer.Services.Product
 {
@@ -141,7 +142,49 @@ namespace BusinessLogicLayer.Services.Product
         }
 
 
+        // 19.1 getAllCategory
+        public static List<CategoryDTO> GetAllCategory()
+        {
+            var result = DataAccessFactory.
+            return null;
+        }
+        // 19.2 getAllBrand
+        public static List<BrandDTO> GetAllBrand()
+        {
 
+            return null;
+        }
+
+        // 19.3 Search Product by productName ,
+
+
+        public static List<ProductDTO> SearchProductByCategory(string searchValue, string categoryType)
+        {
+
+            // category er upor base kore  data pull kore niye ashbo  
+
+            if(categoryType == "category")
+            {
+                // category er upor base kore shob product show korte hobe
+            }
+            if (categoryType == "brand")
+            {
+                // brand er upor base kore shob product show korte hobe
+            }
+            if (categoryType == "product")
+            {
+                // productName er upor base kore shob product show korte hobe
+            }
+
+            //var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByMinAndMaxRange().sortProductByMinAndMaxRange(minValue, maxValue);
+
+            // Model To DTO Convert korte hobe .. 
+            //var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
+
+
+            //return Model_DTOMapped;
+            return null;
+        }
 
 
     }

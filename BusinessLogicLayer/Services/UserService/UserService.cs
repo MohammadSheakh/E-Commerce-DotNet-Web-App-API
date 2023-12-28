@@ -68,6 +68,7 @@ namespace BusinessLogicLayer.Services.UserService
             var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<SellerProfile, SellerProfileDTO>(result);
 
             return Model_DTOMapped;
+            //return "boom";
         }
 
         // User.4. GetAllUsersProfile //🔰OK- - -🔴🔗
