@@ -1,4 +1,6 @@
-﻿using BusinessLogicLayer.DTOs.Conversation;
+﻿using BusinessLogicLayer.DTOs.Common.Conversation;
+using BusinessLogicLayer.DTOs.Conversation;
+using BusinessLogicLayer.Services.Common.Conversation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +31,30 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
 
         // 22. createNewConversation [Conversation] //🔰 - - -🔴🔗
 
-        // 23. showAllConversation [Conversation] 
-
-        [HttpGet]
-        [Route("api/seller/message/showAllConversation")] //🔰 - - -🔴🔗
-        public HttpResponseMessage ShowAllConversation()
+        [HttpPost]
+        [Route("api/seller/conversation/createNewConversation")] //🔰 - - -🔴🔗
+        public HttpResponseMessage CreateNewConversation(ConversationDTO conversationDto)
         {
             try
             {
-                var allConversation = "";// = ConversationService.ShowAllConversation(string loggedInUserEmail);
+                ConversationService.CreateNewConversation(conversationDto);
+                return Request.CreateResponse(HttpStatusCode.OK, "New Conversation Created");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        // 23. showAllConversation [Conversation] 
+
+        [HttpGet]
+        [Route("api/seller/message/showAllConversation/{loggedInUserEmail}")] //🔰 - - -🔴🔗
+        public HttpResponseMessage ShowAllConversation(string loggedInUserEmail)
+        {
+            try
+            {
+                var allConversation = ConversationService.ShowAllConversation(loggedInUserEmail);
                 return Request.CreateResponse(HttpStatusCode.OK, allConversation);
             }
             catch (Exception ex)
@@ -55,7 +72,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         {
             try
             {
-                var allConversation = "";// = ConversationService.ShowAllMessageOfAConversation(conversationId);
+                var allConversation = ConversationService.ShowAllMessageOfAConversation(conversationId);
                 return Request.CreateResponse(HttpStatusCode.OK, allConversation);
             }
             catch (Exception ex)
