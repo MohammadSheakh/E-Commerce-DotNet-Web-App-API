@@ -19,14 +19,17 @@ namespace BusinessLogicLayer.DTOs.Review
        
         public string ReviewDetails { get; set; }
 
-        public DateTime? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; } // set in Repo
 
-        public int? LikeCount { get; set; }
+        //public int? LikeCount { get; set; }
 
-        public int? DisLikeCount { get; set; }
+        //public int? DisLikeCount { get; set; }
 
+        public int? ProductId { get; set; }
+
+        
+        public int? ShopProfileId { get; set; }
         public string PostedBy { get; set; }
-
 
     }
 }

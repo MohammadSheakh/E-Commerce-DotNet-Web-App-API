@@ -15,13 +15,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         // 21. createNewMessage [Message]
 
         [HttpPost]
-        [Route("api/seller/message/createNewMessage")] //🔰 - - -🔴🔗
+        [Route("api/conversation/createNewMessage")] //🔰 - - -🔴🔗
         public HttpResponseMessage CreateNewMessage(MessageDTO messageDTO)
         {
             try
             {
-                //ConversationService.CreateNewMessage(messageDTO);
-                return Request.CreateResponse(HttpStatusCode.OK, "New Message Created");
+                var createdMessage =  ConversationService.CreateNewMessage(messageDTO);
+                return Request.CreateResponse(HttpStatusCode.OK, createdMessage);
             }
             catch (Exception ex)
             {
@@ -32,13 +32,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         // 22. createNewConversation [Conversation] //🔰 - - -🔴🔗
 
         [HttpPost]
-        [Route("api/seller/conversation/createNewConversation")] //🔰 - - -🔴🔗
+        [Route("api/conversation/createNewConversation")] //🔰 - - -🔴🔗
         public HttpResponseMessage CreateNewConversation(ConversationDTO conversationDto)
         {
             try
             {
-                ConversationService.CreateNewConversation(conversationDto);
-                return Request.CreateResponse(HttpStatusCode.OK, "New Conversation Created");
+                var createdConversation =  ConversationService.CreateNewConversation(conversationDto);
+                return Request.CreateResponse(HttpStatusCode.OK, createdConversation);
             }
             catch (Exception ex)
             {
@@ -49,8 +49,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         // 23. showAllConversation [Conversation] 
 
         [HttpGet]
-        [Route("api/seller/message/showAllConversation/{loggedInUserEmail}")] //🔰 - - -🔴🔗
-        public HttpResponseMessage ShowAllConversation(string loggedInUserEmail)
+        [Route("api/conversation/All")] //🔰 - - -🔴🔗 {loggedInUserEmail}
+        public HttpResponseMessage ShowAllConversation([FromUri] string loggedInUserEmail)
         {
             try
             {
@@ -67,8 +67,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         // 24. showAllMessageOfAConversation [Conversation] //🔰 - - -🔴🔗
 
         [HttpGet]
-        [Route("api/seller/message/showAllMessageOfAConversation/{conversationId}")]
-        public HttpResponseMessage ShowAllMessageOfAConversation(int conversationId)
+        [Route("api/conversation/showAllMessage/by/")] // {conversationId}
+        public HttpResponseMessage ShowAllMessageOfAConversation([FromUri] int conversationId)
         {
             try
             {

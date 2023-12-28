@@ -199,7 +199,6 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         {
             try
             {
-
                 var data = ProductService.GetAllCategory();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }

@@ -12,9 +12,10 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
     {
         public Category Create(Category obj)
         {
-            throw new NotImplementedException();
+            db.Categories.Add(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return null;
         }
-
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -22,12 +23,12 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 
         public List<Category> Get()
         {
-            throw new NotImplementedException();
+            return db.Categories.ToList();
         }
 
         public Category Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Categories.Find(id);
         }
 
         public Category Update(Category obj)

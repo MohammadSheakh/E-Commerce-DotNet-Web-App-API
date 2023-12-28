@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interface.Common.Review
 {
-    internal interface IReview<CLASS>
+    public interface IReview<CLASS>
     {
-        //CLASS 
+        
+        List<CLASS> GetAllReviewsByShopProfileIdAndReviewCategory(int ShopProfileId, string ReviewCategory);
+        List<CLASS> GetAllReviewsByProductIdAndReviewCategory(int ProductId, string ReviewCategory);
     }
 }
