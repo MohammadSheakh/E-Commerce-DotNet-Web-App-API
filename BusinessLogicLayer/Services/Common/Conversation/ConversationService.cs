@@ -67,7 +67,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
         // 21. showAllMessageOfAConversation [Conversation]
         public static List<MessageDTO> ShowAllMessageOfAConversation(int conversationId)
         {
-            var result = DataAccessFactory.MessageDataForGetAllMessageByConversationId().GetAllMessageByConversationId(conversationId);
+            var result = DataAccessFactory.IMessageData().GetAllMessageByConversationId(conversationId);
             // Model to DTO
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Message, MessageDTO>(result);
 
@@ -88,7 +88,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
         public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> ShowAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
         {
-            var result = DataAccessFactory.ConversationDataForshowAllConversationToCurrentLoggedInUser().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
+            var result = DataAccessFactory.IConversationData().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
             //DTO conversation .. 🏠
             
             return result;

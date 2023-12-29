@@ -134,13 +134,13 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
         // doLikeDislikeToAReview -> reviewId , sellerId, likeDislikeStatus
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/review/doLikeDislikeToAReview/by/")] //🔰 - - -🔴🔗
-        public HttpResponseMessage DoLikeDislikeToAReview([FromUri] int ReviewId, [FromUri] int SellerId, [FromUri] string LikeDislikeStatus)
+        public HttpResponseMessage DoLikeDislikeToAReview([FromUri] int ReviewId, [FromUri] int UserId, [FromUri] string LikeDislikeStatus)
         {
             try
             {
-                var data = ReviewService.DoLikeDislikeToAReview(ReviewId, SellerId, LikeDislikeStatus);
+                var data = ReviewService.DoLikeDislikeToAReview(ReviewId, UserId, LikeDislikeStatus);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -154,11 +154,11 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
         
         [HttpGet]
         [Route("api/review/getLikeDislikeStatus/by/")]   //🔰 - - -🔴🔗
-        public HttpResponseMessage GetLikeDislikeStatusForReviewIdAndSellerId([FromUri] int ReviewId, [FromUri] int SellerId)
+        public HttpResponseMessage GetLikeDislikeStatusForReviewIdAndSellerId([FromUri] int ReviewId, [FromUri] int UserId)
         {
             try
             {
-                var data =  ReviewService.GetLikeDislikeStatusForReviewIdAndSellerId(ReviewId, SellerId);
+                var data =  ReviewService.GetLikeDislikeStatusForReviewIdAndSellerId(ReviewId, UserId);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
