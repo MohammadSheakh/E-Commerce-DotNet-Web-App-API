@@ -39,7 +39,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
         }
 
 
-        // 19. createNewConversation [Message] //🔰 - - -🔴🔗
+        // 19. createNewConversation [Message] 
         //public static ConversationDTO CreateNewConversation(ConversationDTO conversationDto)
         //{
         //    // auto mapper diye convert korte hobe 
@@ -53,7 +53,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
         //}
 
-        // 20. showAllConversation [Conversation]
+        // 20. showAllConversation [Conversation] //🔰 - - -🔴🔗
 
         public static List<ConversationDTO> ShowAllConversation(string loggedInUserEmail)
         {
@@ -64,7 +64,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
             return Model_DTOMapped;
         }
 
-        // 21. showAllMessageOfAConversation [Conversation]
+        // 21. showAllMessageOfAConversation [Conversation] //🔰 - - -🔴🔗
         public static List<MessageDTO> ShowAllMessageOfAConversation(int conversationId)
         {
             var result = DataAccessFactory.IMessageData().GetAllMessageByConversationId(conversationId);
@@ -80,8 +80,21 @@ namespace BusinessLogicLayer.Services.Common.Conversation
         // . deleteConversationByConversationId
         public static bool DeleteConversationByConversationId(int conversationId)
         {
-            var result = DataAccessFactory.ConversationData().Delete(conversationId);
-            return result;
+            // conversation delete korar age .. ei conversationId er shob message gula 
+            // delete korte hobe .. 
+
+            // age dekhte hobe ..  conversation ase kina .. thakle .. 
+            // tar under e thaka message gula delete korte hobe .. 
+
+            var res = DataAccessFactory.IMessageData().DeleteAllMessageByConversationId(conversationId);
+            
+            if(res != null)
+            {
+                var result = DataAccessFactory.ConversationData().Delete(conversationId);
+                return result;
+            }
+            return false;
+            
         }
 
         // .  showAllConversationToCurrentLoggedInUser
