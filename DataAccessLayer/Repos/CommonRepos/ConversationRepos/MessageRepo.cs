@@ -13,12 +13,23 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
     internal class MessageRepo : Repo, IRepo<Message, int, Message>, IMessage<Message>
     {
+
+        public bool DeleteAllMessageByConversationId(int conversationId)
+        {
+            var allMessage = GetAllMessageByConversationId(conversationId);
+            foreach (var item in allMessage)
+            {
+                db.Messages.Remove(item);
+            }
+            
+            return db.SaveChanges() > 0; 
+        }
         public List<Message> GetAllMessageByConversationId(int conversationId)
         {
-            var products = db.Messages.Where(p => p.ConversationId == conversationId).ToList();
+            var messages = db.Messages.Where(p => p.ConversationId == conversationId).ToList();
 
 
-            return products;
+            return messages;
         }
 
         public Message Create(Message obj)

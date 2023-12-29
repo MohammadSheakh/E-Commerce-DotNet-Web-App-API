@@ -10,5 +10,7 @@ namespace DataAccessLayer.Interface.Common.Conversation
     public interface IMessage<CLASS>
     {
         List<Message> GetAllMessageByConversationId(int conversationId);
+
+        bool DeleteAllMessageByConversationId(int conversationId);
     }
 }

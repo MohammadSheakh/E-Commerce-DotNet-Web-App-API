@@ -82,7 +82,20 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         }
 
         // deleteConversationByConversationId
-        // showAllConversationToCurrentLoggedInUser
+        [HttpDelete]
+        [Route("api/conversation/deletedConversation/by")] // {conversationId}
+        public HttpResponseMessage DeleteConversationByConversationId([FromUri] int conversationId)
+        {
+            try
+            {
+                var deletedConversation = ConversationService.DeleteConversationByConversationId(conversationId);
+                return Request.CreateResponse(HttpStatusCode.OK, deletedConversation);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
     }
 
 }
