@@ -24,7 +24,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
 
         // 18. createNewMessage [Message]
-        public static MessageDTO CreateNewMessage(MessageDTO messageDto) //🔰 - - -🔴🔗
+        public static MessageDTO CreateNewMessage(MessageDTO messageDto) //🔰 OK - - -🔴🔗
         {
             // auto mapper diye convert korte hobe 
 
@@ -40,24 +40,24 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
 
         // 19. createNewConversation [Message] //🔰 - - -🔴🔗
-        public static ConversationDTO CreateNewConversation(ConversationDTO conversationDto)
-        {
-            // auto mapper diye convert korte hobe 
+        //public static ConversationDTO CreateNewConversation(ConversationDTO conversationDto)
+        //{
+        //    // auto mapper diye convert korte hobe 
 
-            var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<ConversationDTO, DataAccessLayer.EF.Models.Common.Conversations.Conversation>(conversationDto);
+        //    var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<ConversationDTO, DataAccessLayer.EF.Models.Common.Conversations.Conversation>(conversationDto);
 
-            var result = DataAccessFactory.ConversationData().Create(DTO_ModelMapped);
+        //    var result = DataAccessFactory.ConversationData().Create(DTO_ModelMapped);
 
-            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Conversations.Conversation, ConversationDTO>(result);
-            return Model_DTOMapped;
+        //    var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Conversations.Conversation, ConversationDTO>(result);
+        //    return Model_DTOMapped;
 
-        }
+        //}
 
         // 20. showAllConversation [Conversation]
 
         public static List<ConversationDTO> ShowAllConversation(string loggedInUserEmail)
         {
-            var result = DataAccessFactory.ConversationData().Get();
+            var result = DataAccessFactory.IConversationData().ShowAllConversationByLoggedInUserEmail(loggedInUserEmail);
             // Model to DTO
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<DataAccessLayer.EF.Models.Common.Conversations.Conversation, ConversationDTO>(result);
 
@@ -77,21 +77,21 @@ namespace BusinessLogicLayer.Services.Common.Conversation
         }
 
 
-        // 22. deleteConversationByConversationId
+        // . deleteConversationByConversationId
         public static bool DeleteConversationByConversationId(int conversationId)
         {
             var result = DataAccessFactory.ConversationData().Delete(conversationId);
             return result;
         }
 
-        // 23 .  showAllConversationToCurrentLoggedInUser
+        // .  showAllConversationToCurrentLoggedInUser
 
-        public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> ShowAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
-        {
-            var result = DataAccessFactory.IConversationData().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
-            //DTO conversation .. 🏠
+        //public static List<DataAccessLayer.EF.Models.Common.Conversations.Conversation> ShowAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
+        //{
+        //    var result = DataAccessFactory.IConversationData().showAllConversationToCurrentLoggedInUser(currentLoggedInUserEmail);
+        //    //DTO conversation .. 🏠
             
-            return result;
-        }
+        //    return result;
+        //}
     }
 }

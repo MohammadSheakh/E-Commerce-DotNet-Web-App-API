@@ -22,14 +22,14 @@ namespace DataAccessLayer.Repos.UserRepo
     internal class UserRepo : Repo, IRepo<User, int, User>, IAuth<bool>, IUser<User>
     {
 
-        public User getUserByEmail(string senderEmail, string receiverEmail)
+        public bool getUserByEmail(string senderEmail, string receiverEmail)
         {
-           var user = db.Users.FirstOrDefault(u => u.Email.Equals(senderEmail) && u.Email.Equals(receiverEmail));
+           var user = db.Users.Where(u => u.Email.Equals(senderEmail) && u.Email.Equals(receiverEmail));
            if(user != null)
            {
-                return user;
+                return true;
            }
-            return null;
+            return false;
            // throw new NotImplementedException();
         }
 

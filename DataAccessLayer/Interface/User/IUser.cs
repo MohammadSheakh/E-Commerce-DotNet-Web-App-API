@@ -8,6 +8,6 @@ namespace DataAccessLayer.Interface.User
 {
     public interface IUser<CLASS>
     {
-        CLASS getUserByEmail(string senderEmail, string receiverEmail);
+        bool getUserByEmail(string senderEmail, string receiverEmail);
     }
 }
