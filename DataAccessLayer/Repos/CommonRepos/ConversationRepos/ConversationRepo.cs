@@ -11,7 +11,7 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
     internal class ConversationRepo : Repo, IRepo<Conversation, int, Conversation>, IConversation<Conversation>
     {
-        public List<Conversation> showAllConversationToCurrentLoggedInUser(string currentLoggedInUserEmail)
+        public List<Conversation> ShowAllConversationByLoggedInUserEmail(string currentLoggedInUserEmail)
         {
             // 1. current logged in user conversation er participantEmail er moddhe ase kina check korbo
             //    shei conversation gula niye ashbo 

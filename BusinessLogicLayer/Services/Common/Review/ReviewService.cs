@@ -145,13 +145,13 @@ namespace BusinessLogicLayer.Services.Common.Review
         }
 
         //  getLikeDislikeStatusForReviewIdAndSellerId [Product] //🔰 - - -🔴🔗
-        public static LikeDislikeDTO GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int UserId)
+        public static LikeDislikeDTOForType GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int UserId)
         {
             // data access layer theke data anbo first e .. 
             var data = DataAccessFactory.IReviewData().GetLikeDislikeStatusForReviewIdAndSellerId(ReviewId, UserId);
-            // eta te DTO te convert na korle application layer use korte parbe na 
+            // eta te DTO te convert na korle application layer use korte parbe na  
 
-            var mappedData = AutoMapperConverter.ConvertForSingleInstance<LikeDislike, LikeDislikeDTO > (data);
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<LikeDislike, LikeDislikeDTOForType> (data);
 
             return mappedData;
         }

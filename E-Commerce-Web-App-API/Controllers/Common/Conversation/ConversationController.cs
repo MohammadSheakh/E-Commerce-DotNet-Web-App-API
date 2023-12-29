@@ -15,7 +15,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
         // 21. createNewMessage [Message]
 
         [HttpPost]
-        [Route("api/conversation/createNewMessage")] //🔰 - - -🔴🔗
+        [Route("api/conversation/createNewMessage")] //🔰 OK - - -🔴🔗
         public HttpResponseMessage CreateNewMessage(MessageDTO messageDTO)
         {
             try
@@ -31,20 +31,20 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
 
         // 22. createNewConversation [Conversation] //🔰 - - -🔴🔗
 
-        [HttpPost]
-        [Route("api/conversation/createNewConversation")] //🔰 - - -🔴🔗
-        public HttpResponseMessage CreateNewConversation(ConversationDTO conversationDto)
-        {
-            try
-            {
-                var createdConversation =  ConversationService.CreateNewConversation(conversationDto);
-                return Request.CreateResponse(HttpStatusCode.OK, createdConversation);
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
-            }
-        }
+        //[HttpPost]
+        //[Route("api/conversation/createNewConversation")] //🔰 - - -🔴🔗
+        //public HttpResponseMessage CreateNewConversation(ConversationDTO conversationDto)
+        //{
+        //    try
+        //    {
+        //        var createdConversation =  ConversationService.CreateNewConversation(conversationDto);
+        //        return Request.CreateResponse(HttpStatusCode.OK, createdConversation);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+        //    }
+        //}
 
         // 23. showAllConversation [Conversation] 
 
@@ -61,7 +61,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
             }
-        }
+        } 
 
 
         // 24. showAllMessageOfAConversation [Conversation] //🔰 - - -🔴🔗
@@ -81,6 +81,8 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Conversation
             }
         }
 
+        // deleteConversationByConversationId
+        // showAllConversationToCurrentLoggedInUser
     }
 
 }
