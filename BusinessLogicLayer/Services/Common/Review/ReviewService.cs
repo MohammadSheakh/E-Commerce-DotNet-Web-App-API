@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using DataAccessLayer.EF.Models.Common.Reviews;
 using BusinessLogicLayer.DTOs.User;
 using DataAccessLayer.EF.Models.UserModel;
+using BusinessLogicLayer.DTOs.Common.Review.LikeDislike;
 
 //using ;
 
@@ -52,7 +53,7 @@ namespace BusinessLogicLayer.Services.Common.Review
         {
             // data access layer theke data anbo first e .. 
             
-            var data = DataAccessFactory.ReviewDataForGetAllReviewsByShopProfileIdAndReviewCategory().GetAllReviewsByShopProfileIdAndReviewCategory(ShopProfileId, ReviewCategory);
+            var data = DataAccessFactory.IReviewData().GetAllReviewsByShopProfileIdAndReviewCategory(ShopProfileId, ReviewCategory);
 
 
             // eta te DTO te convert na korle application layer use korte parbe na 
@@ -78,7 +79,7 @@ namespace BusinessLogicLayer.Services.Common.Review
         {
             // data access layer theke data anbo first e .. 
 
-            var data = DataAccessFactory.ReviewDataForGetAllReviewsByProductIdAndReviewCategory().GetAllReviewsByProductIdAndReviewCategory(ProductId, ReviewCategory);
+            var data = DataAccessFactory.IReviewData().GetAllReviewsByProductIdAndReviewCategory(ProductId, ReviewCategory);
 
 
             // eta te DTO te convert na korle application layer use korte parbe na 
@@ -132,10 +133,10 @@ namespace BusinessLogicLayer.Services.Common.Review
         }
 
         //  doLikeDislikeToAReview [Product] //🔰 - - -🔴🔗
-        public static ReviewDTO DoLikeDislikeToAReview(int ReviewId, int SellerId, string LikeDislikeStatus)
+        public static ReviewDTO DoLikeDislikeToAReview(int ReviewId, int UserId, string LikeDislikeStatus)
         {
             // data access layer theke data anbo first e .. 
-            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId, LikeDislikeStatus);
+            var data = DataAccessFactory.IReviewData().DoLikeDislikeToAReview(ReviewId, UserId, LikeDislikeStatus);
             // eta te DTO te convert na korle application layer use korte parbe na 
 
             var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
@@ -144,13 +145,13 @@ namespace BusinessLogicLayer.Services.Common.Review
         }
 
         //  getLikeDislikeStatusForReviewIdAndSellerId [Product] //🔰 - - -🔴🔗
-        public static ReviewDTO GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int SellerId)
+        public static LikeDislikeDTO GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int UserId)
         {
             // data access layer theke data anbo first e .. 
-            var data = DataAccessFactory.ReviewData().Get(ReviewId, SellerId);
+            var data = DataAccessFactory.IReviewData().GetLikeDislikeStatusForReviewIdAndSellerId(ReviewId, UserId);
             // eta te DTO te convert na korle application layer use korte parbe na 
 
-            var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>(data);
+            var mappedData = AutoMapperConverter.ConvertForSingleInstance<LikeDislike, LikeDislikeDTO > (data);
 
             return mappedData;
         }

@@ -50,6 +50,7 @@
     <Compile Include="DTOs\Common\Product\Brand And Category\BrandDTO.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\CategoryDTO.cs" />
     <Compile Include="DTOs\Common\Product\ProductDTO.cs" />
+    <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Common\Review\Review_ReviewReplyDTO.cs" />

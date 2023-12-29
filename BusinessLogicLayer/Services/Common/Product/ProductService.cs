@@ -46,7 +46,7 @@ namespace BusinessLogicLayer.Services.Product
         public static List<ProductDTO> GetAllProductsDetailsBySellerId(int sellerId)
         {
             // seller id er against e shob gula product niye ashte hobe
-            var allProductsOfSeller = DataAccessFactory.ProductDataForGetAllProductsDetailsBySellerId().GetAllProductsDetailsBySellerId(sellerId);
+            var allProductsOfSeller = DataAccessFactory.IProductData().GetAllProductsDetailsBySellerId(sellerId);
 
             // jei data ashse .. eta ke Model -> DTO te convert korte hobe
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allProductsOfSeller);
@@ -60,7 +60,7 @@ namespace BusinessLogicLayer.Services.Product
             // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
             // shegula list return korbe 
 
-            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForCheckForLowQuantityBySellerId().GetALlLowQuantityProductForSellerId(sellerId);
+            var allLowQuantityProductForSeller = DataAccessFactory.IProductData().GetALlLowQuantityProductForSellerId(sellerId);
 
             // Model To DTO Convert korte hobe .. 
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
@@ -102,7 +102,7 @@ namespace BusinessLogicLayer.Services.Product
             // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
             // shegula list return korbe 
 
-            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByBrand().sortProductByBrand(brandName);
+            var allLowQuantityProductForSeller = DataAccessFactory.IProductData().sortProductByBrand(brandName);
 
             // Model To DTO Convert korte hobe .. 
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
@@ -117,7 +117,7 @@ namespace BusinessLogicLayer.Services.Product
             // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
             // shegula list return korbe 
 
-            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByCategory().sortProductByCategory(categoryName);
+            var allLowQuantityProductForSeller = DataAccessFactory.IProductData().sortProductByCategory(categoryName);
 
             // Model To DTO Convert korte hobe .. 
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
@@ -132,7 +132,7 @@ namespace BusinessLogicLayer.Services.Product
             // ekta seller er under e jei product gula ase .. shegular moddhe jegula low quantity 
             // shegula list return korbe 
 
-            var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByMinAndMaxRange().sortProductByMinAndMaxRange(minValue, maxValue);
+            var allLowQuantityProductForSeller = DataAccessFactory.IProductData().sortProductByMinAndMaxRange(minValue, maxValue);
 
             // Model To DTO Convert korte hobe .. 
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
