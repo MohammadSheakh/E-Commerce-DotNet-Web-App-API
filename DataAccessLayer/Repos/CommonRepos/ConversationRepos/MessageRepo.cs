@@ -13,31 +13,49 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 {
     internal class MessageRepo : Repo, IRepo<Message, int, Message>, IMessage<Message>
     {
+
+        public bool DeleteAllMessageByConversationId(int conversationId)
+        {
+            var allMessage = GetAllMessageByConversationId(conversationId);
+            foreach (var item in allMessage)
+            {
+                db.Messages.Remove(item);
+            }
+            
+            return db.SaveChanges() > 0; 
+        }
         public List<Message> GetAllMessageByConversationId(int conversationId)
         {
-            var products = db.Messages.Where(p => p.ConversationId == conversationId).ToList();
+            var messages = db.Messages.Where(p => p.ConversationId == conversationId).ToList();
 
 
-            return products;
+            return messages;
         }
 
         public Message Create(Message obj)
         {
-            // var createdMessage = null;
+             var createdMessage = new Message{};
             
             // Destructing done .. 
             var receiverEmail = obj.ReceiverEmail;
             var message = obj.MessageDetails;
             var senderEmail = obj.SenderEmail;
 
+            Guid newGuid = Guid.NewGuid();
+            byte[] bytes = newGuid.ToByteArray();
+            int newMessageId = Math.Abs(BitConverter.ToInt32(bytes, 0));
+
+
+            // Convert.ToInt32(Guid.NewGuid())
 
             // Create a new Message object
             var newMessage = new Message
             {
-                Id = Convert.ToInt32(Guid.NewGuid()), // Using ticks as a unique identifier
+                Id = newMessageId, // Using ticks as a unique identifier
                 SenderEmail = senderEmail,
                 ReceiverEmail = receiverEmail,
                 MessageDetails = message,
+                CreatedAt = DateTime.Now,
                 // Other properties if needed
             };
 
@@ -58,14 +76,20 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
                 //   ============== previous conversation found
                 var conversaionId = foundConversation.Id;
 
+                Guid newGuid1 = Guid.NewGuid();
+                byte[] bytes1 = newGuid1.ToByteArray();
+                int newMessageId1 = BitConverter.ToInt32(bytes1, 0);
+
+                // Convert.ToInt32(Guid.NewGuid())
                 // conversaion exist
                 var newMessageWithConversationId = new Message
                 {
-                    Id = Convert.ToInt32(Guid.NewGuid()), // Using ticks as a unique identifier
+                    //Id = newMessageId1, // Using ticks as a unique identifier
                     SenderEmail = senderEmail,
                     ReceiverEmail = receiverEmail,
                     MessageDetails = message,
                     ConversationId = conversaionId,
+                    CreatedAt = DateTime.Now,
                 };
 
                 foundConversation.LastMessage = message;
@@ -73,10 +97,12 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
                 var conversationRepo = new ConversationRepo();
                 conversationRepo.Update(foundConversation);
 
+                var result =  db.Messages.Add(newMessageWithConversationId);
 
-                db.Messages.Add(newMessageWithConversationId);
+                //return newMessageWithConversationId;
 
-                return newMessageWithConversationId;
+                if (db.SaveChanges() > 0) return newMessageWithConversationId;
+                return null;
             }
             else
             {
@@ -92,8 +118,21 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
                 var user = userRepo.getUserByEmail(senderEmail, receiverEmail);
 
 
-                if(user != null)
+                if(user == false)
                 {
+                    // sender and receiver email User table  exist kore na 
+                    // exception generate korte hobe .. 
+                    // message send korte hobe front-end e .. ⚫⚫⚫⚫⚫⚫⚫⚫⚫⚫⚫⚫
+
+                    var user1 = "user is not found .. false";
+
+                }
+                else
+                {
+                    // user jodi true hoy 
+
+                    var user1 = "user is found true";
+
                     // sender and receiver user DB te ase .. 
                     // conversation create korbo 
                     var newConversation = new Conversation
@@ -109,27 +148,40 @@ namespace DataAccessLayer.Repos.CommonRepos.ConversationRepos
 
                     var createdConversaitonId = createdConversaiton.Id;
 
+                    Guid newGuid1 = Guid.NewGuid();
+                    byte[] bytes1 = newGuid.ToByteArray();
+                    int newMessageId1 = Math.Abs(BitConverter.ToInt32(bytes1, 0));
+
+
                     var messageRepo = new MessageRepo();
                     var newMessageWithConversationId = new Message
                     {
-                        Id = Convert.ToInt32(Guid.NewGuid()), // Using ticks as a unique identifier
+                        //Id = newMessageId1, // Using ticks as a unique identifier
+                        Id = newMessageId1,
                         SenderEmail = senderEmail,
                         ReceiverEmail = receiverEmail,
                         MessageDetails = message,
                         ConversationId = createdConversaitonId,
+                        CreatedAt = DateTime.Now,
                     };
-                    var createdMessage =  messageRepo.Create(newMessageWithConversationId);
 
-                    return createdMessage;
+                    //createdMessage = this.Create(newMessageWithConversationId);
+                    createdMessage =  db.Messages.Add(newMessageWithConversationId);
+
+                    if (db.SaveChanges() > 0) return createdMessage;
+                    return null;
+                    //return createdMessage;
 
                 }
 
             }
 
-            return null;
+            return createdMessage;
+
+
             //db.Messages.Add(obj);
             //if (db.SaveChanges() > 0) return obj;
-            
+
         }
 
         public bool Delete(int id)

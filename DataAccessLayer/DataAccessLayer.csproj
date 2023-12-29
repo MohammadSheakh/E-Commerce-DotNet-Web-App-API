@@ -130,6 +130,10 @@
     <Compile Include="Migrations\202312290418396_likeDislikeForReview.designer.cs">
       <DependentUpon>202312290418396_likeDislikeForReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312291053507_messageTableIdPrimaryKey.cs" />
+    <Compile Include="Migrations\202312291053507_messageTableIdPrimaryKey.designer.cs">
+      <DependentUpon>202312291053507_messageTableIdPrimaryKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
@@ -192,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312290418396_likeDislikeForReview.resx">
       <DependentUpon>202312290418396_likeDislikeForReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291053507_messageTableIdPrimaryKey.resx">
+      <DependentUpon>202312291053507_messageTableIdPrimaryKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

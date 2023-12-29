@@ -103,7 +103,9 @@ namespace DataAccessLayer.Repos.Seller
 
         public LikeDislike GetLikeDislikeStatusForReviewIdAndSellerId(int ReviewId, int UserId)
         {
-            throw new NotImplementedException();
+            var data = db.LikeDisliikes.FirstOrDefault(a => a.ReviewId == ReviewId && a.UserId == UserId);
+
+            return data;
         }
         public List<Review> GetAllReviewsByProductIdAndReviewCategory(int ProductId, string ReviewCategory)
         {
