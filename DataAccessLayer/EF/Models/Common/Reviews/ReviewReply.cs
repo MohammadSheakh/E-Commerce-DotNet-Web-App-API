@@ -21,10 +21,10 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
         public DateTime? CreatedAt { get; set; }
 
         [ForeignKey("User")]
-        public int? PostedBy { get; set; } // kon user reply diyeche
+        public int PostedBy { get; set; } // kon user reply diyeche
 
         [ForeignKey("Review")]
-        public int? ReviewId { get; set; } // kon review er reply
+        public int ReviewId { get; set; } // kon review er reply
 
         public virtual User User { get; set; }
 

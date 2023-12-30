@@ -8,6 +8,7 @@ namespace BusinessLogicLayer.DTOs.Common.Review.LikeDislike
 {
     public class LikeDislikeDTOForType
     {
+
         public string Type { get; set; }
 
     }
