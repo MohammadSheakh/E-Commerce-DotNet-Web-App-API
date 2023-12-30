@@ -26,9 +26,9 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
 
         public DateTime? CreatedAt { get; set; }
 
-        public int? LikeCount { get; set; }
+        public int LikeCount { get; set; }
 
-        public int? DisLikeCount { get; set; }
+        public int DisLikeCount { get; set; }
 
         // kon product er Review 
         [ForeignKey("Product")]
@@ -44,7 +44,7 @@ namespace DataAccessLayer.EF.Models.Common.Reviews
 
 
         [ForeignKey("User")]
-        public int? PostedBy { get; set; }
+        public int PostedBy { get; set; }
         /*
           eta hocche amar foreign key of user .. 
           so, amra ekta virtual nibo .. 

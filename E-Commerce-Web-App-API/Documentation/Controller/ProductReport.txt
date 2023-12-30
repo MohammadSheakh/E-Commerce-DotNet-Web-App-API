@@ -1,0 +1,55 @@
+﻿1. GetProductsByLargestAvailableQuantity
+2. GetProductsByRatingLessThanTwo
+3. GetProductsNoReviews
+4. GetProductsWithLowStock
+5. Best-Selling Products
+6. Products Out of Stock
+7. Products with High Ratings
+8. Product Add in Specific Time Range 
+9. Products with Most Reviews
+10. 
+11. Products with Most Returns
+12. Products Frequently Added to Wishlists
+13.
+14.
+15. Products with Expired Shelf Life
+11.
+11.
+11.
+11. Order Status Summary
+11. Late Deliveries
+11. Order Returns and Refunds
+11. Customer Order History
+11. Order Frequency Analysis
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11. 
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11. 
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.
+11.

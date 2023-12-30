@@ -72,14 +72,6 @@ namespace DataAccessLayer.EF.Models.Common.Products
         }
 
 
-
-
-       
-
-
-        
-
-
         // Available Quality
     }
 }

@@ -140,6 +140,10 @@
     <Compile Include="Migrations\202312291518134_orderTableRelation.designer.cs">
       <DependentUpon>202312291518134_orderTableRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312300532422_updateReviewTable.cs" />
+    <Compile Include="Migrations\202312300532422_updateReviewTable.designer.cs">
+      <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312291518134_orderTableRelation.resx">
       <DependentUpon>202312291518134_orderTableRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312300532422_updateReviewTable.resx">
+      <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
