@@ -52,33 +52,33 @@ namespace DataAccessLayer.Migrations
 
         // Role Added
         //string[] roleNames = { "Seller", "Buyer", "Admin" };
-        //foreach (var roleName in roleNames)
-        //{
-        //    context.Roles.AddOrUpdate(new EF.Models.UserModel.Role
+        //    foreach (var roleName in roleNames)
         //    {
-        //        name = roleName,
-        //    });
-        //}
+        //        context.Roles.AddOrUpdate(new EF.Models.UserModel.Role
+        //        {
+        //            name = roleName,
+        //        });
+        //    }
 
-        // Product Added=============================
+            // Product Added=============================
 
-        //Name: Tp Link 445
-        //Details: amezing router
-        //Rating: 0
-        //Price: 50
-        //availableQuantity: 3
-        //lowestQuantityToStock: 3
-        //CategoryId: 1
-        //BrandId: 1
-        //SellerId: 6
+            //Name: Tp Link 445
+            //Details: amezing router
+            //Rating: 0
+            //Price: 50
+            //availableQuantity: 3
+            //lowestQuantityToStock: 3
+            //CategoryId: 1
+            //BrandId: 1
+            //SellerId: 6
 
 
-        // Seler Added=============================
+            // Seler Added=============================
 
-        //Name: sheakhBuyer
-        //Email:d @gmail.com
-        //Password:1234
-        //RoleId: 1
+            //Name: sheakhBuyer
+            //Email:d @gmail.com
+            //Password:1234
+            //RoleId: 1
 
 
 

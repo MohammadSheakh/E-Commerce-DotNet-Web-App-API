@@ -144,6 +144,14 @@
     <Compile Include="Migrations\202312300532422_updateReviewTable.designer.cs">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312301848226_add-role.cs" />
+    <Compile Include="Migrations\202312301848226_add-role.designer.cs">
+      <DependentUpon>202312301848226_add-role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312302036139_cart-table.cs" />
+    <Compile Include="Migrations\202312302036139_cart-table.designer.cs">
+      <DependentUpon>202312302036139_cart-table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
@@ -215,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312300532422_updateReviewTable.resx">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301848226_add-role.resx">
+      <DependentUpon>202312301848226_add-role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312302036139_cart-table.resx">
+      <DependentUpon>202312302036139_cart-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

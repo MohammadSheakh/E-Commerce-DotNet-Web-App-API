@@ -108,6 +108,54 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             return null;
         }
 
-        
+        public List<Products> GetProductsByLargestAvailableQuantity(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetProductsByRatingLessThanRatingLimit(int SellerId, int RatingLimit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetProductsNoReviews(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetProductsWithLowStock(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLBestSellingProduct(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLBestSellingProductByCategory(int SellerId, string CategoryOrBrandType, string CategoryOrBrandName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLOutOfStockProduct(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductsWithHighRatings(int SellerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductAddInSpecificTimeRange(int SellerId, DateTime StartDate, DateTime EndDate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductsWithMostReviewsByType(int SellerId, string BrandName, string CategoryName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
