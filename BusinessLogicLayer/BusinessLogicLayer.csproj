@@ -35,6 +35,7 @@
       <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,7 @@
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTOForType.cs" />
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewDTO.cs" />
+    <Compile Include="DTOs\Common\Review\CreateReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Common\Review\Review_ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\Profile\SellerProfileDTO.cs" />
@@ -87,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\Buyer\" />
+    <Folder Include="DTOs\Common\Order\" />
     <Folder Include="Helper\CustomAttribute\" />
+    <Folder Include="Services\Common\Order\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

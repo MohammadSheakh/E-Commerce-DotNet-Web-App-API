@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs.Review
 {
-    public class ReviewDTO
+    public class CreateReviewDTO
     {
         // Required pore assign korbo 
         public int Id { get; set; }
@@ -26,11 +26,16 @@ namespace BusinessLogicLayer.DTOs.Review
         public int? ProductId { get; set; }
 
         public int? ShopProfileId { get; set; }
-        public int PostedBy { get; set; }
+        public string PostedBy { get; set; }
 
-        public int LikeCount { get; set; }
 
-        public int DisLikeCount { get; set; }
+        
+
+
+
+        //public int? LikeCount { get; set; }
+
+        //public int? DisLikeCount { get; set; }
 
     }
 }

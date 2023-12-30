@@ -17,7 +17,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Review
 
         [HttpPost]
         [Route("api/review/addReview")] //🔰OK- - -🔴🔗
-        public HttpResponseMessage AddReview(ReviewDTO reviewDTO)
+        public HttpResponseMessage AddReview(CreateReviewDTO reviewDTO)
         {
             // product er kono aftersales experience hobe na .. 
             // shop er afterSalesExperience hobe .. 
