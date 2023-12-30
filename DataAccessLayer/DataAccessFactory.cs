@@ -50,6 +50,7 @@ namespace DataAccessLayer
             return new BuyerProfileRepo();
         }
 
+
         //----------------------------------- Common ---------------
         //--------------------------------------------- Product---------------
 
@@ -63,25 +64,7 @@ namespace DataAccessLayer
             return new ProductRepo();
         }
 
-        //public static IProduct<Products> ProductDataForCheckForLowQuantityBySellerId()
-        //{
-        //    return new ProductRepo();
-        //}
-
-        //public static IProduct<Products> ProductDataForSortProductByBrand()
-        //{
-        //    return new ProductRepo();
-        //}
-
-        //public static IProduct<Products> ProductDataForSortProductByCategory()
-        //{
-        //    return new ProductRepo();
-        //}
-
-        //public static IProduct<Products> ProductDataForSortProductByMinAndMaxRange()
-        //{
-        //    return new ProductRepo();
-        //}
+        
         //----------------------------------------- Category Brand -----------------
         public static IRepo<Category, int , Category> CategoryData()
         {
@@ -106,11 +89,7 @@ namespace DataAccessLayer
             return new ReviewRepo();
         }
 
-        //public static IReview<Review> ReviewDataForGetAllReviewsByProductIdAndReviewCategory()
-        //{
-        //    return new ReviewRepo();
-        //}
-
+        
         public static IRepo<ReviewReply, int, ReviewReply> ReviewReplyData()
         {
             return new ReviewReplyRepo();

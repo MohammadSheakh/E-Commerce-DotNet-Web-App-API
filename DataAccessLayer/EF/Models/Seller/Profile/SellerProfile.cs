@@ -28,8 +28,13 @@ namespace DataAccessLayer.EF.Models.Seller.Profile
         public virtual ICollection<Products> Products { get; set; }
         // Collection amader ke initialize korte hoy 
 
+        // One Seller can have Many Order
+        public virtual ICollection<Order> Orders { get; set; }
+
+
         public SellerProfile() { 
             Products = new List<Products>();
+            Orders = new List<Order>();
         }
     }
 }

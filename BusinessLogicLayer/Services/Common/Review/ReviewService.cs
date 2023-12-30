@@ -118,14 +118,14 @@ namespace BusinessLogicLayer.Services.Common.Review
             var data = DataAccessFactory.ReviewData().Get(ReviewId);
             var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, Review_ReviewReplyDTO>(data);
 
-            var cfg = new MapperConfiguration(c =>
-            {
-                c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.Review, Review_ReviewReplyDTO>();
-                c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>();
-            });
-            var mapper = new Mapper(cfg);
+            //var cfg = new MapperConfiguration(c =>
+            //{
+            //    c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.Review, Review_ReviewReplyDTO>();
+            //    c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>();
+            //});
+            //var mapper = new Mapper(cfg);
 
-            var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
+            //var mapped = mapper.Map<Review_ReviewReplyDTO>(data);
 
             // var mappedData2 = 
             //return mappedData1;

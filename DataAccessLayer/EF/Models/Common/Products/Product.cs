@@ -59,11 +59,16 @@ namespace DataAccessLayer.EF.Models.Common.Products
         //-------------------------------------- One Product Has Many Reviews
         public virtual ICollection<Review> Reviews { get; set; }
 
+        // One Product can be in multiple OrderItems
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+
         public Products()
         {
             Reviews = new List<Review>();
             SpecificationCategories = new List<SpecificationCategory>(); // initiate kore dite hobe .. 
             // jehetu list .. na hole may be null assign hoye thakbe 
+
+            OrderItems = new List<OrderItem>();
         }
 
 

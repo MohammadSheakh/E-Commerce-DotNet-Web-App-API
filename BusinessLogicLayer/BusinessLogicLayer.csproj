@@ -87,7 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\Buyer\" />
+    <Folder Include="DTOs\Common\Order\" />
     <Folder Include="Helper\CustomAttribute\" />
+    <Folder Include="Services\Common\Order\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

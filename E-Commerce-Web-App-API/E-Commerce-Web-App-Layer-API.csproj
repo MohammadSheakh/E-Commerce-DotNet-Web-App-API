@@ -123,6 +123,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Auth\AuthController.cs" />
     <Compile Include="Controllers\Common\Conversation\ConversationController.cs" />
+    <Compile Include="Controllers\Common\Order\OrderController.cs" />
     <Compile Include="Controllers\Common\Product\ProductController.cs" />
     <Compile Include="Controllers\Common\Review\ReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
