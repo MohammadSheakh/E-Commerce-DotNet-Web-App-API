@@ -75,9 +75,11 @@
     <Compile Include="EF\Models\UserModel\Role.cs" />
     <Compile Include="EF\Models\UserModel\Token.cs" />
     <Compile Include="EF\Models\UserModel\User.cs" />
+    <Compile Include="Helper\GenerateId.cs" />
     <Compile Include="Helper\GenericMethodForRepo.cs" />
     <Compile Include="Interface\Common\Conversation\IConversation.cs" />
     <Compile Include="Interface\Common\Conversation\IMessage.cs" />
+    <Compile Include="Interface\Common\Order\ICart.cs" />
     <Compile Include="Interface\Common\Product\CategoryAndBrand\ICategoryBrand.cs" />
     <Compile Include="Interface\Common\Product\IProduct.cs" />
     <Compile Include="Interface\Common\Review\IReview.cs" />
@@ -144,19 +146,24 @@
     <Compile Include="Migrations\202312300532422_updateReviewTable.designer.cs">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312301739435_dataSeedAgain.cs" />
-    <Compile Include="Migrations\202312301739435_dataSeedAgain.designer.cs">
-      <DependentUpon>202312301739435_dataSeedAgain.cs</DependentUpon>
+    <Compile Include="Migrations\202312301848226_add-role.cs" />
+    <Compile Include="Migrations\202312301848226_add-role.designer.cs">
+      <DependentUpon>202312301848226_add-role.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312310658090_seedAgainForNewDB.cs" />
-    <Compile Include="Migrations\202312310658090_seedAgainForNewDB.designer.cs">
-      <DependentUpon>202312310658090_seedAgainForNewDB.cs</DependentUpon>
+    <Compile Include="Migrations\202312302036139_cart-table.cs" />
+    <Compile Include="Migrations\202312302036139_cart-table.designer.cs">
+      <DependentUpon>202312302036139_cart-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312302047262_add-cart--cartId.cs" />
+    <Compile Include="Migrations\202312302047262_add-cart--cartId.designer.cs">
+      <DependentUpon>202312302047262_add-cart--cartId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
     <Compile Include="Repos\CommonRepos\ConversationRepos\ConversationRepo.cs" />
     <Compile Include="Repos\CommonRepos\ConversationRepos\MessageRepo.cs" />
+    <Compile Include="Repos\CommonRepos\OrderRepos\CartRepo.cs" />
     <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\BrandRepo.cs" />
     <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\CategoryBrandRepo.cs" />
     <Compile Include="Repos\CommonRepos\ProductRepos\CategoryAndBrand\CategoryRepo.cs" />
@@ -224,17 +231,17 @@
     <EmbeddedResource Include="Migrations\202312300532422_updateReviewTable.resx">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312301739435_dataSeedAgain.resx">
-      <DependentUpon>202312301739435_dataSeedAgain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312301848226_add-role.resx">
+      <DependentUpon>202312301848226_add-role.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312310658090_seedAgainForNewDB.resx">
-      <DependentUpon>202312310658090_seedAgainForNewDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312302036139_cart-table.resx">
+      <DependentUpon>202312302036139_cart-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312302047262_add-cart--cartId.resx">
+      <DependentUpon>202312302047262_add-cart--cartId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interface\Common\Order\" />
-    <Folder Include="Repos\CommonRepos\OrderRepos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

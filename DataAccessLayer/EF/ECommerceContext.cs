@@ -16,6 +16,7 @@ using DataAccessLayer.EF.Models.Seller.Profile;
 using DataAccessLayer.EF.Models.Seller.Shop;
 // using DataAccessLayer.EF.Models.Seller.Shop;
 using System.Reflection.Emit;
+using DataAccessLayer.EF.Models.Common.Orders;
 
 namespace DataAccessLayer.EF
 {
@@ -51,6 +52,8 @@ namespace DataAccessLayer.EF
         // ---------- For Orders --------------------------
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        // cart
+        public DbSet<Cart> Carts { get; set; }
         // ---------- For Products --------------------------
         public DbSet<Products> Product { get; set; }
         public DbSet<CategoryBrand> CategoryBrand { get; set; }

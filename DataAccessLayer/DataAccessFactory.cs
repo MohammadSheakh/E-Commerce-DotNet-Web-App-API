@@ -22,6 +22,9 @@ using DataAccessLayer.EF.Models.Common.Conversations;
 using System.Runtime.Remoting.Messaging;
 using DataAccessLayer.Interface.Common.Conversation;
 using DataAccessLayer.Interface.Common.Review;
+using DataAccessLayer.EF.Models.Common.Orders;
+using DataAccessLayer.Repos.CommonRepos.OrderRepos;
+using DataAccessLayer.Interface.Common.Order;
 
 namespace DataAccessLayer
 {
@@ -93,6 +96,12 @@ namespace DataAccessLayer
         public static IRepo<ReviewReply, int, ReviewReply> ReviewReplyData()
         {
             return new ReviewReplyRepo();
+        }
+
+        // cart 
+        public static ICart<Cart, int> CartData()
+        {
+            return new CartRepo();
         }
 
 
