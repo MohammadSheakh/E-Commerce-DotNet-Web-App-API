@@ -18,7 +18,7 @@ namespace DataAccessLayer.Interface.Common.Product
 
         List<CLASS> sortProductByMinAndMaxRange(int? MinValue, int? MaxValue);
 
-        List<CLASS> GetProductsByLargestAvailableQuantity(int SellerId);//
+        CLASS GetProductsByLargestAvailableQuantity(int SellerId);//
         List<CLASS> GetProductsByRatingLessThanRatingLimit(int SellerId, int RatingLimit);//
         List<CLASS> GetProductsNoReviews(int SellerId);//
         List<CLASS> GetProductsWithLowStock(int SellerId); //
