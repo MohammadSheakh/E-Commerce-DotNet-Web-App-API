@@ -48,6 +48,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\Common\Conversation\ConversationDTO.cs" />
     <Compile Include="DTOs\Common\Conversation\MessageDTO.cs" />
+    <Compile Include="DTOs\Common\Order\CartViewDto.cs" />
+    <Compile Include="DTOs\Common\Order\CratCreateDto.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\BrandDTO.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\CategoryDTO.cs" />
     <Compile Include="DTOs\Common\Product\ProductDTO.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Services\Auth\AuthService.cs" />
     <Compile Include="Services\Buyer\BuyerService.cs" />
     <Compile Include="Services\Common\Conversation\ConversationService.cs" />
+    <Compile Include="Services\Common\Order\CartService.cs" />
     <Compile Include="Services\Common\Product\ProductService.cs" />
     <Compile Include="Services\Common\Review\ReviewService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
@@ -89,9 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\Buyer\" />
-    <Folder Include="DTOs\Common\Order\" />
     <Folder Include="Helper\CustomAttribute\" />
-    <Folder Include="Services\Common\Order\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

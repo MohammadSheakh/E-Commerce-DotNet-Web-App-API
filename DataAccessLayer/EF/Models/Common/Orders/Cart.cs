@@ -14,7 +14,7 @@ namespace DataAccessLayer.EF.Models.Common.Orders
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
- 
+        public string CartId { get; set; }
         [ForeignKey("Product")]
         public int? ProductId { get; set; }
         public virtual EF.Models.Common.Products.Products Product { get; set; }
