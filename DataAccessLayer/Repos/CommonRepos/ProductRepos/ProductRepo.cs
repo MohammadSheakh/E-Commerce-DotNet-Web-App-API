@@ -75,6 +75,8 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 
         public Products Create(Products obj)
         {
+            obj.Rating = 0;
+            obj.CreatedDate = DateTime.Now;
             db.Product.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
@@ -108,6 +110,80 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             return null;
         }
 
-        
+        public Products GetProductsByLargestAvailableQuantity(int SellerId)
+        {
+            var productWithLargestQuantity = db.Product
+                .Where(p => p.SellerId == SellerId)
+                .OrderByDescending(p => p.AvailableQuantity)
+                .FirstOrDefault();
+            if (productWithLargestQuantity != null)
+            {
+                return productWithLargestQuantity;
+            }
+            else {
+                return null;
+            }
+        }
+
+        public List<Products> GetProductsByRatingLessThanRatingLimit(int SellerId, int RatingLimit)
+        {
+            var productsWithGreatRating = db.Product.Where(p => p.Rating > RatingLimit && p.SellerId == SellerId);
+            return productsWithGreatRating.ToList();
+            //throw new NotImplementedException();
+        }
+
+        public List<Products> GetProductsNoReviews(int SellerId)
+        {
+            var productsWithNoReview = db.Product.Where(p => p.SellerId == SellerId && !db.Reviewes.Any(r => r.ProductId == p.Id)).ToList();
+            return productsWithNoReview;
+            //throw new NotImplementedException();
+        }
+
+        public List<Products> GetProductsWithLowStock(int SellerId)
+        {
+            var productWithLowStock = db.Product.Where(p => p.AvailableQuantity <= p.LowestQuantityToStock && p.SellerId == SellerId).ToList();
+            return productWithLowStock;
+           // throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLBestSellingProduct(int SellerId)
+        {
+            // order beshi hoise jei product er .. shei product return korbe .. 
+            // ekhon amar .. total product er 10% product return korbe .. 
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLBestSellingProductByCategory(int SellerId, string CategoryOrBrandType, string CategoryOrBrandName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLOutOfStockProduct(int SellerId)
+        {
+            var productWithOutOfStock = db.Product.Where(p => p.AvailableQuantity == 0 && p.SellerId == SellerId).ToList();
+            return productWithOutOfStock;
+            // throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductsWithHighRatings(int SellerId)
+        {
+            var productWithHighRating = db.Product.Where(p => p.Rating > 4 && p.SellerId == SellerId).ToList();
+           return productWithHighRating;
+            //throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductAddInSpecificTimeRange(int SellerId, DateTime StartDate, DateTime EndDate)
+        {
+            var productInTimeRange = db.Product.Where(p => p.SellerId == SellerId && p.CreatedDate >= StartDate && p.CreatedDate <= EndDate).ToList();
+            return productInTimeRange;
+            // throw new NotImplementedException();
+        }
+
+        public List<Products> GetALLProductsWithMostReviewsByType(int SellerId, string BrandName, string CategoryName)
+        {
+            throw new NotImplementedException();
+        }
+        // ekta product er .. shob cheye beshi jei category er review ashse .. shei category er nam show korbo 
+        // 
     }
 }

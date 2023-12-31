@@ -88,7 +88,7 @@ namespace BusinessLogicLayer.Services.Common.Conversation
 
             var res = DataAccessFactory.IMessageData().DeleteAllMessageByConversationId(conversationId);
             
-            if(res != null)
+            if(res != false)
             {
                 var result = DataAccessFactory.ConversationData().Delete(conversationId);
                 return result;

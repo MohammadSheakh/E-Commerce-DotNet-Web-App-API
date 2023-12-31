@@ -144,6 +144,14 @@
     <Compile Include="Migrations\202312300532422_updateReviewTable.designer.cs">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312301739435_dataSeedAgain.cs" />
+    <Compile Include="Migrations\202312301739435_dataSeedAgain.designer.cs">
+      <DependentUpon>202312301739435_dataSeedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312310658090_seedAgainForNewDB.cs" />
+    <Compile Include="Migrations\202312310658090_seedAgainForNewDB.designer.cs">
+      <DependentUpon>202312310658090_seedAgainForNewDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\BuyerRepo\Profile\BuyerProfileRepo.cs" />
@@ -215,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312300532422_updateReviewTable.resx">
       <DependentUpon>202312300532422_updateReviewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312301739435_dataSeedAgain.resx">
+      <DependentUpon>202312301739435_dataSeedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312310658090_seedAgainForNewDB.resx">
+      <DependentUpon>202312310658090_seedAgainForNewDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
