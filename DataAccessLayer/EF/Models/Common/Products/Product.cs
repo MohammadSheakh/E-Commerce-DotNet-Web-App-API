@@ -29,6 +29,8 @@ namespace DataAccessLayer.EF.Models.Common.Products
         public int? AvailableQuantity { get; set; }
         public int? LowestQuantityToStock { get; set; }
 
+        public DateTime CreatedDate { get; set; }
+
         // kon seller er post kora product
         [ForeignKey("User")]
         public int? SellerId { get; set; }
