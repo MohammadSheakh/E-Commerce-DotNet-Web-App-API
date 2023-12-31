@@ -31,7 +31,6 @@ namespace DataAccessLayer.EF.Models.Seller.Profile
         // One Seller can have Many Order
         public virtual ICollection<Order> Orders { get; set; }
 
-
         public SellerProfile() { 
             Products = new List<Products>();
             Orders = new List<Order>();

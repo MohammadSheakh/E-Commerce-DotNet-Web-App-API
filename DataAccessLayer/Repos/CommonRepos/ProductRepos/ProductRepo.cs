@@ -75,6 +75,7 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 
         public Products Create(Products obj)
         {
+            obj.Rating = 0;
             obj.CreatedDate = DateTime.Now;
             db.Product.Add(obj);
             if (db.SaveChanges() > 0) return obj;
