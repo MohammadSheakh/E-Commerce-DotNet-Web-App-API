@@ -20,7 +20,9 @@ namespace DataAccessLayer.Repos.SellerRepo.Profile.Shop
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var existing = Get(id);
+            db.ShopProfiles.Remove(existing);
+            return db.SaveChanges() > 0;
         }
 
         public List<ShopProfile> Get()

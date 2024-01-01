@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class messageTableIdPrimaryKey : IMigrationMetadata
+    public sealed partial class addcartcartId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(messageTableIdPrimaryKey));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addcartcartId));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312291053507_messageTableIdPrimaryKey"; }
+            get { return "202312302047262_add-cart--cartId"; }
         }
         
         string IMigrationMetadata.Source

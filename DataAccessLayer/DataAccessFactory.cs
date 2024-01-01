@@ -22,6 +22,15 @@ using DataAccessLayer.EF.Models.Common.Conversations;
 using System.Runtime.Remoting.Messaging;
 using DataAccessLayer.Interface.Common.Conversation;
 using DataAccessLayer.Interface.Common.Review;
+using DataAccessLayer.EF.Models.Common.Orders;
+using DataAccessLayer.Repos.CommonRepos.OrderRepos;
+using DataAccessLayer.Interface.Common.Order;
+using DataAccessLayer.Repos.SellerRepo.Profile.Shop;
+using DataAccessLayer.EF.Models.Seller.Shop;
+using DataAccessLayer.Interface.SellerProfile;
+using DataAccessLayer.Interface.User;
+using DataAccessLayer.Interface.Common.Product.Specificaiton;
+using DataAccessLayer.EF.Models.Product.Specifications;
 
 namespace DataAccessLayer
 {
@@ -37,11 +46,26 @@ namespace DataAccessLayer
             return new UserRepo();
         }
 
+        public static IUser<User> IUserData()
+        {
+            return new UserRepo();
+        }
+
         //----------------------------------- Seller ---------------
 
         public static IRepo<SellerProfile, int, SellerProfile> SellerProfileData()
         {
             return new SellerProfileRepo();
+        }
+
+        public static ISellerProfile<SellerProfile> ISellerProfileData()
+        {
+            return new SellerProfileRepo();
+        }
+        //------------------------------------------- Shop ---------------
+        public static IRepo<ShopProfile, int, ShopProfile> ShopData()
+        {
+            return new ShopRepo();
         }
 
         //----------------------------------- Buyer ---------------
@@ -63,8 +87,12 @@ namespace DataAccessLayer
         {
             return new ProductRepo();
         }
+        public static ISpecificationCategory<SpecificationCategory, Specification> IProductSpecificationData()
+        {
+            return new ProductRepo();
+        }
 
-        
+
         //----------------------------------------- Category Brand -----------------
         public static IRepo<Category, int , Category> CategoryData()
         {
@@ -93,6 +121,12 @@ namespace DataAccessLayer
         public static IRepo<ReviewReply, int, ReviewReply> ReviewReplyData()
         {
             return new ReviewReplyRepo();
+        }
+
+        // ------------------------------------------ cart 
+        public static ICart<Cart, int> CartData()
+        {
+            return new CartRepo();
         }
 
 

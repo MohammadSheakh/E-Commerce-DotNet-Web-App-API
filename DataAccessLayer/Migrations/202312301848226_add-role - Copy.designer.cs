@@ -7,18 +7,18 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addCategoryBrandManyToMany01 : IMigrationMetadata
+    public sealed partial class addrole : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addCategoryBrandManyToMany01));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addrole));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312280920399_addCategoryBrandManyToMany01"; }
+            get { return "202312301848226_add-role"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

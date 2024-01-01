@@ -7,13 +7,13 @@ namespace DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class dataPushToDB2 : IMigrationMetadata
+    public sealed partial class carttable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dataPushToDB2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(carttable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312241127458_dataPushToDB2"; }
+            get { return "202312302036139_cart-table"; }
         }
         
         string IMigrationMetadata.Source

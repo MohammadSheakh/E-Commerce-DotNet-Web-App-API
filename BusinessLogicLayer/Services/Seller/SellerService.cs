@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using BusinessLogicLayer.DTOs.Common.Product;
+using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
 using DataAccessLayer;
 using DataAccessLayer.EF;
 using DataAccessLayer.EF.Models;
+using DataAccessLayer.EF.Models.Common.Products;
 using DataAccessLayer.EF.Models.Common.Reviews;
 using DataAccessLayer.Repos.Seller;
 using E_Commerce_Web_Application.Helper.Converter;
@@ -38,79 +41,91 @@ namespace BusinessLogicLayer.Services.Seller
         }
 
 
+        // 1 done
+        public static ProductDTO GetProductsByLargestAvailableQuantity(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetProductsByLargestAvailableQuantity(SellerId);
+            // Model To DTO 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(products);
 
-        //public static List<DTOs.Seller.SellerDTO> GetAllSeller()
-        //{
-        //    var sellers = SellerRepo.GetAllSeller();
-
-        //    var autoMapper = new AutoMapperConverter();
-
-        //    //var ret = mapper.Map<List<PersonDTO>>(data);
-        //    var ret =  autoMapper.ConvertForList<DataAccessLayer.EF.Models.Seller, SellerDTO>(sellers);
-
-        //    return ret;
-        //}
+            //return products;
+            return Model_DTOMapped;
+        }
 
 
+        // 2 done
+        public static List<ProductDTO> GetProductsByRatingLessThanRatingLimit(int SellerId, int RatingLimit)
+        {
+            var products = DataAccessFactory.IProductData().GetProductsByRatingLessThanRatingLimit(SellerId, RatingLimit);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(products);
 
-        //public static DTOs.Seller.SellerDTO GetOneSeller(int id)
-        //{
-        //    var seller = SellerRepo.GetOneSeller(id);
+            //return products;
+            return Model_DTOMapped;
+        }
 
-        //    var autoMapper = new AutoMapperConverter();
+        // 3 done
+        public static List<ProductDTOForReport> GetProductsNoReviews(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetProductsNoReviews(SellerId);
+            // Model To DTO 
+            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-        //    var ret = autoMapper.ConvertForSingleInstance<DataAccessLayer.EF.Models.Seller, SellerDTO>(seller); ;
-        //    return ret;
-        //}
+            return Model_DTOMapped;
+        }
 
+        // 4
+        public static List<ProductDTOForReport> GetProductsWithLowStock(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetProductsWithLowStock(SellerId);
+            // Model To DTO 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-
-        //public static void Create(PersonDTO p)
-        //{
-        //    var config = new MapperConfiguration(cfg => {
-        //        cfg.CreateMap<PersonDTO, Person>();
-        //    });
-        //    var mapper = new Mapper(config);
-        //    var data = mapper.Map<Person>(p);
-        //    PersonRepo.Create(data);
-        //}
-
-        /////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////
-
-       
-
-
-        //public static List<DTOs.Seller.SellerDTO> GetAllSeller()
-        //{
-        //    var sellers = SellerRepo.GetAllSeller();
-
-        //    var autoMapper = new AutoMapperConverter();
-
-        //    //var ret = mapper.Map<List<PersonDTO>>(data);
-        //    var ret = autoMapper.ConvertForList<DataAccessLayer.EF.Models.Seller, SellerDTO>(sellers);
-
-        //    return ret;
-        //}
+            return Model_DTOMapped;
+        }
 
 
+        // 5 // age order list jante hobe ... 
+        public static List<Products> GetALLBestSellingProduct(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetALLBestSellingProduct(SellerId);
+            // Model To DTO 
+            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+
+            return products;
+        }
 
 
+        // 6
+        public static List<ProductDTOForReport> GetALLOutOfStockProduct(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetALLOutOfStockProduct(SellerId);
+            // Model To DTO 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
+            return Model_DTOMapped;
+        }
 
+        // 7
+        public static List<ProductDTOForReport> GetALLProductsWithHighRatings(int SellerId)
+        {
+            var products = DataAccessFactory.IProductData().GetALLProductsWithHighRatings(SellerId);
+            // Model To DTO 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
+            return Model_DTOMapped;
+        }
 
+        // 8
+        public static List<ProductDTOForReport> GetALLProductAddInSpecificTimeRange(int SellerId, StartAndEndDatetimeDTO startAndEndDateTimeDto)
+        {
+            var products = DataAccessFactory.IProductData().GetALLProductAddInSpecificTimeRange(SellerId, startAndEndDateTimeDto.StartDate, startAndEndDateTimeDto.EndDate);
+            // Model To DTO 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
+            return Model_DTOMapped;
+        }
 
-        //  9. Seller Login basic/jwt [Seller]
-        // 10. Seller Logout[Seller]
-        // 11. createNewSeller [Seller]
-        // 12. getAllSeller [Seller]
+        
 
-        // 13. updateSellerInformation [Seller]
-        // 14. deleteSellerAccount [Seller]
-
-
-        // 22. Send Email
     }
 }

@@ -48,15 +48,22 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\Common\Conversation\ConversationDTO.cs" />
     <Compile Include="DTOs\Common\Conversation\MessageDTO.cs" />
+    <Compile Include="DTOs\Common\Order\CartViewDto.cs" />
+    <Compile Include="DTOs\Common\Order\CratCreateDto.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\BrandDTO.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\CategoryDTO.cs" />
     <Compile Include="DTOs\Common\Product\ProductDTO.cs" />
+    <Compile Include="DTOs\Common\Product\ProductDTOForReport.cs" />
+    <Compile Include="DTOs\Common\Product\Specifications\SpecificaitonCategoryDTO.cs" />
+    <Compile Include="DTOs\Common\Product\Specifications\SpecificationDTO.cs" />
+    <Compile Include="DTOs\Common\Product\StartAndEndDatetimeDTO.cs" />
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTOForType.cs" />
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\CreateReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Common\Review\Review_ReviewReplyDTO.cs" />
+    <Compile Include="DTOs\Common\Review\Review__ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\Profile\SellerProfileDTO.cs" />
     <Compile Include="DTOs\Seller\Profile\UpdateSellerProfileDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
@@ -64,12 +71,15 @@
     <Compile Include="DTOs\User\RegistrationDTO.cs" />
     <Compile Include="DTOs\User\TokenDTO.cs" />
     <Compile Include="DTOs\User\UpdateUserDTO.cs" />
+    <Compile Include="DTOs\User\UserWithBuyerProfileDTO.cs" />
+    <Compile Include="DTOs\User\UserWithSellerProfileDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Auth\AuthService.cs" />
     <Compile Include="Services\Buyer\BuyerService.cs" />
     <Compile Include="Services\Common\Conversation\ConversationService.cs" />
+    <Compile Include="Services\Common\Order\CartService.cs" />
     <Compile Include="Services\Common\Product\ProductService.cs" />
     <Compile Include="Services\Common\Review\ReviewService.cs" />
     <Compile Include="Services\Seller\SellerService.cs" />
@@ -89,9 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\Buyer\" />
-    <Folder Include="DTOs\Common\Order\" />
     <Folder Include="Helper\CustomAttribute\" />
-    <Folder Include="Services\Common\Order\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

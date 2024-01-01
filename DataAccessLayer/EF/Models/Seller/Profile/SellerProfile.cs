@@ -20,7 +20,7 @@ namespace DataAccessLayer.EF.Models.Seller.Profile
          
 
         [ForeignKey("ShopProfile")]
-        public int ShopProfileId { get; set; }  // Foreign key
+        public int? ShopProfileId { get; set; }  // Foreign key
         
         public virtual ShopProfile ShopProfile { get; set; }  // Navigation property
 
