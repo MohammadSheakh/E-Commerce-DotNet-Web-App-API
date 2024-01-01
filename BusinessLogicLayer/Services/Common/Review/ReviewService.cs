@@ -11,6 +11,10 @@ using DataAccessLayer.EF.Models.Common.Reviews;
 using BusinessLogicLayer.DTOs.User;
 using DataAccessLayer.EF.Models.UserModel;
 using BusinessLogicLayer.DTOs.Common.Review.LikeDislike;
+using BusinessLogicLayer.DTOs.Common.Review;
+using DataAccessLayer.EF.Models.Seller.Shop;
+using DataAccessLayer.EF.Models.Common.Products;
+using BusinessLogicLayer.DTOs.Product;
 
 //using ;
 
@@ -113,64 +117,27 @@ namespace BusinessLogicLayer.Services.Common.Review
         }
 
         // 4.3 getAReviewWithReviewReplies [Product] //🔰 - - -🔴🔗
-        public static Review_ReviewReplyDTO GetAReviewWithReviewReplies(int ReviewId)
+        public static Review__ReviewReplyDTO GetAReviewWithReviewReplies(int ReviewId)
         {
             var reviewEntity = DataAccessFactory.ReviewData().Get(ReviewId);
-            var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, Review_ReviewReplyDTO>(reviewEntity);
+            //var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, Review__ReviewReplyDTO>(reviewEntity);
 
-            //var cfg = new MapperConfiguration(c =>
-            //{
-            //    c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>();
-            //    c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>();
-            //});
-            //var mapper = new Mapper(cfg);
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>();
+                c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>();
+                //c.CreateMap<ShopProfile, ShopProfileDTO>();
+                c.CreateMap<Products, ProductDTO>();
+                c.CreateMap<User, UserDTO>();
+            });
 
-            //var mapped = mapper.Map<Review_ReviewReplyDTO>(reviewEntity);
+            var mapper = new Mapper(cfg);
 
-            // var mappedData2 = 
-            return mappedData1;
-            //return mapped;
+            var mapped = mapper.Map<Review__ReviewReplyDTO>(reviewEntity);
 
 
-            
-            //var reviewDTO = new ReviewDTO
-            //{
-            //    Id = reviewEntity.Id,
-            //    Category = reviewEntity.Category,
-            //    ReviewDetails = reviewEntity.ReviewDetails,
-            //    CreatedAt = reviewEntity.CreatedAt,
-            //    LikeCount = reviewEntity.LikeCount,
-            //    DisLikeCount = reviewEntity.DisLikeCount,
-            //    ProductId = reviewEntity.ProductId,
-            //    ShopProfileId = reviewEntity.ShopProfileId,
-            //    PostedBy = reviewEntity.PostedBy,
-            //    User = new UserDTO // Assuming you have a UserDTO class
-            //    {
-            //        // Map user properties here
-            //    },
-            //    LikeDislikes = reviewEntity.LikeDislikes.Select(ld => new LikeDislikeDTO
-            //    {
-            //        // Map LikeDislike properties here
-            //    }).ToList(),
-            //    ReviewReplies = reviewEntity.ReviewReplies.Select(rr => new ReviewReplyDTO
-            //    {
-            //        Id = rr.Id,
-            //        ReplyDetails = rr.ReplyDetails,
-            //        CreatedAt = rr.CreatedAt,
-            //        PostedBy = rr.PostedBy,
-            //        ReviewId = rr.ReviewId,
-            //        User = new UserDTO // Assuming you have a UserDTO class
-            //        {
-            //            // Map user properties here
-            //        }
-            //    }).ToList()
-            //};
-
-            //return new Review_ReviewReplyDTO
-            //{
-            //    Review = reviewDTO
-            //    // Other properties of Review_ReviewReplyDTO if any
-            //};
+             return mapped;
+           // return mappedData1;
         }
 
         //  doLikeDislikeToAReview [Product] //🔰 - - -🔴🔗

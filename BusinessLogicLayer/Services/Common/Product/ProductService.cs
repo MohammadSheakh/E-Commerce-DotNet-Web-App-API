@@ -12,6 +12,8 @@ using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Seller.Profile;
 using DataAccessLayer.EF.Models.Seller.Profile;
 using BusinessLogicLayer.DTOs.Common.Product.Brand_And_Category;
+using BusinessLogicLayer.DTOs.Common.Product.Specifications;
+using DataAccessLayer.EF.Models.Product.Specifications;
 
 namespace BusinessLogicLayer.Services.Product
 {
@@ -193,6 +195,26 @@ namespace BusinessLogicLayer.Services.Product
             return null;
         }
 
+        public static SpecificaitonCategoryDTO AddSpecificationCategory(SpecificaitonCategoryDTO specificationCategoryDTO)
+        {
+            var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<SpecificaitonCategoryDTO, SpecificationCategory>(specificationCategoryDTO);
 
+            var result = DataAccessFactory.IProductSpecificationData().AddSpecificationCategory(DTO_ModelMapped);
+
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<SpecificationCategory, SpecificaitonCategoryDTO>(result);
+            
+            return Model_DTOMapped;
+        }
+
+        public static SpecificationDTO AddSpecification(SpecificationDTO specificationDTO)
+        {
+            var DTO_ModelMapped = AutoMapperConverter.ConvertForSingleInstance<SpecificationDTO, Specification>(specificationDTO);
+
+            var result = DataAccessFactory.IProductSpecificationData().AddSpecification(DTO_ModelMapped);
+
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Specification, SpecificationDTO>(result);
+
+            return Model_DTOMapped;
+        }
     }
 }

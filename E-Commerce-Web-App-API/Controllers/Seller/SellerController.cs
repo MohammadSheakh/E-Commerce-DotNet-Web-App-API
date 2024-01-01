@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.DTOs.Conversation;
+﻿using BusinessLogicLayer.DTOs.Common.Product;
+using BusinessLogicLayer.DTOs.Conversation;
 using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
@@ -82,7 +83,7 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
 
         //}
 
-        
+
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -92,36 +93,105 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
 
 
 
-        
-        
-        
-        
+        // 1
+        [HttpGet]
+        [Route("api/seller/GetReport")]
+        public HttpResponseMessage GetReport([FromUri] string reportType, [FromUri] int SellerId)
+        {
+            try
+            {
+                if(reportType == "GetProductsByLargestAvailableQuantity")
+                {
+                    // 1
+                    var GetProductsByLargestAvailableQuantity = SellerService.GetProductsByLargestAvailableQuantity(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetProductsByLargestAvailableQuantity); // controller e hit korse
+                }
+                else if ( reportType == "GetProductsNoReviews")
+                {
+                    // 3
+                    var GetProductsNoReviews = SellerService.GetProductsNoReviews(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetProductsNoReviews);
+                }
+                else if (reportType == "GetProductsWithLowStock")
+                {
+                    // 4
+                    var GetProductsWithLowStock = SellerService.GetProductsWithLowStock(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetProductsWithLowStock);
+                }
+                else if (reportType == "GetALLBestSellingProduct")
+                {
+                    // 5
+                    var GetALLBestSellingProduct = SellerService.GetALLBestSellingProduct(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetALLBestSellingProduct );
+                }
+                else if (reportType == "GetALLOutOfStockProduct")
+                {
+                    //6
+                    var GetALLOutOfStockProduct = SellerService.GetALLOutOfStockProduct(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetALLOutOfStockProduct );
+                }
+                else if (reportType == "GetALLProductsWithHighRatings")
+                {
+                    // 7
+                    var GetALLProductsWithHighRatings = SellerService.GetALLProductsWithHighRatings(SellerId);
+                    return Request.CreateResponse(HttpStatusCode.OK, GetALLProductsWithHighRatings );
+
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "!!!" );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+
+        // 2
+        [HttpGet]
+        [Route("api/seller/GetProductsByRatingLessThanRatingLimit")]
+        public HttpResponseMessage GetProductsByRatingLessThanRatingLimit(int SellerId)
+        {
+            try
+            {
+                var GetProductsByRatingLessThanRatingLimit = SellerService.GetProductsByLargestAvailableQuantity(SellerId);
+
+                return Request.CreateResponse(HttpStatusCode.OK, GetProductsByRatingLessThanRatingLimit);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        // 8
+        [HttpGet]
+        [Route("api/seller/GetALLProductAddInSpecificTimeRange")]
+        public HttpResponseMessage GetALLProductAddInSpecificTimeRange([FromUri]  int SellerId, StartAndEndDatetimeDTO startAndEndDateTimeDto /*, DateTime StartDate, DateTime EndDate*/)
+        {
+            try
+            {
+                var GetALLProductAddInSpecificTimeRange = SellerService.GetALLProductAddInSpecificTimeRange(SellerId, startAndEndDateTimeDto);
+
+                return Request.CreateResponse(HttpStatusCode.OK, GetALLProductAddInSpecificTimeRange);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
 
 
 
-        
-
-
-
-
-
-        
-
-       
 
         //  7. paymentCompleteOfPreOrder [Product]
 
 
 
         //  8. orderStatusPending [Product]
-
-
-
-        
-
-        
-
-
 
 
         // 11. Seller Login basic/jwt [Seller]

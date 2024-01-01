@@ -101,48 +101,11 @@ namespace DataAccessLayer.Repos.UserRepo
             // var existingUser = Get(id);
             var existingUser = db.Users.Find(id);
 
-            // 🔴 User account Remove korar age .. 
-            // Profile Account Remove korte hobe 
-            // Tar Age Seller Shop Profile Remove korte hobe 
-
-
-            // 🔰 Age dekhte hobe Role ki .. Role Seller Hoile Seller Profile Delete
-            // Role Buyer Hoile Buyer Profile Delete korte hobe .. 
-
+            
             if (existingUser != null)
             {
-                var sellerProfileRepo = new SellerProfileRepo();
-
-               
-
-                var existingProfileAccount = sellerProfileRepo.Get(existingUser.SellerProfileId ?? 0);
-
-                var shopProfileRepo = new ShopRepo();
-                //    var existingShopProfileAccount = shopProfileRepo.Get(existingProfileAccount.ShopProfileId);
-
-                var existingShopProfileAccount =  db.ShopProfiles.FirstOrDefault(u => u.id == existingProfileAccount.ShopProfileId);
-
-                if (existingShopProfileAccount != null && existingProfileAccount != null)
-                {
-                    // Remove the reference from the Users table
-                    
-
-                    db.ShopProfiles.Remove(existingShopProfileAccount);
-
-                    db.SaveChanges();
-
-                    db.SellerProfiles.Remove(existingProfileAccount);
-
-                    //db.SaveChanges();
-
-                    existingUser.SellerProfileId = null;
-
-                    db.Users.Remove(existingUser);
-
-
-                }
-
                 
+                db.Users.Remove(existingUser);
 
             }
 
@@ -182,6 +145,14 @@ namespace DataAccessLayer.Repos.UserRepo
             return null;
 
             //throw new NotImplementedException();
+        }
+
+        public User UpdateSellerProfileIdToNull(int userId)
+        {
+            var existing = Get(userId);
+            existing.SellerProfileId = null;
+            if (db.SaveChanges() > 0) return existing;
+            return null;
         }
     }
 }

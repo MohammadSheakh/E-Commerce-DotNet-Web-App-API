@@ -82,9 +82,11 @@
     <Compile Include="Interface\Common\Order\ICart.cs" />
     <Compile Include="Interface\Common\Product\CategoryAndBrand\ICategoryBrand.cs" />
     <Compile Include="Interface\Common\Product\IProduct.cs" />
+    <Compile Include="Interface\Common\Product\Specificaiton\ISpecificationCategory.cs" />
     <Compile Include="Interface\Common\Review\IReview.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
+    <Compile Include="Interface\SellerProfile\ISellerProfile.cs" />
     <Compile Include="Interface\User\IUser.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
