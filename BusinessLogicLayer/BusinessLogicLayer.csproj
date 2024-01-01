@@ -53,12 +53,15 @@
     <Compile Include="DTOs\Common\Product\Brand And Category\BrandDTO.cs" />
     <Compile Include="DTOs\Common\Product\Brand And Category\CategoryDTO.cs" />
     <Compile Include="DTOs\Common\Product\ProductDTO.cs" />
+    <Compile Include="DTOs\Common\Product\Specifications\SpecificaitonCategoryDTO.cs" />
+    <Compile Include="DTOs\Common\Product\Specifications\SpecificationDTO.cs" />
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTOForType.cs" />
     <Compile Include="DTOs\Common\Review\LikeDislike\LikeDislikeDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\CreateReviewDTO.cs" />
     <Compile Include="DTOs\Common\Review\ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Common\Review\Review_ReviewReplyDTO.cs" />
+    <Compile Include="DTOs\Common\Review\Review__ReviewReplyDTO.cs" />
     <Compile Include="DTOs\Seller\Profile\SellerProfileDTO.cs" />
     <Compile Include="DTOs\Seller\Profile\UpdateSellerProfileDTO.cs" />
     <Compile Include="DTOs\Seller\SellerDTO.cs" />
@@ -66,6 +69,8 @@
     <Compile Include="DTOs\User\RegistrationDTO.cs" />
     <Compile Include="DTOs\User\TokenDTO.cs" />
     <Compile Include="DTOs\User\UpdateUserDTO.cs" />
+    <Compile Include="DTOs\User\UserWithBuyerProfileDTO.cs" />
+    <Compile Include="DTOs\User\UserWithSellerProfileDTO.cs" />
     <Compile Include="DTOs\User\UserDTO.cs" />
     <Compile Include="Helper\Converter\AutoMapperConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

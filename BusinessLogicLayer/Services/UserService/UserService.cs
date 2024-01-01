@@ -60,6 +60,39 @@ namespace BusinessLogicLayer.Services.UserService
             //return "";
         }
 
+
+        /// ⚫⚫⚫ 
+        public static UserDTOWithSellerProfile GetOneSellerWithSellerProfileById(int UserId)
+        {
+            // 🏠 ekhane ki amra return type User dibo naki User DTO dibo 
+            var result = DataAccessFactory.UserData().Get(UserId);
+
+
+            //auto mapper diye convert korte hobe 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<User, UserDTOWithSellerProfile>(result);
+
+
+
+            return Model_DTOMapped;
+            //return "";
+        }
+        /// ⚫⚫⚫ 
+        public static UserDTOWithBuyerProfile GetOneSellerWithBuyerProfileById(int UserId)
+        {
+            // 🏠 ekhane ki amra return type User dibo naki User DTO dibo 
+            var result = DataAccessFactory.UserData().Get(UserId);
+
+
+            //auto mapper diye convert korte hobe 
+            var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<User, UserDTOWithBuyerProfile>(result);
+
+
+
+            return Model_DTOMapped;
+            //return "";
+        }
+
+
         // User.3. GetOneUsersProfileById //🔰OK- - -🔴🔗
         public static SellerProfileDTO GetOneUsersProfileById(int UserId)
         {
@@ -120,8 +153,41 @@ namespace BusinessLogicLayer.Services.UserService
         public static bool DeleteAUsersAccountById(int UserId)
         {
             // it will delete Users Basic Data as well as Profile Information
-            var result = DataAccessFactory.UserData().Delete(UserId);
 
+            var flag = false;
+            var user = GetOneUserById(UserId);
+            if (user != null)
+            {
+                if (user.RoleId == 1)
+                {
+                   var seller = GetOneSellerWithSellerProfileById(UserId);
+                    // seller hoile .. 
+                    // ShopProfile remove korte hobe 
+                    // then seller profile remove korte hobe .. 
+                   
+                    var  shopProfileDeletedResult = DataAccessFactory.ShopData().Delete(seller.SellerProfile.ShopProfileId ?? 0);
+                    if (shopProfileDeletedResult)
+                    {
+                        flag = true;
+                    }
+                    
+
+                }
+                else if (user.RoleId == 2)
+                {
+                    // buyer hoile buyer profile remove korte hobe .. 
+                    var buyer = GetOneSellerWithBuyerProfileById(UserId);
+                    var buyerProfileDeletedResult = DataAccessFactory.BuyerProfileData().Delete(buyer.BuyerProfile.Id);
+                }
+                else
+                {
+                    // ekhane admin er kichu thakle sheta manage korte hobe .. 
+                }
+            }
+
+            //var result = DataAccessFactory.UserData().Delete(UserId);
+
+            var result = flag;
             return result;
         }
 

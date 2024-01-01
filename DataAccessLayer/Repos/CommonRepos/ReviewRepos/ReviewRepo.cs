@@ -150,8 +150,10 @@ namespace DataAccessLayer.Repos.Seller
 
         public Review Get(int ReviewId)
         {
-            return db.Reviewes.Find(ReviewId);
-            
+            // return db.Reviewes.Find(ReviewId);
+            return db.Reviewes
+             .Include("ReviewReplies")  // Include the ReviewReplies related to the review
+             .FirstOrDefault(r => r.Id == ReviewId);
         }
 
        

@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.DTOs.Product;
+﻿using BusinessLogicLayer.DTOs.Common.Product.Specifications;
+using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.Services.Product;
 using System;
 using System.Collections.Generic;
@@ -67,30 +68,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
             }
         }
 
-        //[HttpGet]
-        //[Route("api/seller/getReport")]
-        //public HttpResponseMessage GetReport()
-        //{
-        //    try
-        //    {
-        //        var AvailableQualityOfAllProduct = ProductService.GetAllAvailableQualityOfAllProduct();
-        //        var SpecificationOfAProduct = ProductService.GetAllAvailableQualityOfAllProduct();
-               
-                
-        //        // 🔴🔴
-        //        var checkForLowQuantity = ProductService.GetAllAvailableQualityOfAllProduct();
-        //        // koyta product and ki ki product shegula dekhate hobe ..
-
-                
-        //        var getAllBrandName = ProductService.GetAllAvailableQualityOfAllProduct();
-        //        var getAllCategoryName = ProductService.GetAllAvailableQualityOfAllProduct();
-        //        //var AvailableQualityOfAllProduct = ProductService.GetAllAvailableQualityOfAllProduct();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
-        //    }
-        //}
+        
 
         
 
@@ -250,6 +228,36 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
         }
 
 
+        [HttpPost]
+        [Route("api/product/specificationCategory/")] // 🔴 query kivabe send korbo ? 
+        public HttpResponseMessage AddSpecificationCategory(SpecificaitonCategoryDTO specificationCategoryDto)
+        {
+            try
+            {
 
+                var data = ProductService.AddSpecificationCategory(specificationCategoryDto);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/product/specification/")] // 🔴 query kivabe send korbo ? 
+        public HttpResponseMessage AddSpecification(SpecificationDTO specificationDto)
+        {
+            try
+            {
+                var data = ProductService.AddSpecification(specificationDto);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
     }
 }

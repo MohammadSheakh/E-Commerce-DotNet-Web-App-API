@@ -12,6 +12,10 @@ namespace DataAccessLayer.EF.Models
         //prop
         public int Id { get; set; }
 
+        public string PreferedPaymentMethod { get; set; }
+
+        public string PreferredLanguage { get; set; }
+
         // One buyer can have Many Order
 
         public virtual ICollection<Order> Orders { get; set; }

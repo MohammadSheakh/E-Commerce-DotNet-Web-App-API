@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using DataAccessLayer.EF.Models.Common.Products;
 using DataAccessLayer.Interface.Common.Product;
 using System.Security.Cryptography;
+using DataAccessLayer.Interface.Common.Product.Specificaiton;
+using DataAccessLayer.EF.Models.Product.Specifications;
 
 namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
 {
-    internal class ProductRepo : Repo, IRepo<Products, int, Products> ,IProduct<Products>// IProduct<Products>,
+    internal class ProductRepo : Repo, IRepo<Products, int, Products> ,IProduct<Products>, ISpecificationCategory<SpecificationCategory, Specification>
     {
 
         // 15
@@ -110,6 +112,8 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             return null;
         }
 
+
+        // done - 1 // done
         public Products GetProductsByLargestAvailableQuantity(int SellerId)
         {
             var productWithLargestQuantity = db.Product
@@ -125,27 +129,32 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             }
         }
 
+        // done - 2
         public List<Products> GetProductsByRatingLessThanRatingLimit(int SellerId, int RatingLimit)
         {
             var productsWithGreatRating = db.Product.Where(p => p.Rating > RatingLimit && p.SellerId == SellerId);
             return productsWithGreatRating.ToList();
-            //throw new NotImplementedException();
+
         }
 
+
+        // done - 3
         public List<Products> GetProductsNoReviews(int SellerId)
         {
             var productsWithNoReview = db.Product.Where(p => p.SellerId == SellerId && !db.Reviewes.Any(r => r.ProductId == p.Id)).ToList();
             return productsWithNoReview;
-            //throw new NotImplementedException();
+            
         }
 
+        // done - 4
         public List<Products> GetProductsWithLowStock(int SellerId)
         {
             var productWithLowStock = db.Product.Where(p => p.AvailableQuantity <= p.LowestQuantityToStock && p.SellerId == SellerId).ToList();
             return productWithLowStock;
-           // throw new NotImplementedException();
+           
         }
 
+        // done - 5 
         public List<Products> GetALLBestSellingProduct(int SellerId)
         {
             // order beshi hoise jei product er .. shei product return korbe .. 
@@ -153,38 +162,58 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
             throw new NotImplementedException();
         }
 
+        ///////////////////////////////
         public List<Products> GetALLBestSellingProductByCategory(int SellerId, string CategoryOrBrandType, string CategoryOrBrandName)
         {
             throw new NotImplementedException();
         }
 
+        // done - 6
         public List<Products> GetALLOutOfStockProduct(int SellerId)
         {
             var productWithOutOfStock = db.Product.Where(p => p.AvailableQuantity == 0 && p.SellerId == SellerId).ToList();
             return productWithOutOfStock;
-            // throw new NotImplementedException();
+            
         }
 
+        // done - 7
         public List<Products> GetALLProductsWithHighRatings(int SellerId)
         {
             var productWithHighRating = db.Product.Where(p => p.Rating > 4 && p.SellerId == SellerId).ToList();
-           return productWithHighRating;
-            //throw new NotImplementedException();
+            return productWithHighRating;
+            
         }
 
+        // done - 8
         public List<Products> GetALLProductAddInSpecificTimeRange(int SellerId, DateTime StartDate, DateTime EndDate)
         {
             var productInTimeRange = db.Product.Where(p => p.SellerId == SellerId && p.CreatedDate >= StartDate && p.CreatedDate <= EndDate).ToList();
             return productInTimeRange;
-            // throw new NotImplementedException();
         }
 
+        /////////////////////////
         public List<Products> GetALLProductsWithMostReviewsByType(int SellerId, string BrandName, string CategoryName)
         {
             throw new NotImplementedException();
         }
 
+        ////////////// Specification Category ///////////////////
+        public SpecificationCategory AddSpecificationCategory(SpecificationCategory obj)
+        {
+            db.SpecificationCategories.Add(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return null;
+        }
+
+        public Specification AddSpecification(Specification obj)
+        {
+            db.Specifications.Add(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return null;
+        }
+
         // ekta product er .. shob cheye beshi jei category er review ashse .. shei category er nam show korbo 
         // 
+        
     }
 }
