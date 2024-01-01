@@ -26,7 +26,7 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
                 .Select(p => new { Id = p.Id, Name = p.Name })
                 .FirstOrDefault();
              */
-            var brandId = db.Brands.Where(p => p.Name == brandName).Select(p=> p.Id).FirstOrDefault();
+            var brandId = db.Brands.Where(p => p.Name.Contains(brandName)).Select(p=> p.Id).FirstOrDefault();
 
             var products = db.Product.Where(p => p.BrandId == brandId).ToList();
 
@@ -34,14 +34,21 @@ namespace DataAccessLayer.Repos.CommonRepos.ProductRepos
         }
 
         // 16
-        public List<Products> sortProductByCategory(string categoryName)
+        public List<Products> sortProductByCategory(string categoryName) // contains means like search
         {
-            var categoryId = db.Categories.Where(p => p.Name == categoryName).Select(p => p.Id).FirstOrDefault();
+            var categoryId = db.Categories.Where(p => p.Name.Contains(categoryName)).Select(p => p.Id).FirstOrDefault();
 
             var products = db.Product.Where(p => p.CategoryId == categoryId).ToList();
 
             return products;
+        }
 
+        public List<Products> searchProductBySearchValue(string searchValue)
+        {
+
+            var products = db.Product.Where(p => p.Name.Contains(searchValue)).ToList();
+            
+            return products;
         }
 
         // 17

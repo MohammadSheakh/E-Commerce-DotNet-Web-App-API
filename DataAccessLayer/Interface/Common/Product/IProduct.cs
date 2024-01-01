@@ -15,6 +15,7 @@ namespace DataAccessLayer.Interface.Common.Product
         List<CLASS> sortProductByBrand(string brandName);
 
         List<CLASS> sortProductByCategory(string categoryName);
+        List<Products> searchProductBySearchValue(string searchValue);
 
         List<CLASS> sortProductByMinAndMaxRange(int? MinValue, int? MaxValue);
 

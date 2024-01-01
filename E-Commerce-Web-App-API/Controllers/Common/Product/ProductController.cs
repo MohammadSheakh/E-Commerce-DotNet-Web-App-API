@@ -213,7 +213,7 @@ namespace E_Commerce_Web_App_API.Controllers.Common.Product
 
         [HttpGet]
         [Route("api/product/searchProduct/")] // 🔴 query kivabe send korbo ? 
-        public HttpResponseMessage SearchProductByCategory(string searchValue, string categoryType)
+        public HttpResponseMessage SearchProductByCategory([FromUri] string searchValue, [FromUri] string categoryType)
         {
             try
             {
