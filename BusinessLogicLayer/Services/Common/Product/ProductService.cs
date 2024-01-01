@@ -67,10 +67,8 @@ namespace BusinessLogicLayer.Services.Product
             // Model To DTO Convert korte hobe .. 
             var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
 
-
             return Model_DTOMapped;
         }
-
 
 
         /**
@@ -87,15 +85,11 @@ namespace BusinessLogicLayer.Services.Product
             // 
         */
 
-
         //     addAvailableQualityOfAProduct [Product]                           //🔰OK- - -🔴🔗
         //     addSpecificationOfAProduct [Product]                              //🔰OK- - -🔴🔗
         //  5. paymentCompleteOfPreOrder [Product]                               //🔰OK- - -🔴🔗
         //  6. orderStatusPending [Product]                                      //🔰OK- - -🔴🔗
         //  7. getAllNegetiveReview [Product]                                    //🔰OK- - -🔴🔗
-
-
-
 
 
         // 15. sortProductByBrand [Brand]                                       //🔰 - - -🔴🔗
@@ -171,27 +165,37 @@ namespace BusinessLogicLayer.Services.Product
         {
 
             // category er upor base kore  data pull kore niye ashbo  
-
+           
             if(categoryType == "category")
             {
                 // category er upor base kore shob product show korte hobe
+                var products = DataAccessFactory.IProductData().sortProductByCategory(searchValue);
+
+                //Model To DTO Convert korte hobe .. 
+                var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(products);
+
+
+                return Model_DTOMapped;
             }
             if (categoryType == "brand")
             {
                 // brand er upor base kore shob product show korte hobe
+                var products = DataAccessFactory.IProductData().sortProductByBrand(searchValue);
+                var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(products);
+
+
+                return Model_DTOMapped;
             }
             if (categoryType == "product")
             {
                 // productName er upor base kore shob product show korte hobe
+                var products = DataAccessFactory.IProductData().searchProductBySearchValue(searchValue);
+                var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(products);
+
+
+                return Model_DTOMapped;
             }
 
-            //var allLowQuantityProductForSeller = DataAccessFactory.ProductDataForSortProductByMinAndMaxRange().sortProductByMinAndMaxRange(minValue, maxValue);
-
-            // Model To DTO Convert korte hobe .. 
-            //var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTO>(allLowQuantityProductForSeller);
-
-
-            //return Model_DTOMapped;
             return null;
         }
 
