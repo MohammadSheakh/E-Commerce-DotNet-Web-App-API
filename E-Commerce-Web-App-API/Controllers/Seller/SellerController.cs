@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.DTOs.Conversation;
+﻿using BusinessLogicLayer.DTOs.Common.Product;
+using BusinessLogicLayer.DTOs.Conversation;
 using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
@@ -169,11 +170,11 @@ namespace E_Commerce_Web_App_API.Controllers.Seller
         // 8
         [HttpGet]
         [Route("api/seller/GetALLProductAddInSpecificTimeRange")]
-        public HttpResponseMessage GetALLProductAddInSpecificTimeRange(int SellerId, DateTime StartDate, DateTime EndDate)
+        public HttpResponseMessage GetALLProductAddInSpecificTimeRange([FromUri]  int SellerId, StartAndEndDatetimeDTO startAndEndDateTimeDto /*, DateTime StartDate, DateTime EndDate*/)
         {
             try
             {
-                var GetALLProductAddInSpecificTimeRange = SellerService.GetALLProductAddInSpecificTimeRange(SellerId, StartDate, EndDate);
+                var GetALLProductAddInSpecificTimeRange = SellerService.GetALLProductAddInSpecificTimeRange(SellerId, startAndEndDateTimeDto);
 
                 return Request.CreateResponse(HttpStatusCode.OK, GetALLProductAddInSpecificTimeRange);
             }

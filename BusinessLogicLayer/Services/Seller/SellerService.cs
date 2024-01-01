@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessLogicLayer.DTOs.Common.Product;
 using BusinessLogicLayer.DTOs.Product;
 using BusinessLogicLayer.DTOs.Review;
 using BusinessLogicLayer.DTOs.Seller;
@@ -63,27 +64,28 @@ namespace BusinessLogicLayer.Services.Seller
         }
 
         // 3 done
-        public static List<Products> GetProductsNoReviews(int SellerId)
+        public static List<ProductDTOForReport> GetProductsNoReviews(int SellerId)
         {
             var products = DataAccessFactory.IProductData().GetProductsNoReviews(SellerId);
             // Model To DTO 
             //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-            return products;
+            return Model_DTOMapped;
         }
 
         // 4
-        public static List<Products> GetProductsWithLowStock(int SellerId)
+        public static List<ProductDTOForReport> GetProductsWithLowStock(int SellerId)
         {
             var products = DataAccessFactory.IProductData().GetProductsWithLowStock(SellerId);
             // Model To DTO 
-            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-            return products;
+            return Model_DTOMapped;
         }
 
 
-        // 5
+        // 5 // age order list jante hobe ... 
         public static List<Products> GetALLBestSellingProduct(int SellerId)
         {
             var products = DataAccessFactory.IProductData().GetALLBestSellingProduct(SellerId);
@@ -95,32 +97,32 @@ namespace BusinessLogicLayer.Services.Seller
 
 
         // 6
-        public static List<Products> GetALLOutOfStockProduct(int SellerId)
+        public static List<ProductDTOForReport> GetALLOutOfStockProduct(int SellerId)
         {
             var products = DataAccessFactory.IProductData().GetALLOutOfStockProduct(SellerId);
             // Model To DTO 
-            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-            return products;
+            return Model_DTOMapped;
         }
 
         // 7
-        public static List<Products> GetALLProductsWithHighRatings(int SellerId)
+        public static List<ProductDTOForReport> GetALLProductsWithHighRatings(int SellerId)
         {
             var products = DataAccessFactory.IProductData().GetALLProductsWithHighRatings(SellerId);
             // Model To DTO 
-            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
 
-            return products;
+            return Model_DTOMapped;
         }
 
         // 8
-        public static List<Products> GetALLProductAddInSpecificTimeRange(int SellerId, DateTime StartDate, DateTime EndDate)
+        public static List<ProductDTOForReport> GetALLProductAddInSpecificTimeRange(int SellerId, StartAndEndDatetimeDTO startAndEndDateTimeDto)
         {
-            var products = DataAccessFactory.IProductData().GetALLProductAddInSpecificTimeRange(SellerId, StartDate, EndDate);
+            var products = DataAccessFactory.IProductData().GetALLProductAddInSpecificTimeRange(SellerId, startAndEndDateTimeDto.StartDate, startAndEndDateTimeDto.EndDate);
             // Model To DTO 
-            //var Model_DTOMapped = AutoMapperConverter.ConvertForSingleInstance<Products, ProductDTO>(result);
-            return products;
+            var Model_DTOMapped = AutoMapperConverter.ConvertForList<Products, ProductDTOForReport>(products);
+            return Model_DTOMapped;
         }
 
         
