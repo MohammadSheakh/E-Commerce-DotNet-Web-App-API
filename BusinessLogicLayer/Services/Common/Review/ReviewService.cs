@@ -107,11 +107,10 @@ namespace BusinessLogicLayer.Services.Common.Review
         // 4.2 getAReview [Product] //🔰OK- - -🔴🔗
         public static CreateReviewDTO GetAReviewByReviewId(int ReviewId)
         {
-            // data access layer theke data anbo first e .. 
             var data = DataAccessFactory.ReviewData().Get(ReviewId);
-            // eta te DTO te convert na korle application layer use korte parbe na 
-
+            
             var mappedData = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, CreateReviewDTO>(data);
+
 
             return mappedData;
         }
@@ -122,13 +121,14 @@ namespace BusinessLogicLayer.Services.Common.Review
             var reviewEntity = DataAccessFactory.ReviewData().Get(ReviewId);
             //var mappedData1 = AutoMapperConverter.ConvertForSingleInstance<DataAccessLayer.EF.Models.Common.Reviews.Review, Review__ReviewReplyDTO>(reviewEntity);
 
+
             var cfg = new MapperConfiguration(c =>
             {
                 c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.Review, ReviewDTO>();
                 c.CreateMap<DataAccessLayer.EF.Models.Common.Reviews.ReviewReply, ReviewReplyDTO>();
-                //c.CreateMap<ShopProfile, ShopProfileDTO>();
-                c.CreateMap<Products, ProductDTO>();
-                c.CreateMap<User, UserDTO>();
+                // c.CreateMap<ShopProfile, ShopProfileDTO>();
+                // c.CreateMap<Products, ProductDTO>();
+                // c.CreateMap<User, UserDTO>();
             });
 
             var mapper = new Mapper(cfg);
