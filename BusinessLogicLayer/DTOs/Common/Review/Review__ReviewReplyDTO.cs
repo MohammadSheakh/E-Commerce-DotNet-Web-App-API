@@ -34,11 +34,14 @@ namespace BusinessLogicLayer.DTOs.Common.Review
         // Review Reply
         #region
         //////////////////////////public virtual ReviewReply ReviewReply { get; set; }
-        public List<ReviewReplyDTO> ReviewReplies { get; set; }
-        public Review__ReviewReplyDTO()
-        {
-            ReviewReplies = new List<ReviewReplyDTO>();
-        }
+        //public virtual List<ReviewReplyDTO> ReviewReplies { get; set; }
+
+        public virtual ReviewReplyDTO ReviewReplies { get; set; }
+
+        //public Review__ReviewReplyDTO()
+        //{
+        //    ReviewReplies = new List<ReviewReplyDTO>();
+        //}
         #endregion
     }
 }

@@ -9,7 +9,7 @@ namespace BusinessLogicLayer.DTOs.Review
 {
     public  class ReviewReplyDTO
     {
-        // public int id { get; set; }
+        ///public int id { get; set; }
 
         [Required]
         public string ReplyDetails { get; set; }

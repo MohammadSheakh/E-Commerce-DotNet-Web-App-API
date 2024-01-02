@@ -29,13 +29,9 @@ namespace BusinessLogicLayer.DTOs.Review
         public string PostedBy { get; set; }
 
 
-        
+        public int LikeCount { get; set; }
 
-
-
-        //public int? LikeCount { get; set; }
-
-        //public int? DisLikeCount { get; set; }
+        public int DisLikeCount { get; set; }
 
     }
 }
